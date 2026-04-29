@@ -373,11 +373,11 @@ class DeviceClassifier:
             score+=c
             signal_count+=1
             reasons.append(f"Banner analysis: {reason} (score {c:+.1f})")
-        if len(signals.icmp_rtt_samples)>=5:
-            c,reason=self.score_icmp_cv(signals.icmp_rtt_samples)
-            score+=c
-            signal_count+=1
-            reasons.append(f"ICMP CV: {reason} (score {c:+.1f})")
+        # if len(signals.icmp_rtt_samples)>=5:
+        #     c,reason=self.score_icmp_cv(signals.icmp_rtt_samples)
+        #     score+=c
+        #     signal_count+=1
+        #     reasons.append(f"ICMP CV: {reason} (score {c:+.1f})")
         if signals.mdns_services:
             c,reason=self.score_mdns(signals.mdns_services)
             score+=c
@@ -477,17 +477,17 @@ class DeviceClassifier:
             if kw in banner: 
                 return +w,f"robust OS keyword '{kw}'"         
         return 0.0,"no distinctive keywords"
-    def score_icmp_cv(self,samples:list)->tuple:
-        w=SIGNAL_WEIGHTS["icmp_RTT_cv"]
-        mean=statistics.mean(samples)
-        if mean==0:
-            return 0.0,"zero mean RTT" 
-        cv=statistics.stdev(samples)/mean
-        if cv>HIGH_ICMP_RTT_CV_THRESHOLD*2:
-            return -w*2,f"CV={cv:.2f} — very high RTT variance"  
-        if cv>HIGH_ICMP_RTT_CV_THRESHOLD:
-            return -w,f"CV={cv:.2f} — elevated RTT variance"                     
-        return +w*0.5,f"CV={cv:.2f} — consistent RTT"
+    # def score_icmp_cv(self,samples:list)->tuple:
+    #     w=SIGNAL_WEIGHTS["icmp_RTT_cv"]
+    #     mean=statistics.mean(samples)
+    #     if mean==0:
+    #         return 0.0,"zero mean RTT" 
+    #     cv=statistics.stdev(samples)/mean
+    #     if cv>HIGH_ICMP_RTT_CV_THRESHOLD*2:
+    #         return -w*2,f"CV={cv:.2f} — very high RTT variance"  
+    #     if cv>HIGH_ICMP_RTT_CV_THRESHOLD:
+    #         return -w,f"CV={cv:.2f} — elevated RTT variance"                     
+    #     return +w*0.5,f"CV={cv:.2f} — consistent RTT"
     def score_mdns(self, services: list)->tuple:
         """
         Score mDNS service types against known IoT and consumer service lists.

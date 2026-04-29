@@ -1,6 +1,4 @@
 """
-agents/discovery_agent.py — Discovery Agent (Phases 0-1).
-
 PURPOSE:
     The Discovery Agent is the FIRST agent in the 9-step pipeline. It finds
     hosts on the target network(s) using two phases:
@@ -28,7 +26,6 @@ OUTPUTS:
       NetBIOS presence) applied to each device's TIB signal store.
     - Discovery nodes added to the PCF DAG for evidence tracking.
 
-Paper reference: Section VI-B item 1
 """
 
 import logging
@@ -70,7 +67,6 @@ class DiscoveryAgent(BaseAgent):
         """
         # Lazy imports to avoid circular dependencies and keep the import
         # footprint small when the module is loaded but not executed.
-        from TIB_and_PCF.PCF import NodeType, EvidenceApproach
         from TIB_and_PCF.TIB.TIB_structures import PentestPhase
         from Discovery.passive_listener import PassiveReconPhase
         from Discovery.active_discovery import ActiveDiscoveryPhase
@@ -80,14 +76,12 @@ class DiscoveryAgent(BaseAgent):
 
         # Helper for progress output
         def _p(msg):
-            self.context.progress(f"           {msg}")
+            self.context.progress(f"{msg}")
 
         # ── Phase 0: Passive recon ───────────────────────────────────────────
         _p("Phase 0: Starting passive listeners (mDNS, SSDP, DHCP, NetBIOS)...")
         try:
-            phase0 = PassiveReconPhase(
-                self.context.pcf_dag, self.context.session_root_id
-            )
+            phase0=PassiveReconPhase(self.context.pcf_dag, self.context.session_root_id)
             phase0.start()
         except Exception as e:
             errors.append(f"Phase 0 error: {e}")
@@ -198,7 +192,7 @@ class DiscoveryAgent(BaseAgent):
                     if tib and services:
                         tib.signals.update_mdns_services(services)
 
-                # mDNS device names: e.g., "John's iPhone", "Living Room TV"
+                # mDNS device names
                 for ip, name in findings.mdns_names.items():
                     tib = self.context.get_device(ip)
                     if tib and name:
@@ -244,12 +238,12 @@ class DiscoveryAgent(BaseAgent):
                 session_root_id=self.context.session_root_id,
             )
 
-            _p("  → mDNS browse (Apple, Chromecast, printers, smart speakers)...")
+            _p("  -> mDNS browse (Apple, Chromecast, printers, smart speakers)...")
             mdns_results = scanner.scan_mdns(timeout=5)
             for ip, info in mdns_results.items():
                 tib = self.context.get_device(ip)
                 if not tib:
-                    # mDNS discovered a device not found by ICMP/ARP/TCP
+                    # mDNS discovered a device not found by ICMP/ARP
                     tib = self.context.register_device(ip, discovery_method="mdns_active")
                     discovered_count += 1
                 if info.get("services"):

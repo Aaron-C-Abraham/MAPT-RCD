@@ -120,12 +120,12 @@ class ActiveDiscoveryPhase:
         self.pcf_dag = pcf_dag
         self.session_root_id = session_root_id
 
-    def run(self,networks:List[str],arp_timeout: int = 3, icmp_timeout: int = 2) -> List[DiscoveredHost]:
+    def run(self,networks:List[str],arp_timeout:int = 3, icmp_timeout: int = 2) -> List[DiscoveredHost]:
         all_discovered=[]
         seen_ips=set()
 
         for network in networks:
-            if not network or network == "auto":
+            if not network or network=="auto":
                 network = auto_detect_subnet()
 
             net = ipaddress.ip_network(network, strict=False)
@@ -150,15 +150,16 @@ class ActiveDiscoveryPhase:
                 alive_ips=set(mac_map.keys())
 
             # TCP SYN scan to get the open ports
-            syn_ports = [80, 443, 22, 445, 3389, 8080, 7000, 62078, 5555,
-                         8008, 8001, 139, 21, 5900, 554, 1883, 548, 135]
-            for ip in list(alive_ips):
-                try:
-                    open_ports = self._scapy_syn_scan(ip, syn_ports)
-                    if open_ports:
-                        mac_map.setdefault(ip, "")
-                except Exception as e:
-                    logger.debug(f"[SYN] {ip}: {e}")
+            # Is this not a violation of the whole TIB principle?
+            # syn_ports = [80, 443, 22, 445, 3389, 8080, 7000, 62078, 5555,
+            #              8008, 8001, 139, 21, 5900, 554, 1883, 548, 135]
+            # for ip in list(alive_ips):
+            #     try:
+            #         open_ports = self._scapy_syn_scan(ip, syn_ports)
+            #         if open_ports:
+            #             mac_map.setdefault(ip, "")
+            #     except Exception as e:
+            #         logger.debug(f"[SYN] {ip}: {e}")
 
             #  ICMP ping for any hosts missed by ARP 
             all_ips=[str(ip) for ip in net.hosts()]
@@ -189,7 +190,7 @@ class ActiveDiscoveryPhase:
                 mac = mac_map.get(ip_str, "")
                 vendor = self.oui_db.lookup(mac) if (self.oui_db and mac) else "Unknown"
                 hostname = hostname_map.get(ip_str, "")
-                method = "arp+tcp" if mac else "icmp+tcp"
+                method = "arp" if mac else "icmp"
 
                 node_id = self.pcf_dag.add_node(
                     node_type=NodeType.DISCOVERY, phase="HOST_DISCOVERY",
@@ -206,23 +207,23 @@ class ActiveDiscoveryPhase:
         logger.info(f" Discovery complete: {len(all_discovered)} hosts found")
         return all_discovered
 
-    def _scapy_syn_scan(self, ip: str, ports: List[int], timeout: float = 1.5) -> List[int]:
-        """SYN scan specific ports on a single host. Returns list of open ports."""
-        open_ports = []
-        try:
-            # Send SYN to all ports at once
-            pkts = IP(dst=ip) / TCP(dport=ports, flags="S")
-            answered, _ = sr(pkts, timeout=timeout, verbose=0)
-            for sent, received in answered:
-                # SYN-ACK (flags=0x12) means port is open
-                if received.haslayer(TCP) and received[TCP].flags == 0x12:
-                    open_ports.append(received[TCP].sport)
-                    # Send RST to close the half-open connection
-                    sr1(IP(dst=ip)/TCP(dport=received[TCP].sport, flags="R"),
-                        timeout=0.5, verbose=0)
-        except Exception as e:
-            logger.debug(f"[SYN scan] {ip}: {e}")
-        return open_ports
+    # def _scapy_syn_scan(self, ip: str, ports: List[int], timeout: float = 1.5) -> List[int]:
+    #     """SYN scan specific ports on a single host. Returns list of open ports."""
+    #     open_ports = []
+    #     try:
+    #         # Send SYN to all ports at once
+    #         pkts = IP(dst=ip) / TCP(dport=ports, flags="S")
+    #         answered, _ = sr(pkts, timeout=timeout, verbose=0)
+    #         for sent, received in answered:
+    #             # SYN-ACK (flags=0x12) means port is open
+    #             if received.haslayer(TCP) and received[TCP].flags == 0x12:
+    #                 open_ports.append(received[TCP].sport)
+    #                 # Send RST to close the half-open connection
+    #                 sr1(IP(dst=ip)/TCP(dport=received[TCP].sport, flags="R"),
+    #                     timeout=0.5, verbose=0)
+    #     except Exception as e:
+    #         logger.debug(f"[SYN scan] {ip}: {e}")
+    #     return open_ports
 
     def _p(self, msg):
         """Emit progress if callback is set."""
@@ -233,7 +234,7 @@ class ActiveDiscoveryPhase:
         """Parse arp -a and return entries within the target network."""
         entries = []
         try:
-            output = subprocess.check_output(["arp","-a"], text=True, timeout=10)
+            output=subprocess.check_output(["arp","-a"], text=True, timeout=10)
         except Exception as e:
             logger.error(f"Failed to read ARP table: {e}")
             return entries

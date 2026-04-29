@@ -238,10 +238,9 @@ def listen_dhcp(findings:PassiveFindings,stop_event:threading.Event,pcf_dag:PCFD
                 findings.add_dhcp(src_ip,option55)
                 logger.debug(f"[DHCP] {src_ip} option55={option55}")
             pcf_dag.add_node(
-                    node_type    = NodeType.PASSIVE,
+                    node_type=NodeType.PASSIVE,
                     phase="PASSIVE_LISTENING",
-                    payload={"ip": src_ip, "dhcp_option55": option55,
-                                    "protocol": "DHCP"},
+                    payload={"ip":src_ip,"dhcp_option55":option55,"protocol":"DHCP"},
                     parent_ids=[session_root_id],
                     evidence_approaches=EvidenceApproach.PASSIVE,
                     device_ip=src_ip,
@@ -278,8 +277,7 @@ def listen_netbios(findings:PassiveFindings,stop_event:threading.Event,pcf_dag:P
                 pcf_dag.add_node(
                     node_type=NodeType.PASSIVE,
                     phase="PASSIVE_LISTENING",
-                    payload={"ip": src_ip, "protocol": "NetBIOS",
-                                "inference": "Windows host"},
+                    payload={"ip":src_ip,"protocol":"NetBIOS","inference":"Windows host"},
                     parent_ids=[session_root_id],
                     evidence_approaches=EvidenceApproach.PASSIVE,
                     device_ip=src_ip,

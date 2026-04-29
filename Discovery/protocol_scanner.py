@@ -419,7 +419,7 @@ class ProtocolScanner:
             return records
 
         # Parse header
-        _id, flags, qdcount, ancount, nscount, arcount = struct.unpack(">HHHHHH", data[:12])
+        _, flags, qdcount, ancount, nscount, arcount = struct.unpack(">HHHHHH", data[:12])
         offset = 12
 
         # Skip questions

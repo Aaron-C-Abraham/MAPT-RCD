@@ -36,7 +36,6 @@ OT DETECTION:
     (context.safety_officer_active = True). This is the trigger that makes
     the SafetyOfficer run at Step 5 of the pipeline.
 
-Paper reference: Section VI-B items 2-3
 """
 
 import logging
