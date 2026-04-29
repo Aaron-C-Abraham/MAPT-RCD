@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRUCE-PT Penetration Test Report</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.7;font-size:14px}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#0a0a23 0%,#1a1a3e 40%,#0f3460 100%);color:#fff;padding:50px 40px;border-radius:14px;margin-bottom:25px}
+.header h1{font-size:2.2em;letter-spacing:-0.5px}
+.header .sub{opacity:.7;font-size:1.05em;margin-top:4px}
+.header .meta{margin-top:18px;display:flex;gap:25px;flex-wrap:wrap;font-size:.9em;opacity:.85}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:6px}
+.card{background:#fff;border-radius:12px;padding:28px;margin-bottom:22px;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.card h2{color:#0f3460;border-bottom:2px solid #e4e8ee;padding-bottom:10px;margin-bottom:18px;font-size:1.25em}
+.card h3{color:#16213e;margin:18px 0 8px;font-size:1.05em}
+.card h4{color:#333;margin:12px 0 6px;font-size:.95em}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.m{background:#f4f6fb;border-radius:8px;padding:14px;text-align:center;border-left:4px solid #0f3460}
+.m .v{font-size:1.7em;font-weight:700;color:#0f3460}
+.m .l{font-size:.78em;color:#666;margin-top:2px}
+.m.red{border-color:#e74c3c}.m.red .v{color:#e74c3c}
+.m.green{border-color:#27ae60}.m.green .v{color:#27ae60}
+.m.orange{border-color:#f39c12}.m.orange .v{color:#f39c12}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.88em}
+th{background:#0f3460;color:#fff;padding:9px 12px;text-align:left;font-weight:600}
+td{padding:7px 12px;border-bottom:1px solid #eee}
+tr:nth-child(even){background:#fafbfd}
+tr:hover{background:#f0f4ff}
+.tb{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.78em;font-weight:700;color:#fff}
+.tb-ROBUST{background:#27ae60}.tb-MODERATE{background:#f39c12}.tb-FRAGILE{background:#e74c3c}.tb-CRITICAL{background:#8e44ad}.tb-UNKNOWN{background:#95a5a6}
+.st{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.75em;font-weight:600}
+.st-completed{background:#d4edda;color:#155724}.st-failed{background:#f8d7da;color:#721c24}.st-skipped{background:#fff3cd;color:#856404}
+.rpi{border-left:4px solid #c0392b}
+.rpi-card{background:#fdf2f2;border-radius:8px;padding:16px;margin:10px 0;border:1px solid #f5c6cb}
+.finding{border-radius:6px;padding:8px 14px;margin:5px 0;font-size:.88em;border-left:3px solid #27ae60;background:#eaf7ea}
+.finding.warn{border-color:#f39c12;background:#fff8e1}
+.finding.info{border-color:#3498db;background:#ebf5fb}
+.finding.danger{border-color:#e74c3c;background:#fdf2f2}
+.step{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #f0f0f0}
+.sn{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:700;color:#fff}
+.sn-ok{background:#27ae60}.sn-skip{background:#f39c12}.sn-err{background:#e74c3c}
+.timeline{border-left:3px solid #0f3460;margin-left:12px;padding-left:18px}
+.tl-item{position:relative;padding:4px 0;font-size:.82em;color:#555}
+.tl-item::before{content:'';position:absolute;left:-24px;top:8px;width:10px;height:10px;border-radius:50%;background:#0f3460}
+.tl-item.alert::before{background:#e74c3c}
+.bar{height:20px;border-radius:4px;background:#e0e0e0;overflow:hidden;margin:4px 0}
+.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#27ae60,#2ecc71)}
+.bar-fill.high{background:linear-gradient(90deg,#e74c3c,#c0392b)}
+.oracle{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:4px;font-size:.8em;margin:2px}
+.oracle.pass{background:#d4edda;color:#155724}.oracle.fail{background:#f8d7da;color:#721c24}
+.port{display:inline-block;background:#e74c3c;color:#fff;padding:1px 8px;border-radius:10px;font-size:.8em;margin:1px;font-weight:600}
+.footer{text-align:center;padding:25px;color:#999;font-size:.82em}
+details{margin:8px 0}
+summary{cursor:pointer;font-weight:600;color:#0f3460;padding:6px 0}
+summary:hover{color:#e74c3c}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}.mg{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+<h1>Penetration Test Report</h1>
+<div class="sub">TRUCE-PT Multi-Agent Risk-Tiered Network Assessment</div>
+<div class="meta">
+<span>Date: 2026-04-28 21:45:44</span>
+<span>Target: 192.168.0.0/24</span>
+<span>Duration: 639.8s</span>
+<span>Devices: 4</span>
+<span>Actions: 68</span>
+
+</div>
+</div>
+
+<!-- ═══ EXECUTIVE SUMMARY ═══ -->
+<div class="card">
+<h2>1. Executive Summary</h2>
+<p>Automated penetration test conducted on <strong>192.168.0.0/24</strong> using the TRUCE-PT multi-agent framework.
+The 9-step pipeline discovered <strong>4 devices</strong>, executed <strong>68 test actions</strong>,
+produced <strong>41 findings</strong>, and validated <strong>40</strong> of them via oracle checks.
+<strong>2 Raspberry Pi</strong> device(s) were identified.
+All evidence is recorded in a <strong>268-node</strong> cryptographic proof chain (PCF DAG).
+</p>
+<div class="mg" style="margin-top:16px">
+<div class="m"><div class="v">4</div><div class="l">Devices Discovered</div></div>
+<div class="m green"><div class="v">68</div><div class="l">Tests Executed</div></div>
+<div class="mred "><div class="v">41</div><div class="l">Findings</div></div>
+<div class="m green"><div class="v">40</div><div class="l">Validated</div></div>
+<div class="m orange"><div class="v">6</div><div class="l">Rejected</div></div>
+<div class="m"><div class="v">0</div><div class="l">Safety Vetoes</div></div>
+<div class="m"><div class="v">268</div><div class="l">Evidence Nodes</div></div>
+<div class="m"><div class="v">2</div><div class="l">Raspberry Pi</div></div>
+</div>
+</div>
+
+<!-- ═══ TESTS PERFORMED ═══ -->
+<div class="card">
+<h2>2. Penetration Tests Performed</h2>
+<p>The following test categories were executed across all devices via the Per-Target Graph (PTG) engine:</p>
+<table>
+<tr><th>Phase</th><th>Test Name</th><th>Tool ID</th><th>Description</th><th>Risk Tier</th></tr>
+<tr><td>Phase 0</td><td>mDNS Listener</td><td>mdns_listener</td><td>Passive multicast DNS service discovery</td><td><span class="tb tb-ROBUST">TIER 0</span></td></tr>
+<tr><td>Phase 0</td><td>SSDP Listener</td><td>ssdp_listener</td><td>Passive UPnP device discovery</td><td><span class="tb tb-ROBUST">TIER 0</span></td></tr>
+<tr><td>Phase 0</td><td>DHCP Listener</td><td>dhcp_listener</td><td>Passive DHCP fingerprint capture</td><td><span class="tb tb-ROBUST">TIER 0</span></td></tr>
+<tr><td>Phase 0</td><td>NetBIOS Listener</td><td>netbios_listener</td><td>Passive NetBIOS name resolution</td><td><span class="tb tb-ROBUST">TIER 0</span></td></tr>
+<tr><td>Phase 1</td><td>ARP Discovery</td><td>arp_discovery</td><td>ARP table + ICMP ping sweep for host detection</td><td><span class="tb tb-MODERATE">TIER 1</span></td></tr>
+<tr><td>Phase 1</td><td>ICMP Discovery</td><td>icmp_discovery</td><td>ICMP echo probes with TTL analysis</td><td><span class="tb tb-MODERATE">TIER 1</span></td></tr>
+<tr><td>Phase 1</td><td>TCP Discovery</td><td>tcp_discovery</td><td>TCP connect probes on common ports</td><td><span class="tb tb-MODERATE">TIER 1</span></td></tr>
+<tr><td>Phase 2</td><td>Reverse DNS</td><td>dns_reverse</td><td>Hostname resolution via reverse DNS lookup</td><td><span class="tb tb-ROBUST">TIER 0</span></td></tr>
+<tr><td>Phase 2</td><td>ICMP Fingerprint</td><td>icmp_fingerprint</td><td>TTL + RTT jitter analysis for OS family detection</td><td><span class="tb tb-MODERATE">TIER 1</span></td></tr>
+<tr><td>Phase 2</td><td>TCP Fingerprint</td><td>tcp_fingerprint</td><td>TCP window size, options, ISN entropy analysis</td><td><span class="tb tb-MODERATE">TIER 1</span></td></tr>
+<tr><td>Phase 2</td><td>SNMP Probe</td><td>snmp_probe</td><td>SNMPv1/v2c sysDescr.0 query for device identification</td><td><span class="tb tb-MODERATE">TIER 1</span></td></tr>
+<tr><td>Phase 3</td><td>TIB Classification</td><td>__internal_tib_classify</td><td>Risk tier assignment based on collected signals</td><td><span class="tb tb-ROBUST">TIER 0</span></td></tr>
+<tr><td>Phase 4</td><td>TCP Port Scan</td><td>tcp_syn_scan</td><td>TCP connect scan on top ports (tier-gated count)</td><td><span class="tb tb-FRAGILE">TIER 2</span></td></tr>
+<tr><td>Phase 5</td><td>Banner Grab</td><td>banner_grab</td><td>Service banner capture on open ports</td><td><span class="tb tb-FRAGILE">TIER 2</span></td></tr>
+<tr><td>Phase 5</td><td>HTTP Probe</td><td>http_probe</td><td>HTTP header analysis for web server identification</td><td><span class="tb tb-FRAGILE">TIER 2</span></td></tr>
+<tr><td>Phase 6</td><td>Passive OS ID</td><td>os_passive_id</td><td>OS inference from TTL, banners, vendor (zero packets)</td><td><span class="tb tb-ROBUST">TIER 0</span></td></tr>
+<tr><td>Phase 6</td><td>Active OS ID</td><td>os_active_id</td><td>TCP stack fingerprinting for OS detection</td><td><span class="tb tb-FRAGILE">TIER 2</span></td></tr>
+</table>
+</div>
+
+<!-- ═══ 9-STEP PIPELINE ═══ -->
+<div class="card">
+<h2>3. Pipeline Execution (9 Steps)</h2>
+<div class="step"><div class="sn sn-ok">1</div><div><strong>Step 1: Discovery Agent</strong><br><span style="color:#666;font-size:.88em">Passive listening (mDNS, SSDP, DHCP, NetBIOS) + Active scanning (ICMP, ARP, TCP)</span></div></div>
+<div class="step"><div class="sn sn-ok">2</div><div><strong>Step 2: Target Profiling</strong><br><span style="color:#666;font-size:.88em">Fingerprinting (TTL, banners, SNMP, TCP) + TIB tier classification</span></div></div>
+<div class="step"><div class="sn sn-ok">3</div><div><strong>Step 3: Fleet Reasoner</strong><br><span style="color:#666;font-size:.88em">Device clustering — 0 clusters, 0% probe reduction</span></div></div>
+<div class="step"><div class="sn sn-ok">4</div><div><strong>Step 4: Planner Agent</strong><br><span style="color:#666;font-size:.88em">Built 4 Per-Target Graphs (16 nodes each)</span></div></div>
+<div class="step"><div class="sn sn-ok">5</div><div><strong>Step 5: Safety Officer</strong><br><span style="color:#666;font-size:.88em">OT safety review — vetoes unsafe actions on CRITICAL/FRAGILE devices</span></div></div>
+<div class="step"><div class="sn sn-ok">6</div><div><strong>Step 6: Tool Orchestrator</strong><br><span style="color:#666;font-size:.88em">Executed 68 PTG nodes — port scan, service probe, OS ID</span></div></div>
+<div class="step"><div class="sn sn-ok">7</div><div><strong>Step 7: Impact Monitor</strong><br><span style="color:#666;font-size:.88em">Health check — 0 alerts, 0 vetoes</span></div></div>
+<div class="step"><div class="sn sn-ok">8</div><div><strong>Step 8: Validator Agent</strong><br><span style="color:#666;font-size:.88em">Oracle validation — 40 passed, 6 rejected</span></div></div>
+<div class="step"><div class="sn sn-ok">9</div><div><strong>Step 9: Evidence Agent</strong><br><span style="color:#666;font-size:.88em">Recorded 61 nodes, 14 proof bundles</span></div></div>
+</div>
+<div class="card"><h2>4. Device Tier Classification</h2>
+<p>Each device is classified into a risk tier that determines scanning intensity, budget limits, and allowed actions:</p>
+<table><tr><th>Tier</th><th>Count</th><th>Budget Limit</th><th>Scanning Intensity</th><th>Exploitation</th></tr><tr><td><span class="tb tb-FRAGILE">FRAGILE</span></td><td><strong>3</strong></td><td>1,000 pts</td><td>Top 100 ports, 5 pps rate limit</td><td>Safe only</td></tr><tr><td><span class="tb tb-CRITICAL">CRITICAL</span></td><td><strong>1</strong></td><td>200 pts</td><td>Top 20 ports, 1 pps rate limit</td><td>None</td></tr></table></div><div class="card"><h2>5. Device Inventory</h2>
+<table><tr><th>IP</th><th>Device Name</th><th>Type</th><th>MAC</th><th>Vendor</th><th>Tier</th><th>Open Ports</th><th>OS</th><th>Breaker</th><th>Budget</th></tr><tr><td><strong>192.168.0.1</strong></td><td><strong>TL-WR850N</strong></td><td>Laptop / Desktop</td><td>78:20:51:c9:18:b8</td><td>tp-link systems inc.</td><td><span class="tb tb-CRITICAL">CRITICAL</span></td><td><span class="port">80</span></td><td>Embedded Linux (TP-Link)</td><td style="">ACTIVE</td><td>106/200 (53%)</td></tr><tr><td><strong>192.168.0.100</strong></td><td><strong>Anil's MacBook Air </strong></td><td>Phone</td><td></td><td>Unknown</td><td><span class="tb tb-FRAGILE">FRAGILE</span></td><td><span class="port">5432</span></td><td>Microsoft Windows 10 (general purpose)</td><td>ACTIVE</td><td>166/3000 (6%)</td></tr><tr><td><strong>192.168.0.112</strong></td><td><span style="color:#999">—</span></td><td>Single Board Computer (Raspberry Pi)</td><td>b8:27:eb:b6:8b:93</td><td>raspberry pi foundation</td><td><span class="tb tb-FRAGILE">FRAGILE</span></td><td><span class="port">22</span></td><td>Microsoft Windows XP Professional SP1 (general purpose)</td><td>ACTIVE</td><td>272/3000 (9%)</td></tr><tr><td><strong>192.168.0.113</strong></td><td><span style="color:#999">—</span></td><td>Single Board Computer (Raspberry Pi)</td><td>b8:27:eb:87:fb:5a</td><td>raspberry pi foundation</td><td><span class="tb tb-FRAGILE">FRAGILE</span></td><td><span class="port">22</span></td><td>Microsoft Windows XP Professional SP1 (general purpose)</td><td style="">ACTIVE</td><td>272/3000 (9%)</td></tr></table></div><div class="card"><h2>6. Test Execution Status Per Device</h2>
+<p>Each device has a 16-node Per-Target Graph (PTG). Status of each node after pipeline completion:</p>
+<table><tr><th>Device</th><th>Vendor</th><th>Total Nodes</th><th>Completed</th><th>Failed</th><th>Skipped</th><th>Budget Used</th><th>Completion</th></tr><tr><td><strong>192.168.0.1</strong></td><td>tp-link systems inc.</td><td>15</td><td><span class="st st-completed">12</span></td><td><span class="st st-failed">0</span></td><td><span class="st st-skipped">3</span></td><td>106/200</td><td><div class="bar"><div class="bar-fill " style="width:80%"></div></div>80%</td></tr><tr><td><strong>192.168.0.100</strong></td><td>Unknown</td><td>16</td><td><span class="st st-completed">16</span></td><td><span class="st st-failed">0</span></td><td><span class="st st-skipped">0</span></td><td>166/3000</td><td><div class="bar"><div class="bar-fill " style="width:100%"></div></div>100%</td></tr><tr><td><strong>192.168.0.112</strong></td><td>raspberry pi foundat</td><td>16</td><td><span class="st st-completed">16</span></td><td><span class="st st-failed">0</span></td><td><span class="st st-skipped">0</span></td><td>272/3000</td><td><div class="bar"><div class="bar-fill " style="width:100%"></div></div>100%</td></tr><tr><td><strong>192.168.0.113</strong></td><td>raspberry pi foundat</td><td>16</td><td><span class="st st-completed">16</span></td><td><span class="st st-failed">0</span></td><td><span class="st st-skipped">0</span></td><td>272/3000</td><td><div class="bar"><div class="bar-fill " style="width:100%"></div></div>100%</td></tr></table></div><div class="card"><h2>7. Exploitation Results</h2><div class="mg" style="margin-bottom:16px">
+<div class="m red"><div class="v">0</div><div class="l">Successful Exploits</div></div>
+<div class="m orange"><div class="v">0</div><div class="l">Dry-Run Findings</div></div>
+<div class="m"><div class="v">0</div><div class="l">Total Exploit Checks</div></div>
+<div class="m"><div class="v">0</div><div class="l">Devices Tested</div></div>
+</div><div class="finding warn">No exploitation findings — no exploitable services were detected on any device.</div></div><div class="card"><h2>7.5. Post-Exploitation Analysis</h2><div class="mg" style="margin-bottom:16px">
+        <div class="m red"><div class="v">0</div><div class="l">Shells Established</div></div>
+        <div class="m red"><div class="v">0</div><div class="l">Pivot Paths</div></div>
+        <div class="m red"><div class="v">0</div><div class="l">Confirmed Pivots</div></div>
+        <div class="m orange"><div class="v">0</div><div class="l">Kill Chains</div></div>
+        </div><h3>C2 / Reverse Shell Risk Distribution</h3><div class="mg" style="margin-bottom:12px"><div class="m green"><div class="v">3</div><div class="l">MINIMAL</div></div></div><h3>Subnet Risk Assessment (1 subnets)</h3><table><tr><th>Subnet</th><th>Risk</th><th>Devices</th><th>Compromised</th><th>High-Value</th><th>Confirmed Pivots</th><th>Recommendations</th></tr><tr><td><strong>192.168.0.0/24</strong></td><td><span style="color:#27ae60;font-weight:bold">LOW</span></td><td>4</td><td>0</td><td>4</td><td>0</td><td style="font-size:.82em">No immediate action required for 192.168.0.0/24</td></tr></table><h3>Per-Device C2 / Reverse Shell Risk</h3><table><tr><th>Device</th><th>RSRS Score</th><th>Risk Level</th><th>Outbound</th><th>Auth Weakness</th><th>Writable Svc</th><th>DNS Tunnel</th><th>Covert Ch.</th><th>Persistence</th><th>C2 Channels</th></tr><tr><td><strong>192.168.0.100</strong></td><td style="font-weight:bold;color:#95a5a6">0.05</td><td><span style="color:#95a5a6;font-weight:bold">MINIMAL</span></td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:10%"></div></div> 10%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:15%"></div></div> 15%</td><td>0</td></tr><tr><td><strong>192.168.0.112</strong></td><td style="font-weight:bold;color:#95a5a6">0.06</td><td><span style="color:#95a5a6;font-weight:bold">MINIMAL</span></td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:10%"></div></div> 10%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:5%"></div></div> 5%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:15%"></div></div> 15%</td><td>0</td></tr><tr><td><strong>192.168.0.113</strong></td><td style="font-weight:bold;color:#95a5a6">0.06</td><td><span style="color:#95a5a6;font-weight:bold">MINIMAL</span></td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:10%"></div></div> 10%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:5%"></div></div> 5%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:0%"></div></div> 0%</td><td><div class="bar" style="width:80px;display:inline-block"><div class="bar-fill " style="width:15%"></div></div> 15%</td><td>0</td></tr></table></div><div class="card"><h2>8. Detailed Device Reports</h2>
+<details>
+<summary>192.168.0.1 — TL-WR850N <span class="tb tb-CRITICAL">CRITICAL</span> 🟢</summary>
+<div style="padding:10px 0">
+<div class="two-col">
+<div>
+<h4>Identity</h4>
+<table>
+<tr><td>Device Name</td><td><strong>TL-WR850N</strong></td></tr>
+<tr><td>Device Type</td><td>Laptop / Desktop</td></tr>
+<tr><td>IP Address</td><td><strong>192.168.0.1</strong></td></tr>
+<tr><td>MAC Address</td><td>78:20:51:c9:18:b8</td></tr>
+<tr><td>Vendor</td><td>tp-link systems inc.</td></tr>
+<tr><td>Tier</td><td><span class="tb tb-CRITICAL">CRITICAL</span></td></tr>
+<tr><td>OS Detection</td><td><strong>Embedded Linux (TP-Link)</strong></td></tr>
+<tr><td>Circuit Breaker</td><td><span style='color:#27ae60'>ACTIVE</span></td></tr>
+</table>
+</div>
+<div>
+<h4>Budget Consumption</h4>
+<table>
+<tr><td>Total Budget</td><td>200 pts</td></tr>
+<tr><td>Budget Spent</td><td><strong>106 pts</strong></td></tr>
+<tr><td>Remaining</td><td>94 pts</td></tr>
+</table><h4>Budget Breakdown by Probe Type</h4><table><tr><td>tcp_syn</td><td>94.0 pts</td></tr><tr><td>icmp_echo</td><td>5.0 pts</td></tr><tr><td>snmp_query</td><td>4.5 pts</td></tr><tr><td>tcp_banner_grab</td><td>2.0 pts</td></tr></table></div></div><h4>Open Ports</h4><div class="finding danger">Port <strong>80/tcp</strong> — OPEN</div><div class="finding info">OS Identified: <strong>Embedded Linux (TP-Link)</strong></div><h4>Service Banners</h4><table><tr><th>Port</th><th>Banner</th></tr><tr><td>1900</td><td><code>SSDP: TP-Link | TL-WR850N | 300Mbps Wireless N Router | Linux/3.10.14, UPnP/1.0, Portable SDK for UPnP devices/1.6.19</code></td></tr></table><h4>Test Execution (PTG Nodes)</h4><table><tr><th>Status</th><th>Count</th></tr><tr><td><span class="st st-completed">COMPLETED</span></td><td>12</td></tr><tr><td><span class="st st-skipped">SKIPPED</span></td><td>3</td></tr></table><h4>Network Metrics (RTT)</h4>
+<table>
+<tr><td>Samples</td><td>5</td></tr>
+<tr><td>Baseline RTT</td><td>148.5 ms</td></tr>
+<tr><td>Current RTT</td><td>105.7 ms</td></tr>
+<tr><td>Mean RTT</td><td>148.5 ms</td></tr>
+<tr><td>Std Dev</td><td>116.45 ms</td></tr>
+<tr><td>Stress Events</td><td>0</td></tr>
+</table><h4>Event Timeline</h4><div class='timeline'><div class="tl-item ">[21:37:39] [TIB_CREATED] Device 192.168.0.1 (78:20:51:c9:18:b8) registered</div><div class="tl-item ">[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -&gt; ACTIVE_DISCOVERY</div><div class="tl-item alert">[21:37:51] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;banners&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:37:51] [RETIER] RETIER (Signal &#x27;banners&#x27; updated automatically): UNKNOWN -&gt; FRAGILE (less fragile)</div><div class="tl-item alert">[21:37:51] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;mdns_device_name&#x27; updated — triggering automatic reclassification</div><div class="tl-item alert">[21:37:51] [RECLASSIFY_NO_CHANGE] Reclassification (Signal &#x27;mdns_device_name&#x27; updated automatically) — tier unchanged (FRAGILE)</div><div class="tl-item ">[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -&gt; FINGERPRINTING</div><div class="tl-item alert">[21:38:32] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;open_ports&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:38:32] [RETIER] RETIER (Signal &#x27;open_ports&#x27; updated automatically): FRAGILE -&gt; CRITICAL (MORE fragile)</div><div class="tl-item ">[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -&gt; TIB_ASSIGNMENT</div><div class="tl-item ">[21:40:47] [TIER_ASSIGNED] Tier: CRITICAL -&gt; CRITICAL (score=-5.0, confidence=75%)</div><div class="tl-item ">[21:40:47] [PHASE_TRANSITION] TIB_ASSIGNMENT -&gt; PORT_SCAN</div><div class="tl-item ">[21:41:08] [PHASE_TRANSITION] PORT_SCAN -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:41:08] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:45:01] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:45:01] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div></div></div></details>
+<details>
+<summary>192.168.0.100 — Anil’s MacBook Air  <span class="tb tb-FRAGILE">FRAGILE</span> 🟢</summary>
+<div style="padding:10px 0">
+<div class="two-col">
+<div>
+<h4>Identity</h4>
+<table>
+<tr><td>Device Name</td><td><strong>Anil’s MacBook Air </strong></td></tr>
+<tr><td>Device Type</td><td>Phone</td></tr>
+<tr><td>IP Address</td><td><strong>192.168.0.100</strong></td></tr>
+<tr><td>MAC Address</td><td></td></tr>
+<tr><td>Vendor</td><td>Unknown</td></tr>
+<tr><td>Tier</td><td><span class="tb tb-FRAGILE">FRAGILE</span></td></tr>
+<tr><td>OS Detection</td><td><strong>Microsoft Windows 10 (general purpose)</strong></td></tr>
+<tr><td>Circuit Breaker</td><td><span style='color:#27ae60'>ACTIVE</span></td></tr>
+</table>
+</div>
+<div>
+<h4>Budget Consumption</h4>
+<table>
+<tr><td>Total Budget</td><td>3000 pts</td></tr>
+<tr><td>Budget Spent</td><td><strong>166 pts</strong></td></tr>
+<tr><td>Remaining</td><td>2834 pts</td></tr>
+</table><h4>Budget Breakdown by Probe Type</h4><table><tr><td>tcp_syn</td><td>125.0 pts</td></tr><tr><td>tcp_banner_grab</td><td>24.0 pts</td></tr><tr><td>icmp_echo</td><td>15.0 pts</td></tr><tr><td>snmp_query</td><td>1.5 pts</td></tr></table></div></div><h4>Open Ports</h4><div class="finding danger">Port <strong>5432/tcp</strong> — OPEN</div><div class="finding info">OS Identified: <strong>Microsoft Windows 10 (general purpose)</strong></div><h4>Test Execution (PTG Nodes)</h4><table><tr><th>Status</th><th>Count</th></tr><tr><td><span class="st st-completed">COMPLETED</span></td><td>16</td></tr></table><h4>Network Metrics (RTT)</h4>
+<table>
+<tr><td>Samples</td><td>15</td></tr>
+<tr><td>Baseline RTT</td><td>0.0 ms</td></tr>
+<tr><td>Current RTT</td><td>0.0 ms</td></tr>
+<tr><td>Mean RTT</td><td>0.0 ms</td></tr>
+<tr><td>Std Dev</td><td>0.00 ms</td></tr>
+<tr><td>Stress Events</td><td>0</td></tr>
+</table><h4>Event Timeline</h4><div class='timeline'><div class="tl-item ">[21:37:39] [TIB_CREATED] Device 192.168.0.100 () registered</div><div class="tl-item ">[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -&gt; ACTIVE_DISCOVERY</div><div class="tl-item alert">[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;mdns_services&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:37:46] [RETIER] RETIER (Signal &#x27;mdns_services&#x27; updated automatically): UNKNOWN -&gt; FRAGILE (less fragile)</div><div class="tl-item alert">[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;mdns_device_name&#x27; updated — triggering automatic reclassification</div><div class="tl-item alert">[21:37:46] [RECLASSIFY_NO_CHANGE] Reclassification (Signal &#x27;mdns_device_name&#x27; updated automatically) — tier unchanged (FRAGILE)</div><div class="tl-item ">[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -&gt; FINGERPRINTING</div><div class="tl-item ">[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -&gt; TIB_ASSIGNMENT</div><div class="tl-item ">[21:40:47] [TIER_ASSIGNED] Tier: FRAGILE -&gt; FRAGILE (score=-3.0, confidence=50%)</div><div class="tl-item ">[21:41:09] [PHASE_TRANSITION] TIB_ASSIGNMENT -&gt; PORT_SCAN</div><div class="tl-item ">[21:41:20] [PHASE_TRANSITION] PORT_SCAN -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:41:22] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:41:22] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:41:24] [PHASE_TRANSITION] SERVICE_PROBE -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:41:26] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:41:27] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:45:01] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:45:03] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:45:05] [EXPLOIT_APPROVED] &#x27;CVE Match: CVE-2017-7921&#x27;</div><div class="tl-item ">[21:45:05] [EXPLOIT_APPROVED] &#x27;CVE Match: CVE-2021-36260&#x27;</div><div class="tl-item">... and 5 more events</div></div></div></details>
+<detailsopen>
+<summary>192.168.0.112 — Single Board Computer (Raspberry Pi) <span class="tb tb-FRAGILE">FRAGILE</span> 🟢</summary>
+<div style="padding:10px 0">
+<div class="two-col">
+<div>
+<h4>Identity</h4>
+<table>
+<tr><td>Device Name</td><td><strong><span style="color:#999">—</span></strong></td></tr>
+<tr><td>Device Type</td><td>Single Board Computer (Raspberry Pi)</td></tr>
+<tr><td>IP Address</td><td><strong>192.168.0.112</strong></td></tr>
+<tr><td>MAC Address</td><td>b8:27:eb:b6:8b:93</td></tr>
+<tr><td>Vendor</td><td>raspberry pi foundation</td></tr>
+<tr><td>Tier</td><td><span class="tb tb-FRAGILE">FRAGILE</span></td></tr>
+<tr><td>OS Detection</td><td><strong>Microsoft Windows XP Professional SP1 (general purpose)</strong></td></tr>
+<tr><td>Circuit Breaker</td><td><span style='color:#27ae60'>ACTIVE</span></td></tr>
+</table>
+</div>
+<div>
+<h4>Budget Consumption</h4>
+<table>
+<tr><td>Total Budget</td><td>3000 pts</td></tr>
+<tr><td>Budget Spent</td><td><strong>272 pts</strong></td></tr>
+<tr><td>Remaining</td><td>2728 pts</td></tr>
+</table><h4>Budget Breakdown by Probe Type</h4><table><tr><td>tcp_syn</td><td>164.0 pts</td></tr><tr><td>exploit_safe</td><td>80.0 pts</td></tr><tr><td>icmp_echo</td><td>14.0 pts</td></tr><tr><td>tcp_banner_grab</td><td>9.0 pts</td></tr><tr><td>snmp_query</td><td>4.5 pts</td></tr></table></div></div><h4>Open Ports</h4><div class="finding danger">Port <strong>22/tcp</strong> — OPEN</div><div class="finding info">OS Identified: <strong>Microsoft Windows XP Professional SP1 (general purpose)</strong></div><h4>Service Banners</h4><table><tr><th>Port</th><th>Banner</th></tr><tr><td>22</td><td><code>SSH-2.0-OpenSSH_10.0p2 Raspbian-7</code></td></tr></table><h4>Vulnerability Findings (4)</h4><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><h4>Test Execution (PTG Nodes)</h4><table><tr><th>Status</th><th>Count</th></tr><tr><td><span class="st st-completed">COMPLETED</span></td><td>16</td></tr></table><h4>Network Metrics (RTT)</h4>
+<table>
+<tr><td>Samples</td><td>14</td></tr>
+<tr><td>Baseline RTT</td><td>106.5 ms</td></tr>
+<tr><td>Current RTT</td><td>15.9 ms</td></tr>
+<tr><td>Mean RTT</td><td>49.4 ms</td></tr>
+<tr><td>Std Dev</td><td>88.51 ms</td></tr>
+<tr><td>Stress Events</td><td>0</td></tr>
+</table><h4>Event Timeline</h4><div class='timeline'><div class="tl-item ">[21:37:39] [TIB_CREATED] Device 192.168.0.112 (b8:27:eb:b6:8b:93) registered</div><div class="tl-item ">[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -&gt; ACTIVE_DISCOVERY</div><div class="tl-item alert">[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;mdns_services&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:37:46] [RETIER] RETIER (Signal &#x27;mdns_services&#x27; updated automatically): UNKNOWN -&gt; FRAGILE (less fragile)</div><div class="tl-item ">[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -&gt; FINGERPRINTING</div><div class="tl-item alert">[21:39:29] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;open_ports&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:39:29] [RETIER] RETIER (Signal &#x27;open_ports&#x27; updated automatically): FRAGILE -&gt; CRITICAL (MORE fragile)</div><div class="tl-item alert">[21:40:17] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;banners&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:40:17] [RETIER] RETIER (Signal &#x27;banners&#x27; updated automatically): CRITICAL -&gt; FRAGILE (less fragile)</div><div class="tl-item ">[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -&gt; TIB_ASSIGNMENT</div><div class="tl-item ">[21:40:47] [TIER_ASSIGNED] Tier: FRAGILE -&gt; FRAGILE (score=-1.0, confidence=100%)</div><div class="tl-item ">[21:41:28] [PHASE_TRANSITION] TIB_ASSIGNMENT -&gt; PORT_SCAN</div><div class="tl-item ">[21:43:12] [PHASE_TRANSITION] PORT_SCAN -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:43:13] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:43:13] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:43:13] [PHASE_TRANSITION] SERVICE_PROBE -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:43:13] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:43:14] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:45:04] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:45:04] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item">... and 8 more events</div></div></div></details>
+<detailsopen>
+<summary>192.168.0.113 — Single Board Computer (Raspberry Pi) <span class="tb tb-FRAGILE">FRAGILE</span> 🟢</summary>
+<div style="padding:10px 0">
+<div class="two-col">
+<div>
+<h4>Identity</h4>
+<table>
+<tr><td>Device Name</td><td><strong><span style="color:#999">—</span></strong></td></tr>
+<tr><td>Device Type</td><td>Single Board Computer (Raspberry Pi)</td></tr>
+<tr><td>IP Address</td><td><strong>192.168.0.113</strong></td></tr>
+<tr><td>MAC Address</td><td>b8:27:eb:87:fb:5a</td></tr>
+<tr><td>Vendor</td><td>raspberry pi foundation</td></tr>
+<tr><td>Tier</td><td><span class="tb tb-FRAGILE">FRAGILE</span></td></tr>
+<tr><td>OS Detection</td><td><strong>Microsoft Windows XP Professional SP1 (general purpose)</strong></td></tr>
+<tr><td>Circuit Breaker</td><td><span style='color:#27ae60'>ACTIVE</span></td></tr>
+</table>
+</div>
+<div>
+<h4>Budget Consumption</h4>
+<table>
+<tr><td>Total Budget</td><td>3000 pts</td></tr>
+<tr><td>Budget Spent</td><td><strong>272 pts</strong></td></tr>
+<tr><td>Remaining</td><td>2728 pts</td></tr>
+</table><h4>Budget Breakdown by Probe Type</h4><table><tr><td>tcp_syn</td><td>164.0 pts</td></tr><tr><td>exploit_safe</td><td>80.0 pts</td></tr><tr><td>icmp_echo</td><td>14.0 pts</td></tr><tr><td>tcp_banner_grab</td><td>9.0 pts</td></tr><tr><td>snmp_query</td><td>4.5 pts</td></tr></table></div></div><h4>Open Ports</h4><div class="finding danger">Port <strong>22/tcp</strong> — OPEN</div><div class="finding info">OS Identified: <strong>Microsoft Windows XP Professional SP1 (general purpose)</strong></div><h4>Service Banners</h4><table><tr><th>Port</th><th>Banner</th></tr><tr><td>22</td><td><code>SSH-2.0-OpenSSH_10.0p2 Raspbian-7</code></td></tr></table><h4>Vulnerability Findings (4)</h4><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><div class="finding info"><strong>[INFO]</strong> Port 22 — SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</div><h4>Test Execution (PTG Nodes)</h4><table><tr><th>Status</th><th>Count</th></tr><tr><td><span class="st st-completed">COMPLETED</span></td><td>16</td></tr></table><h4>Network Metrics (RTT)</h4>
+<table>
+<tr><td>Samples</td><td>14</td></tr>
+<tr><td>Baseline RTT</td><td>63.4 ms</td></tr>
+<tr><td>Current RTT</td><td>10.7 ms</td></tr>
+<tr><td>Mean RTT</td><td>36.5 ms</td></tr>
+<tr><td>Std Dev</td><td>33.72 ms</td></tr>
+<tr><td>Stress Events</td><td>0</td></tr>
+</table><h4>Event Timeline</h4><div class='timeline'><div class="tl-item ">[21:37:39] [TIB_CREATED] Device 192.168.0.113 (b8:27:eb:87:fb:5a) registered</div><div class="tl-item ">[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -&gt; ACTIVE_DISCOVERY</div><div class="tl-item alert">[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;mdns_services&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:37:46] [RETIER] RETIER (Signal &#x27;mdns_services&#x27; updated automatically): UNKNOWN -&gt; FRAGILE (less fragile)</div><div class="tl-item ">[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -&gt; FINGERPRINTING</div><div class="tl-item alert">[21:39:59] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;open_ports&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:39:59] [RETIER] RETIER (Signal &#x27;open_ports&#x27; updated automatically): FRAGILE -&gt; CRITICAL (MORE fragile)</div><div class="tl-item alert">[21:40:47] [AUTO_RECLASSIFY_TRIGGERED] Signal &#x27;banners&#x27; updated — triggering automatic reclassification</div><div class="tl-item ">[21:40:47] [RETIER] RETIER (Signal &#x27;banners&#x27; updated automatically): CRITICAL -&gt; FRAGILE (less fragile)</div><div class="tl-item ">[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -&gt; TIB_ASSIGNMENT</div><div class="tl-item ">[21:40:47] [TIER_ASSIGNED] Tier: FRAGILE -&gt; FRAGILE (score=-1.0, confidence=100%)</div><div class="tl-item ">[21:43:14] [PHASE_TRANSITION] TIB_ASSIGNMENT -&gt; PORT_SCAN</div><div class="tl-item ">[21:44:59] [PHASE_TRANSITION] PORT_SCAN -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:44:59] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:45:00] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:45:00] [PHASE_TRANSITION] SERVICE_PROBE -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:45:00] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:45:01] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; OS_IDENTIFICATION</div><div class="tl-item ">[21:45:05] [PHASE_TRANSITION] OS_IDENTIFICATION -&gt; SERVICE_PROBE</div><div class="tl-item ">[21:45:05] [PHASE_TRANSITION] SERVICE_PROBE -&gt; OS_IDENTIFICATION</div><div class="tl-item">... and 8 more events</div></div></div></details></div><div class="card rpi"><h2>9. Raspberry Pi Devices</h2><p><strong>2</strong> Raspberry Pi device(s) identified via OUI MAC prefix (B8:27:EB = Raspberry Pi Foundation).</p><div class="rpi-card">
+<h3>192.168.0.112 — raspberry pi foundation</h3>
+<table>
+<tr><td><strong>MAC</strong></td><td>b8:27:eb:b6:8b:93</td></tr>
+<tr><td><strong>Tier</strong></td><td><span class="tb tb-FRAGILE">FRAGILE</span></td></tr>
+<tr><td><strong>Open Ports</strong></td><td><span class="port">22</span></td></tr>
+<tr><td><strong>OS Detection</strong></td><td><strong>Microsoft Windows XP Professional SP1 (general purpose)</strong></td></tr>
+<tr><td><strong>Budget Used</strong></td><td>272 / 3000 pts</td></tr>
+<tr><td><strong>Circuit Breaker</strong></td><td>ACTIVE</td></tr>
+</table>
+</div><div class="rpi-card">
+<h3>192.168.0.113 — raspberry pi foundation</h3>
+<table>
+<tr><td><strong>MAC</strong></td><td>b8:27:eb:87:fb:5a</td></tr>
+<tr><td><strong>Tier</strong></td><td><span class="tb tb-FRAGILE">FRAGILE</span></td></tr>
+<tr><td><strong>Open Ports</strong></td><td><span class="port">22</span></td></tr>
+<tr><td><strong>OS Detection</strong></td><td><strong>Microsoft Windows XP Professional SP1 (general purpose)</strong></td></tr>
+<tr><td><strong>Budget Used</strong></td><td>272 / 3000 pts</td></tr>
+<tr><td><strong>Circuit Breaker</strong></td><td>ACTIVE</td></tr>
+</table>
+</div></div><div class="card"><h2>10. Issues Found & Recommendations</h2><div class="mg" style="margin-bottom:15px"><div class="m red"><div class="v">7</div><div class="l">HIGH</div></div><div class="m orange"><div class="v">9</div><div class="l">MEDIUM</div></div><div class="m "><div class="v">9</div><div class="l">LOW</div></div><div class="m "><div class="v">10</div><div class="l">INFO</div></div></div><table><tr><th>Sev</th><th>Device</th><th>Category</th><th>Finding & Recommendation</th></tr><tr><td><span style="color:#e74c3c;font-weight:bold">HIGH</span></td><td><strong>192.168.0.100</strong></td><td>Open Port</td><td>PostgreSQL (port 5432) — database port exposed. Restrict access, verify pg_hba.conf authentication</td></tr><tr><td><span style="color:#e74c3c;font-weight:bold">HIGH</span></td><td><strong>192.168.0.112</strong></td><td>Open Port</td><td>SSH service (port 22) exposed to network — restrict access via firewall rules or SSH AllowUsers</td></tr><tr><td><span style="color:#e74c3c;font-weight:bold">HIGH</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi SSH open — default user &#x27;pi&#x27; with password &#x27;raspberry&#x27; may be active. Run &#x27;passwd&#x27; to change immediately</td></tr><tr><td><span style="color:#e74c3c;font-weight:bold">HIGH</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi Foundation device detected (MAC OUI: B8:27:EB) — apply all Raspberry Pi OS security hardening</td></tr><tr><td><span style="color:#e74c3c;font-weight:bold">HIGH</span></td><td><strong>192.168.0.113</strong></td><td>Open Port</td><td>SSH service (port 22) exposed to network — restrict access via firewall rules or SSH AllowUsers</td></tr><tr><td><span style="color:#e74c3c;font-weight:bold">HIGH</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi SSH open — default user &#x27;pi&#x27; with password &#x27;raspberry&#x27; may be active. Run &#x27;passwd&#x27; to change immediately</td></tr><tr><td><span style="color:#e74c3c;font-weight:bold">HIGH</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi Foundation device detected (MAC OUI: B8:27:EB) — apply all Raspberry Pi OS security hardening</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.1</strong></td><td>Open Port</td><td>HTTP (port 80) unencrypted — implement HTTPS redirect, sensitive data may be transmitted in plaintext</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi SSH — disable password auth, use key-based auth only (set PasswordAuthentication no in sshd_config)</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.112</strong></td><td>Service</td><td>OpenSSH version disclosed in banner — consider adding &#x27;DebianBanner no&#x27; to sshd_config to reduce fingerprinting</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — verify OS and packages are up to date: &#x27;sudo apt update &amp;&amp; sudo apt full-upgrade&#x27;</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — check if default &#x27;pi&#x27; user still exists: &#x27;id pi&#x27;. If so, rename or remove it</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi SSH — disable password auth, use key-based auth only (set PasswordAuthentication no in sshd_config)</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.113</strong></td><td>Service</td><td>OpenSSH version disclosed in banner — consider adding &#x27;DebianBanner no&#x27; to sshd_config to reduce fingerprinting</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — verify OS and packages are up to date: &#x27;sudo apt update &amp;&amp; sudo apt full-upgrade&#x27;</td></tr><tr><td><span style="color:#f39c12;font-weight:bold">MEDIUM</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — check if default &#x27;pi&#x27; user still exists: &#x27;id pi&#x27;. If so, rename or remove it</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.1</strong></td><td>OS</td><td>Linux detected (Embedded Linux (TP-Link)) — verify kernel is up to date, check for known CVEs with &#x27;uname -r&#x27;</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — enable automatic security updates: &#x27;sudo apt install unattended-upgrades&#x27;</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — enable UFW firewall: &#x27;sudo ufw enable&#x27; and allow only required ports</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — consider changing SSH port from default 22 to reduce automated scanning exposure</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.112</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — install fail2ban to protect SSH from brute-force: &#x27;sudo apt install fail2ban&#x27;</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — enable automatic security updates: &#x27;sudo apt install unattended-upgrades&#x27;</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — enable UFW firewall: &#x27;sudo ufw enable&#x27; and allow only required ports</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — consider changing SSH port from default 22 to reduce automated scanning exposure</td></tr><tr><td><span style="color:#3498db;font-weight:bold">LOW</span></td><td><strong>192.168.0.113</strong></td><td>Raspberry Pi</td><td>Raspberry Pi — install fail2ban to protect SSH from brute-force: &#x27;sudo apt install fail2ban&#x27;</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.112</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.112</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.112</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.112</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.112</strong></td><td>Info</td><td>SSH Protocol v2 in use (good) — verify no SSHv1 fallback is configured</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.113</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.113</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.113</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.113</strong></td><td>Probe</td><td>SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7</td></tr><tr><td><span style="color:#95a5a6;font-weight:bold">INFO</span></td><td><strong>192.168.0.113</strong></td><td>Info</td><td>SSH Protocol v2 in use (good) — verify no SSHv1 fallback is configured</td></tr></table></div><div class="card"><h2>11. Evidence Chain & Compliance</h2>
+<div class="two-col">
+<div>
+<h4>PCF Evidence DAG</h4>
+<table>
+<tr><td>Total Evidence Nodes</td><td><strong>268</strong></td></tr>
+<tr><td>Proof Bundles</td><td><strong>14</strong></td></tr>
+<tr><td>DAG Integrity</td><td><span style='color:#e74c3c'>WARNINGS (106 issues)</span></td></tr>
+<tr><td>Evidence Recording</td><td>61 actions recorded</td></tr>
+</table>
+</div>
+<div>
+<h4>Safety & Monitoring</h4>
+<table>
+<tr><td>Safety Officer</td><td>Active</td></tr>
+<tr><td>Actions Vetoed</td><td>0</td></tr>
+<tr><td>Instability Events</td><td>0</td></tr>
+<tr><td>Fleet Clusters</td><td>0</td></tr>
+<tr><td>Probe Reduction</td><td>0%</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="footer">
+Generated by <strong>TRUCE-PT</strong> Multi-Agent Penetration Testing Framework<br>
+Report generated on 2026-04-28 21:45:44 | Duration: 639.8s | 4 devices scanned
+</div>
+
+</div>
+</body></html>

@@ -1,0 +1,5321 @@
+{
+  "version": 2,
+  "root_ids": [
+    "pcf-ac5a1ff39931",
+    "pcf-8b7038482b8a"
+  ],
+  "nodes": [
+    {
+      "node_id": "pcf-ac5a1ff39931",
+      "node_type": "session",
+      "phase": "INIT",
+      "timestamp": "2026-04-28T21:35:04.175154",
+      "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+      "parent_ids": [],
+      "payload": {
+        "networks": [
+          "192.168.0.0/24"
+        ],
+        "start_time": "2026-04-28T21:35:04",
+        "passive_only": false
+      },
+      "oracle_level": "passive",
+      "device_ip": ""
+    },
+    {
+      "node_id": "pcf-f054bbd37a5a",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.473838",
+      "data_hash": "49665922ca71eaf9e9e18ad6781012978774751ce5f2a6f79b7e37504c312792",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "mac": "78:20:51:c9:18:b8",
+        "vendor": "tp-link systems inc.",
+        "hostname": "",
+        "method": "arp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-b8bea155f38f",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.474234",
+      "data_hash": "5c12767801444b196553fed9197129e376e296803d9fe70a763cb4794c0c9142",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "mac": "",
+        "vendor": "Unknown",
+        "hostname": "",
+        "method": "icmp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-f281ca60ef9f",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.474423",
+      "data_hash": "e659caa73ff6f5a2a513b75c869046ab94fee4f7a641098393f9c78629551657",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "mac": "b8:27:eb:b6:8b:93",
+        "vendor": "raspberry pi foundation",
+        "hostname": "",
+        "method": "arp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-3d092c9daa63",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.474528",
+      "data_hash": "9a0543e78d10a3649d2b7044fd69c320be5a5045b5414d2068ea3aff83b5de84",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "mac": "b8:27:eb:87:fb:5a",
+        "vendor": "raspberry pi foundation",
+        "hostname": "",
+        "method": "arp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-e9aa519bd06d",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.474753",
+      "data_hash": "50e0c7c7fe46368d0a66528846ee853fc2048fdf8e175446aa06e6dc07864940",
+      "parent_ids": [
+        "pcf-f054bbd37a5a"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "mac": "78:20:51:c9:18:b8",
+        "vendor": "tp-link systems inc.",
+        "method": "arp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-933acc33e207",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.475037",
+      "data_hash": "aac48376f674e35359c3c61805be6acde96ff5d463e6a9b0fd6a595baff99072",
+      "parent_ids": [
+        "pcf-b8bea155f38f"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "mac": "",
+        "vendor": "Unknown",
+        "method": "icmp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-529340d5eb70",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.475222",
+      "data_hash": "f1975ffe05c082365d5a0ce17189af948c62e4d79f92e726fc90b46b18c0d802",
+      "parent_ids": [
+        "pcf-f281ca60ef9f"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "mac": "b8:27:eb:b6:8b:93",
+        "vendor": "raspberry pi foundation",
+        "method": "arp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-28473304f6f3",
+      "node_type": "discovery",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:39.475353",
+      "data_hash": "e6bb645efe389292cde5f599f10517e04884e24dafaafe95e7964cd0e5159e40",
+      "parent_ids": [
+        "pcf-3d092c9daa63"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "mac": "b8:27:eb:87:fb:5a",
+        "vendor": "raspberry pi foundation",
+        "method": "arp+tcp"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-d26f79214560",
+      "node_type": "discovery",
+      "phase": "PROTOCOL_SCAN",
+      "timestamp": "2026-04-28T21:37:46.268358",
+      "data_hash": "47f0e291052a8fa10cd942d7d3406511a79a3958357f085327d8d22b5fd99777",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "protocol": "mDNS_active",
+        "device_name": "Anil\u2019s MacBook Air ",
+        "services": [
+          "_dns-sd._udp",
+          "_companion-link._tcp"
+        ],
+        "os_hint": "iOS / iPadOS"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-704c04d745a5",
+      "node_type": "discovery",
+      "phase": "PROTOCOL_SCAN",
+      "timestamp": "2026-04-28T21:37:46.268448",
+      "data_hash": "bbdf9ff603bb8dfba4bd774a9107157a92dbb1b69a7cc5a84ac8803b53bd8dd3",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "protocol": "mDNS_active",
+        "device_name": "",
+        "services": [
+          "_dns-sd._udp"
+        ],
+        "os_hint": ""
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-532e097a075f",
+      "node_type": "discovery",
+      "phase": "PROTOCOL_SCAN",
+      "timestamp": "2026-04-28T21:37:46.268509",
+      "data_hash": "bddab0d5ee9985e11859722476693cde439dbd0683021b5bbc17abd48bc892ae",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "protocol": "mDNS_active",
+        "device_name": "",
+        "services": [
+          "_dns-sd._udp"
+        ],
+        "os_hint": ""
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-c7e7b03416a1",
+      "node_type": "probe",
+      "phase": "ACTIVE_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:46.268626",
+      "data_hash": "d4599f41fbbece9180a86dfd05ecf4f3904879a21d0c7f4ef52a9f4addd1aa76",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "field": "mdns_services",
+        "value": "['_dns-sd._udp', '_companion-link._tcp']"
+      },
+      "oracle_level": "passive",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-c667731d89bb",
+      "node_type": "probe",
+      "phase": "ACTIVE_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:46.270675",
+      "data_hash": "76dc99c6069a57500bfe853db0789929903dd7cd1b5b08a56afb83c7aeab9a4b",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "field": "mdns_device_name",
+        "value": "Anil\u2019s MacBook Air "
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-3ae372f79ca5",
+      "node_type": "probe",
+      "phase": "ACTIVE_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:46.270882",
+      "data_hash": "522e21c3a1861835a57b7eba355e4979e51ee3bfd1688f721f06f9cfe0b72dc8",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "field": "mdns_services",
+        "value": "['_dns-sd._udp']"
+      },
+      "oracle_level": "passive",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-3fc0f2ee0f36",
+      "node_type": "probe",
+      "phase": "ACTIVE_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:46.271060",
+      "data_hash": "0026a315539304d854f7ed5ce4ee55afce1a11f2c39af64f4e8c6e9cdf980c11",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "field": "mdns_services",
+        "value": "['_dns-sd._udp']"
+      },
+      "oracle_level": "passive",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-28bfd8281103",
+      "node_type": "discovery",
+      "phase": "PROTOCOL_SCAN",
+      "timestamp": "2026-04-28T21:37:51.993514",
+      "data_hash": "8b4ba34641886471063c216a8ace2a70ac047cb7c84b70cd2acfac6d3a9e92ab",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "protocol": "SSDP_MSEARCH",
+        "device_name": "TL-WR850N",
+        "server": "Linux/3.10.14, UPnP/1.0, Portable SDK for UPnP devices/1.6.19",
+        "manufacturer": "TP-Link",
+        "model": "TL-WR850N"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-4fb951478271",
+      "node_type": "probe",
+      "phase": "ACTIVE_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:51.993654",
+      "data_hash": "39bdeaa5828e0ec0d88737429bebd3edce3f1faf597cdbe7f03d853b4ea5c454",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "field": "banners",
+        "value": "{1900: 'SSDP: TP-Link | TL-WR850N | 300Mbps Wireless N Router | Linux/3.10.14, UPnP/1.0, Portable SDK for UPnP devices/1.6.19'}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-9711d943c115",
+      "node_type": "probe",
+      "phase": "ACTIVE_DISCOVERY",
+      "timestamp": "2026-04-28T21:37:51.993906",
+      "data_hash": "078d238fa3e9ea98c628799276a752bed98697cd61a141f8433e12b3776d6320",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "field": "mdns_device_name",
+        "value": "TL-WR850N"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-f4458f4f924d",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:38:32.655998",
+      "data_hash": "4d179534a12edaf03ce41cb69be80047c8e5dec13aa81d824b9d0d39ace3842e",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "probe": "icmp_ping",
+        "ttl": 0,
+        "rtt_mean_ms": 148.457,
+        "rtt_stddev_ms": 116.448,
+        "samples": 5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-37980069db63",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:38:32.657732",
+      "data_hash": "68ef2fa5ee74f6b3a3a090f182af48288a456d5352a415934348c039caad0569",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "field": "open_ports",
+        "value": "[80]"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-36ebcf2652c7",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:38:32.658420",
+      "data_hash": "faf4788309313bcee8852efea13e36c734db83b836d3b2844dd49952836a4682",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "probe": "tcp_connect",
+        "port": 80,
+        "state": "open"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-2aed9660962c",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:38:56.952733",
+      "data_hash": "2ea95d906e09f964b13f2c843cd97546e4d8003c576bcdc10f935809e2bbae62",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "probe": "icmp_ping",
+        "ttl": 64,
+        "rtt_mean_ms": 0.0,
+        "rtt_stddev_ms": 0.0,
+        "samples": 5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-1d8a5ae3714f",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:39:27.425661",
+      "data_hash": "cd506a1b81adafd6ba3130c045248b7b389a4f5516b3ea6cd93c0779d5471937",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "probe": "icmp_ping",
+        "ttl": 0,
+        "rtt_mean_ms": 106.531,
+        "rtt_stddev_ms": 137.732,
+        "samples": 5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-e1cde2eb7fa8",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:39:29.458103",
+      "data_hash": "0c71721332f428925216468b117f7608bb068058e1fa8541d88660d3aea46f54",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "field": "open_ports",
+        "value": "[22]"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-057bcc7a56d3",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:39:29.458947",
+      "data_hash": "737fa5046758c366855ccb7325505f84eb80611f3832cca9a0bce8109fca27bb",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "probe": "tcp_connect",
+        "port": 22,
+        "state": "open"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-739e38468d61",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:39:57.225976",
+      "data_hash": "d8229e51cf5a5c5184ba7d5fffc95e486f9d8cabd69737ce3154f6133d42c06d",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "probe": "icmp_ping",
+        "ttl": 0,
+        "rtt_mean_ms": 63.351,
+        "rtt_stddev_ms": 42.574,
+        "samples": 5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-25f238e106c0",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:39:59.236508",
+      "data_hash": "493552541212954f4225f05fae0606f31d7204a1e84735a6ad3dcb4b14031a9b",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "field": "open_ports",
+        "value": "[22]"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-a9552542ee6a",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:39:59.237773",
+      "data_hash": "df67b5357dac15a7a26585887f54345087c10e129f78565344e5f32e85e76f1d",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "probe": "tcp_connect",
+        "port": 22,
+        "state": "open"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-888175247e25",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:40:17.727302",
+      "data_hash": "e9d2437f33c905a678e6f4a283baaa182f450b73b25135a387ba16d3a8e05bc2",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "field": "banners",
+        "value": "{22: 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-7bc59d81a8a6",
+      "node_type": "service_probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:40:17.727730",
+      "data_hash": "929fc4544924de78d5a9f6748e2cc0b9fa134dd6de7ef8ca6dc5258041bb7739",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-da0e398ec7d4",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:40:47.458772",
+      "data_hash": "9628bc1a9c632650257189ef4938c6f8e1c0775ac3496474840562f4f6a3758a",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "field": "banners",
+        "value": "{22: 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-f700d430d583",
+      "node_type": "service_probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:40:47.459203",
+      "data_hash": "cc238f9e5cfaa881be970dc3a46918e0574d0a3987aab247605065fe0ee87549",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-f2fb0a97557a",
+      "node_type": "tier_id",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:40:47.460828",
+      "data_hash": "41bbe7cde7a9a4f4b04ce60874834fce0122504f906593fd610f1ba243d14e99",
+      "parent_ids": [
+        "pcf-4fb951478271",
+        "pcf-9711d943c115",
+        "pcf-37980069db63"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "tier": "CRITICAL",
+        "score": -5.0,
+        "confidence": 0.75,
+        "reasons": [
+          "Vendor 'tp-link systems inc.' -> consumer (score -1)",
+          "Banner analysis: no distinctive keywords (score +0.0)",
+          "ICMP CV: CV=0.78 \u2014 very high RTT variance (score -4.0)"
+        ],
+        "overrides": [],
+        "budget": 200.0,
+        "max_rate": 5
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-a1cf6bc3a909",
+      "node_type": "tier_id",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:40:47.462652",
+      "data_hash": "127b671610f546c9e9f9f57a37840730f3e932931b598ec2224887b4a42468ab",
+      "parent_ids": [
+        "pcf-c7e7b03416a1",
+        "pcf-c667731d89bb"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "tier": "FRAGILE",
+        "score": -3.0,
+        "confidence": 0.5,
+        "reasons": [
+          "ICMP CV: zero mean RTT (score +0.0)",
+          "mDNS ['_dns-sd._udp', '_companion-link._tcp']: consumer device mDNS service '_companion-link._tcp' (score -3.0)"
+        ],
+        "overrides": [],
+        "budget": 3000.0,
+        "max_rate": 20
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-7f127e697954",
+      "node_type": "tier_id",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:40:47.464497",
+      "data_hash": "4fdedbd6a5668726b61ff26b889473230cc76ebc99604bb7774d4159f6955248",
+      "parent_ids": [
+        "pcf-3fc0f2ee0f36",
+        "pcf-e1cde2eb7fa8",
+        "pcf-888175247e25"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "tier": "FRAGILE",
+        "score": -1.0,
+        "confidence": 1,
+        "reasons": [
+          "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+          "Banner analysis: robust OS keyword 'openssh' (score +4.0)",
+          "ICMP CV: CV=1.29 \u2014 very high RTT variance (score -4.0)",
+          "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+        ],
+        "overrides": [],
+        "budget": 3000.0,
+        "max_rate": 20
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-a140e168a3e2",
+      "node_type": "tier_id",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:40:47.470444",
+      "data_hash": "ee1d6552b396c7ebbaf6db5da0909c9364ed5d5e157d386af2ad73df1c0cfacb",
+      "parent_ids": [
+        "pcf-3ae372f79ca5",
+        "pcf-25f238e106c0",
+        "pcf-da0e398ec7d4"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "tier": "FRAGILE",
+        "score": -1.0,
+        "confidence": 1,
+        "reasons": [
+          "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+          "Banner analysis: robust OS keyword 'openssh' (score +4.0)",
+          "ICMP CV: CV=0.67 \u2014 very high RTT variance (score -4.0)",
+          "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+        ],
+        "overrides": [],
+        "budget": 3000.0,
+        "max_rate": 20
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-82baca70d7b5",
+      "node_type": "session_event",
+      "phase": "SAFETY_REVIEW",
+      "timestamp": "2026-04-28T21:40:47.494401",
+      "data_hash": "89323d791e84599abc78e1f9f0be2ec38681ca9bcfb45121c6bbe7b5eb4de73a",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "vetoes": 0,
+        "approvals": 63,
+        "preflight_blocks": 0,
+        "ot_mode": true
+      },
+      "oracle_level": "inferred",
+      "device_ip": ""
+    },
+    {
+      "node_id": "pcf-005898f4eefb",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:40:47.495733",
+      "data_hash": "6c20032e4c9e2436d81ceb0fc3fab621fe4b6bad367ab41f59d30841d3c0c27e",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0040531158447265625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-c3a8567108fd",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:40:47.496512",
+      "data_hash": "f6e260b5aeaa8696c4f633f2eb9ffa9c3265d0f5900febf20e2ad6b2b3ce2951",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.005245208740234375
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-a2552bf537e9",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:40:47.496710",
+      "data_hash": "222a100af2d8858bb5819297e35d1a77ce40ce46767b74244831c5bd301a0031",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-569766924ad6",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:40:47.496840",
+      "data_hash": "c98f2136279c4009c5bac9660952fed51ba1ba0fb0583d595f621504f64e5084",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0019073486328125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-77a302c98c75",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:40:47.497179",
+      "data_hash": "058fd163bb7c1dfc0e97aa6403c30769ffd2432c7911fcb1fab676d9fabc78e9",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "safe_mode": "standard",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-c2f7b40992d2",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:40:47.497712",
+      "data_hash": "a80253571b00424313d759c0a372a2d27507d74c27d5e59d9e69c012eb23c17e",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "safe_mode": "single_ping",
+        "duration_ms": 0.0040531158447265625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-c4c435c3281e",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:40:47.498127",
+      "data_hash": "957624214d84338d8a84354c7d15bde06387a02faab7c455902de4efbc0ae4e2",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "safe_mode": "single_port",
+        "duration_ms": 0.0019073486328125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-d7f101b24677",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:40:47.498355",
+      "data_hash": "92ece8f85555ab3e554fc0e86c5ebd186ca391bdddddd20e21684d250ceb56bd",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "safe_mode": "standard",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-e69f25d59c0a",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:40:47.498544",
+      "data_hash": "4c39b890cf6c324a250c1ff929dff31d96b3c3d196e337ff167bc6af0c293d03",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "safe_mode": "echo_only",
+        "duration_ms": 0.0016689300537109375
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-3a253445ac00",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:40:47.498720",
+      "data_hash": "7304542d904f5bbad5c5d5dbfa7b3c0a18aea73c18ac9971ae9ce1af52db1dbd",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "safe_mode": "syn_only",
+        "duration_ms": 0.0019073486328125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-cf9d9136845b",
+      "node_type": "probe",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:40:47.499174",
+      "data_hash": "0247bad91f771772fbb0b832439d1169b6d6881e896f4defa1ec386f6bd3ec32",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "safe_mode": "passive",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-1092ce2a702d",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:41:09.025180",
+      "data_hash": "7676123b44703e4e24a7065e331410807ddba3a0b8aac8cb2f6e57be18ef7e90",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "os_guess": "Embedded Linux (TP-Link)",
+        "method": "passive"
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-441557a4c1e1",
+      "node_type": "probe",
+      "phase": "PORT_SCAN",
+      "timestamp": "2026-04-28T21:41:09.025470",
+      "data_hash": "9bbaf1d070540c2829ac9d181a66676fe0336e5d216f6338b6b35cf009c7e49a",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "safe_mode": "top_20",
+        "duration_ms": 21525.924921035767
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-2db415c48f9f",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:09.027411",
+      "data_hash": "3490172b9eff395edbc5fd4022911a5d41649c542e7e9b342e56bdd941a48373",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.00476837158203125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-45f718eb6007",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:09.028292",
+      "data_hash": "4e70b0aa799226af985b4bc4a335961763650815662726b0477461a80b3cff92",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0030994415283203125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-4edf7fc89993",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:09.028931",
+      "data_hash": "3a1f0f5817665ac834a03c0bf554ad1f14373975a2ff17e603832aa380f4695b",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0030994415283203125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-4869c8bb5362",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:09.029836",
+      "data_hash": "fddab5e9e0646b1c8fca8c30973afc6a7a8ea5a1f5f0716636272f1693644249",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-d0baae244ffb",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:41:09.030199",
+      "data_hash": "3353a5d174434a6ebb94d65b870a8d76f86261a90673b6ac71352c6d14906ade",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "safe_mode": "standard",
+        "duration_ms": 0.00286102294921875
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-dfe66bcd0284",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:41:09.034858",
+      "data_hash": "663803d58f78f6b3bc8fc2ab84ae26c25b97f85af9b626c493b8c2e6f6b27cc8",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "safe_mode": "single_ping",
+        "duration_ms": 0.005245208740234375
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-e90b6be5cb2f",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:41:09.035157",
+      "data_hash": "1f9cc1a3fd57c5fff469f22d42511eaaf31aca7705de1fe56ac31782c02f743d",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "safe_mode": "single_port",
+        "duration_ms": 0.0030994415283203125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-0872a397d962",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:41:09.036264",
+      "data_hash": "cfbb50bfbbfc6ecbe07cbaf690dd95da77211fcb1f89b5b5980a09b4b392d767",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "safe_mode": "standard",
+        "duration_ms": 0.010967254638671875
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-5ad3f9e77085",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:41:09.037673",
+      "data_hash": "b866628cda3d8a9bfc996b8edd6a88aa1ebc59d73e3287fb6257dd38a9b8c34e",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "safe_mode": "echo_only",
+        "duration_ms": 0.0040531158447265625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-32204c0b5def",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:41:09.038823",
+      "data_hash": "26182b70b695ea075c4882c0ea57f5a9e7b1a8bbe2f8b254ab83d3dff24ffc53",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "safe_mode": "syn_only",
+        "duration_ms": 0.0026226043701171875
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-7a211031f411",
+      "node_type": "probe",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:41:09.039053",
+      "data_hash": "5fc93f4b0200b1fd4ea19bc418a8bf1242ebe32173c6f94b6dc36cf4419eac4a",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "safe_mode": "passive",
+        "duration_ms": 0.0011920928955078125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-f0de3ad846ab",
+      "node_type": "port_scan",
+      "phase": "PORT_SCAN",
+      "timestamp": "2026-04-28T21:41:17.474171",
+      "data_hash": "07f587c87a310fe0181163009e805771a72f3698b75fce8ac76504c696c2c12b",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "port": 5432,
+        "state": "open"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-4e9b5a93b822",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:41:22.961830",
+      "data_hash": "4eff31adbae33b9653c2efb75e792e8febe15d93b5879418182f66819903f61d",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 65535,
+        "df": true,
+        "tcp_options": "MSS,NOP,WScale,SAckOK,EOL"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-ff19056d4be0",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:41:22.961950",
+      "data_hash": "e8db02c689533c72e2e4c46b91502cc17366ef9f1bf168d9fea06c05410a0098",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-ed36db94d653",
+      "node_type": "probe",
+      "phase": "PORT_SCAN",
+      "timestamp": "2026-04-28T21:41:22.962080",
+      "data_hash": "654d3d8eefa5fddbc8ee71f4b8cee5ddf2b60191bb52a4bf31de7715549fd99a",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "safe_mode": "top_20",
+        "duration_ms": 13922.84107208252
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-aaa98d87c90e",
+      "node_type": "probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:41:24.966791",
+      "data_hash": "e9754e93442ef1bbb97d857ccb4378382172d6e9921c130b1dcda7f6ec930b60",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "banner_grab",
+        "safe_mode": "passive_read",
+        "duration_ms": 2002.159833908081
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-7520eaa1da46",
+      "node_type": "probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:41:26.969142",
+      "data_hash": "70be7bd6315605dfda3e084f6df6e291788fa6391984eded9b79398697c60b2f",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "http_probe",
+        "safe_mode": "head_only",
+        "duration_ms": 2002.039909362793
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-30aabd70c054",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:41:27.566649",
+      "data_hash": "4eff31adbae33b9653c2efb75e792e8febe15d93b5879418182f66819903f61d",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 65535,
+        "df": true,
+        "tcp_options": "MSS,NOP,WScale,SAckOK,EOL"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-c2e35c6311e0",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:41:27.566798",
+      "data_hash": "e8db02c689533c72e2e4c46b91502cc17366ef9f1bf168d9fea06c05410a0098",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-b67f6648adcb",
+      "node_type": "probe",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:41:27.566941",
+      "data_hash": "9e56c9a359c40ebe7ab287c1b37bc247c9472d44a098b994e4294852a5417424",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "os_passive_id",
+        "safe_mode": "passive",
+        "duration_ms": 597.1438884735107
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-1966b7af9c18",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:41:28.137065",
+      "data_hash": "4eff31adbae33b9653c2efb75e792e8febe15d93b5879418182f66819903f61d",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 65535,
+        "df": true,
+        "tcp_options": "MSS,NOP,WScale,SAckOK,EOL"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-2711875fc6a2",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:41:28.137177",
+      "data_hash": "e8db02c689533c72e2e4c46b91502cc17366ef9f1bf168d9fea06c05410a0098",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-c8d6ba4c6f26",
+      "node_type": "probe",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:41:28.137317",
+      "data_hash": "5864f49c86c2c87c770df1f9f12c47c94d76e5ea323957d493ced0bc8870d751",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "tool_id": "os_active_id",
+        "safe_mode": "minimal",
+        "duration_ms": 569.6802139282227
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-81e5fb0a21ab",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:28.140980",
+      "data_hash": "ffd77dfa5ae85e4209b51393674efab7eb7c16de56a8e4583051f5de0c259c01",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.010013580322265625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-844a4dfb4980",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:28.141263",
+      "data_hash": "7276b730725cb7e5eccba8ae3738dcb966f3999ff2317847d7b88547862abb2d",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.00286102294921875
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-ced2e0bc20bd",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:28.141510",
+      "data_hash": "ccb9b10d42fa4023ab5ddc699d199eaa5db66bac0f2f87d333d23e7e4cc7bc41",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.00286102294921875
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-39a788193517",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:41:28.141741",
+      "data_hash": "efddc52814589c68c749653003eab4cd4f95a09ad459d493df0a959abdd1ed06",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0016689300537109375
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-13db98d25689",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:41:28.142078",
+      "data_hash": "3fad81f96492ce48fc2d49d204a9bd2d56d1e498d1db64cc348754f961a92ffa",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "safe_mode": "standard",
+        "duration_ms": 0.003814697265625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-210883cc796d",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:41:28.142378",
+      "data_hash": "f22093df61c665a3e816c74064222369e5cfdee770269c4f834ba01a7470a8ad",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "safe_mode": "single_ping",
+        "duration_ms": 0.0019073486328125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-7eec599a17f0",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:41:28.142734",
+      "data_hash": "fe31f94f52b0cd5a206b9f3c9f69c6f63b1f46c6b348b68605e4a5d62f292c42",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "safe_mode": "single_port",
+        "duration_ms": 0.0019073486328125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-bf38f4d4773d",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:41:28.151985",
+      "data_hash": "36cac9c1be69bf6ba6936febc0815c0225676beba6255845c76452fc39e32132",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "safe_mode": "standard",
+        "duration_ms": 0.0059604644775390625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-2a4fe3e28bf8",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:41:28.152432",
+      "data_hash": "75dd5c0f049a2a16bb46edf498e72e41d53cc8e648517fce580cf44b7a0df4da",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "safe_mode": "echo_only",
+        "duration_ms": 0.0030994415283203125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-b8a186393851",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:41:28.152620",
+      "data_hash": "c324d10bf88b918782cb6148e86dfd25d606d3fc7fc1f98fb3448e3438aadd5b",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "safe_mode": "syn_only",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-40c799ffa94c",
+      "node_type": "probe",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:41:28.152848",
+      "data_hash": "c8c50453f36619952a0dc81f681a7254b3d759768c9ec8df08e1dce90be8a5f3",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "safe_mode": "passive",
+        "duration_ms": 0.0011920928955078125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-f1a08dc17927",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:43:13.049826",
+      "data_hash": "929fc4544924de78d5a9f6748e2cc0b9fa134dd6de7ef8ca6dc5258041bb7739",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-31ce89882c25",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:43:13.615745",
+      "data_hash": "5050a15b8c8d274e2b08e8d7cb803359c053921136fa4c9e4987740369ba9f5e",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-19db02661ea0",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:43:13.615829",
+      "data_hash": "cbd5644f9b4bea1fd88a82d0589ca9968ac8ff2557804c2143ddc0e6dedd102c",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-d49232915bfb",
+      "node_type": "probe",
+      "phase": "PORT_SCAN",
+      "timestamp": "2026-04-28T21:43:13.616083",
+      "data_hash": "ed8649e44b46aa8d01a82862dcbec12a80649a6cf0b452c7466eca81e40b6a42",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "safe_mode": "top_20",
+        "duration_ms": 105462.99386024475
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-a3487eec6920",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:43:13.703570",
+      "data_hash": "929fc4544924de78d5a9f6748e2cc0b9fa134dd6de7ef8ca6dc5258041bb7739",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-de8dcac3e1db",
+      "node_type": "probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:43:13.704088",
+      "data_hash": "bf84662ec77b00c5d22f04343bb8743be720f7c554b4027580c7022625298442",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "banner_grab",
+        "safe_mode": "passive_read",
+        "duration_ms": 87.55207061767578
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-36e907def8b7",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:43:13.767309",
+      "data_hash": "929fc4544924de78d5a9f6748e2cc0b9fa134dd6de7ef8ca6dc5258041bb7739",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-c778927c938d",
+      "node_type": "probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:43:13.767815",
+      "data_hash": "d28936cd294dbd4ba9f1dd4482a6a60743e73387bea010dfddafbb3dd2ccc17f",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "http_probe",
+        "safe_mode": "head_only",
+        "duration_ms": 63.420772552490234
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-acec27b99032",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:43:14.341854",
+      "data_hash": "5050a15b8c8d274e2b08e8d7cb803359c053921136fa4c9e4987740369ba9f5e",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-03bad0c3687d",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:43:14.341988",
+      "data_hash": "cbd5644f9b4bea1fd88a82d0589ca9968ac8ff2557804c2143ddc0e6dedd102c",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-66709a950aa0",
+      "node_type": "probe",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:43:14.342144",
+      "data_hash": "c33d0d9dcea5a37fac313a36eef8897438698e692668fe530600dbbc5f5f8e7c",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "os_passive_id",
+        "safe_mode": "passive",
+        "duration_ms": 573.5979080200195
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-81880e093515",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:43:14.906193",
+      "data_hash": "5050a15b8c8d274e2b08e8d7cb803359c053921136fa4c9e4987740369ba9f5e",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-dc5c64ba98be",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:43:14.906377",
+      "data_hash": "cbd5644f9b4bea1fd88a82d0589ca9968ac8ff2557804c2143ddc0e6dedd102c",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-9dcc36e54669",
+      "node_type": "probe",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:43:14.906621",
+      "data_hash": "724daf9d06348aa05e786a1cb28c3b7726cff68188cb0be03825877d1949c313",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "tool_id": "os_active_id",
+        "safe_mode": "minimal",
+        "duration_ms": 564.1908645629883
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-480b1e03f9b7",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:43:14.908083",
+      "data_hash": "eb72c244f2188ba8224aa672cc9fb711dbd907563a2c69697f0c4639411f06cc",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.025987625122070312
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-b56310d0db60",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:43:14.908692",
+      "data_hash": "772c2d81d7a8ff039c1a63edd9fce551cc589e8a6d0a25960d35dc91a4167bb9",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.00286102294921875
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-d1748899b39e",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:43:14.909125",
+      "data_hash": "ff5195a548b3d2c2708e2da3127d2a2b8e2e2d3ed30d216287483be34372bcbd",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-8f8f65204995",
+      "node_type": "probe",
+      "phase": "PASSIVE_RECON",
+      "timestamp": "2026-04-28T21:43:14.909509",
+      "data_hash": "1d0cf7fead4de16f6295b57899adf5ee8a5bed632bf6cadb76b92749c062be03",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "safe_mode": "passive",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-bf902c003aef",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:43:14.910137",
+      "data_hash": "482aaf24435269ea100c9755f1ca3a2cf87af75962f73761fb1b7e911b2b4aa2",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "safe_mode": "standard",
+        "duration_ms": 0.0021457672119140625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-7bba4b380838",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:43:14.910589",
+      "data_hash": "39ebf1dc31dd9bbd1f3fc294cc99ba3bad7c803bdc63ff24e0fcfaeed017b224",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "safe_mode": "single_ping",
+        "duration_ms": 0.0011920928955078125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-8430a12e3a5f",
+      "node_type": "probe",
+      "phase": "HOST_DISCOVERY",
+      "timestamp": "2026-04-28T21:43:14.910946",
+      "data_hash": "a8d37c72c6961c5f3fa0fae5c746c98ff8a32ba092dd7385a92a591a6a0e8287",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "safe_mode": "single_port",
+        "duration_ms": 0.003814697265625
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-051715d99ce2",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:43:14.911212",
+      "data_hash": "62adb0783cffd5c81e18961651d863260663094ca7f6e3b58bca356c8c90b0e9",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "safe_mode": "standard",
+        "duration_ms": 0.0019073486328125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-dff5f3277b2a",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:43:14.911370",
+      "data_hash": "0d92762003b96e9bf6c243ce24d3b01e95e8bb6abcd03425aa553efd17c637e4",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "safe_mode": "echo_only",
+        "duration_ms": 0.0016689300537109375
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-4b1313b67a87",
+      "node_type": "probe",
+      "phase": "FINGERPRINTING",
+      "timestamp": "2026-04-28T21:43:14.911507",
+      "data_hash": "df87092aa3c2d0dc27c9cdae5639fc9cb9ae62edde4ff840e7be330d7cc948c8",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "safe_mode": "syn_only",
+        "duration_ms": 0.0007152557373046875
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-0fdd27104223",
+      "node_type": "probe",
+      "phase": "TIB_ASSIGNMENT",
+      "timestamp": "2026-04-28T21:43:14.911703",
+      "data_hash": "515c3f7c18bc0b64c0cfa1b95d6af2b9b49e216917bc6ddbf162719c7154b60f",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "safe_mode": "passive",
+        "duration_ms": 0.0011920928955078125
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-8646720725ba",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:44:59.974123",
+      "data_hash": "cc238f9e5cfaa881be970dc3a46918e0574d0a3987aab247605065fe0ee87549",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-4dfbb9d3cc53",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:45:00.533439",
+      "data_hash": "04323f7968dfb2d69061fe28b8e16651fe27d0afe3d6695e163b7b97e00b168b",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-33bbacc7665e",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:00.533522",
+      "data_hash": "29b63e236c19fb7c5d53aaaf01f0d7ccea901beb300dca17582278cc13f2127d",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-3f5c10e28715",
+      "node_type": "probe",
+      "phase": "PORT_SCAN",
+      "timestamp": "2026-04-28T21:45:00.533710",
+      "data_hash": "60f3ad3c0c4780ea21080c2937074e03115705baaeabc1f9d87265339d6bf136",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "safe_mode": "top_20",
+        "duration_ms": 105621.81210517883
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-6973a731e4d2",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:45:00.588823",
+      "data_hash": "cc238f9e5cfaa881be970dc3a46918e0574d0a3987aab247605065fe0ee87549",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-89b924b3c7af",
+      "node_type": "probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:45:00.589806",
+      "data_hash": "1179b7a30f3ec5fe66166792fef0777e3df343f07eb87cddcb23ad41959c0cd3",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "banner_grab",
+        "safe_mode": "passive_read",
+        "duration_ms": 53.87282371520996
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-b42b57b69c44",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:45:00.690735",
+      "data_hash": "cc238f9e5cfaa881be970dc3a46918e0574d0a3987aab247605065fe0ee87549",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-a349f9d43071",
+      "node_type": "probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:45:00.691209",
+      "data_hash": "601fae7f87cf84c70a2d868a0ec25b92ca6818aa2f582d3421b890cdc060a1ab",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "http_probe",
+        "safe_mode": "head_only",
+        "duration_ms": 101.05514526367188
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-ebad17ff6a5c",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:45:01.287966",
+      "data_hash": "04323f7968dfb2d69061fe28b8e16651fe27d0afe3d6695e163b7b97e00b168b",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-84037423391f",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:01.288052",
+      "data_hash": "29b63e236c19fb7c5d53aaaf01f0d7ccea901beb300dca17582278cc13f2127d",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-d3cdc555adee",
+      "node_type": "probe",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:01.288142",
+      "data_hash": "4786aff7bbffbfa2c669b99071b51d9e22d528857cb5a09dbf584d9ef51e2900",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "os_passive_id",
+        "safe_mode": "passive",
+        "duration_ms": 596.1511135101318
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-a6a87dd2a6d2",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:45:01.819003",
+      "data_hash": "04323f7968dfb2d69061fe28b8e16651fe27d0afe3d6695e163b7b97e00b168b",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-a38eee625e5f",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:01.819167",
+      "data_hash": "29b63e236c19fb7c5d53aaaf01f0d7ccea901beb300dca17582278cc13f2127d",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-193b3c666ef4",
+      "node_type": "probe",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:01.819360",
+      "data_hash": "cdf24f570c3f05f2f07f28f975fe9635acf80d346e1f500a5a205a57ee4a7677",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "tool_id": "os_active_id",
+        "safe_mode": "minimal",
+        "duration_ms": 531.0189723968506
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-407594c254e1",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:01.820628",
+      "data_hash": "7676123b44703e4e24a7065e331410807ddba3a0b8aac8cb2f6e57be18ef7e90",
+      "parent_ids": [
+        "pcf-e9aa519bd06d"
+      ],
+      "payload": {
+        "ip": "192.168.0.1",
+        "os_guess": "Embedded Linux (TP-Link)",
+        "method": "passive"
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-8dc45f15bf70",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:45:04.365998",
+      "data_hash": "4eff31adbae33b9653c2efb75e792e8febe15d93b5879418182f66819903f61d",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 65535,
+        "df": true,
+        "tcp_options": "MSS,NOP,WScale,SAckOK,EOL"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-ba0e9e955e5e",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:04.366089",
+      "data_hash": "e8db02c689533c72e2e4c46b91502cc17366ef9f1bf168d9fea06c05410a0098",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "ip": "192.168.0.100",
+        "os_guess": "Microsoft Windows 10 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-917970eb061e",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:45:04.473141",
+      "data_hash": "929fc4544924de78d5a9f6748e2cc0b9fa134dd6de7ef8ca6dc5258041bb7739",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-3ea5e17d43e4",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:45:05.027815",
+      "data_hash": "5050a15b8c8d274e2b08e8d7cb803359c053921136fa4c9e4987740369ba9f5e",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-5a0680f40960",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:05.027996",
+      "data_hash": "cbd5644f9b4bea1fd88a82d0589ca9968ac8ff2557804c2143ddc0e6dedd102c",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "ip": "192.168.0.112",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-ac3a29100b0b",
+      "node_type": "service_probe",
+      "phase": "SERVICE_PROBE",
+      "timestamp": "2026-04-28T21:45:05.111185",
+      "data_hash": "cc238f9e5cfaa881be970dc3a46918e0574d0a3987aab247605065fe0ee87549",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "port": 22,
+        "banner": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-6fe737573012",
+      "node_type": "os_id",
+      "phase": "SCAPY_OS_FINGERPRINT",
+      "timestamp": "2026-04-28T21:45:05.657467",
+      "data_hash": "04323f7968dfb2d69061fe28b8e16651fe27d0afe3d6695e163b7b97e00b168b",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "scapy_tcp_fingerprint",
+        "ttl": 64,
+        "window": 64240,
+        "df": true,
+        "tcp_options": "MSS,NOP,NOP,SAckOK,NOP,WScale"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-a9ba579ac0b5",
+      "node_type": "os_id",
+      "phase": "OS_IDENTIFICATION",
+      "timestamp": "2026-04-28T21:45:05.657534",
+      "data_hash": "29b63e236c19fb7c5d53aaaf01f0d7ccea901beb300dca17582278cc13f2127d",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "ip": "192.168.0.113",
+        "os_guess": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "method": "standard"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-3b16ef893794",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.658311",
+      "data_hash": "bf9fdfa2ebd7536f412831ee2253f7afd69591474992695e98097051822cdb28",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2017-7921",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.031948089599609375,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-942c74bf9fef",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.658417",
+      "data_hash": "045dc73ac56b6c698b58e9ab7a96dc902d40aaa68868b1e0c2061b38d3c3852f",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2021-36260",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.015020370483398438,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-e81cce78c693",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.658501",
+      "data_hash": "bf3da55c5ea6f7b3c48c0bcd20f6e17465324e68a44c5195092e26477d616be5",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2018-10561",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.010967254638671875,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-50dc0683f8bf",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.658577",
+      "data_hash": "2f47893ebc8c8a84e2b26862e4694c75fd81e779edcf89eea01e7ae46ae61dc0",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2019-11510",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.009059906005859375,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-6826f95f8934",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.658651",
+      "data_hash": "c6a600b3664f313eb8ff031bec6465fe26f964801b0a4a3a8b822202d7009096",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2020-25078",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.008821487426757812,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-21a60d9fc373",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.658873",
+      "data_hash": "8370709cccc60d286189f02170f97d53f1d05816f139261231f554368ee2d827",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2021-44228",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.015974044799804688,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-3cab61940550",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.659010",
+      "data_hash": "4d23d2643324c4732bdd03fbdfc47e304f8a04be82bc862b3b4befbd7880ffb1",
+      "parent_ids": [
+        "pcf-933acc33e207"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2022-22965",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.016927719116210938,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-0c125b5607b8",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.659542",
+      "data_hash": "a8cb21bd1b6c3438d4a25bd6cc0122136270929f1498f47e93ce95c37c4c833d",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2017-7921",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.03409385681152344,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-368b5ad14123",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.659999",
+      "data_hash": "c19378399269b01c200b6a8ef60da8d4e5bb7087dc3bb4f2ef634b0845954dc0",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2021-36260",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.03600120544433594,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-8f485e525547",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.660338",
+      "data_hash": "3f2fdf85b523da751b7eac1b20dfe6202ddca2ac1890fe7cb69d402e26243200",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2018-10561",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.031948089599609375,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-d97df7808dc8",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.661018",
+      "data_hash": "3fecaa4c9781fef46847e8cd66eafea1e689d942211c66872f941d93194f2833",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2019-11510",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.030755996704101562,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-6eebea2f1eb8",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.661519",
+      "data_hash": "980b74041e4e3031e1920498a61d44b5d7877f75b019f5470bfa319c3cdee722",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2020-25078",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.04100799560546875,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-19b4165ce75a",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.662175",
+      "data_hash": "4835c89c9a43c7466d9d5d143231bd10b22e9e25e835626245994b3b3a245ee7",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2021-44228",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.025033950805664062,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-284242cf62c1",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:05.662371",
+      "data_hash": "435d5f3b6fdb2925ae535f3d2bcd049eff3bf6f41e0c26292ec4cfaee001b2ba",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2022-22965",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.023126602172851562,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-8990e2067a9e",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.010754",
+      "data_hash": "607d6a6724665fb77a02716eebca7dcb6eb3f1315beb1c1ba5226fb8daca7051",
+      "parent_ids": [
+        "pcf-529340d5eb70"
+      ],
+      "payload": {
+        "exploit_id": "default_creds_ssh",
+        "exploit_type": "default_credentials",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 22348.052978515625,
+        "evidence_summary": "{'service': 'ssh', 'attempts_made': 7, 'attempts': [{'username': 'admin', 'password': '***', 'success': False, 'detail': 'SSH auth failed: admin'}, {'username': 'root', 'password': '***', 'success': False, 'detail': 'SSH auth failed: root'}, {'username': 'root', 'password': '(empty)', 'success': False, 'detail': 'SSH auth failed: root'}, {'username': 'admin', 'password': '***', 'success': False, 'detail': 'SSH auth failed: admin'}, {'username': 'admin', 'password': '***', 'success': False, 'deta"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-646ab1eed6f8",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.012365",
+      "data_hash": "aad17c23df9b3b293b7d0b461cb71ea80e42efe4f2281f3f719a45f97a8bdd3a",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2017-7921",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.04601478576660156,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-81d2ea8c5561",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.012804",
+      "data_hash": "681dece73252c777a2361fd4b186703fc317b5c3107ad72b18ced7f0c88b8e9b",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2021-36260",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.04601478576660156,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-35eaf2c9f338",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.013113",
+      "data_hash": "e58c3ef17870adf2a6d4e80fa016300d3e5c7beced82959df2bd5a9ac4350f36",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2018-10561",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.03600120544433594,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-04ef0137137c",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.013393",
+      "data_hash": "5e45cff721f53dd60d59c967ac0881c69988d52a365b4a0280c9bd3fead2894a",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2019-11510",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.03814697265625,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-1d8b07cf918b",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.013651",
+      "data_hash": "6437594b702ba64875de92e00342690b42ae4fdf3295856ed8106721d5e59013",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2020-25078",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.032901763916015625,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-4581ab5206d6",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.013894",
+      "data_hash": "31d1c55021182dace4a2fbaded6af278ffb100447848d182f3ec65481b1637cd",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2021-44228",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.03314018249511719,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-3ef851f38191",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:28.014181",
+      "data_hash": "f8f8640d939e8e4488293e6afc29bb1c57e75b46b1b31ac8521939e09ca0325e",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "cve_match_CVE-2022-22965",
+        "exploit_type": "version_match",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 0.03409385681152344,
+        "evidence_summary": "{}"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-f66b3cf48375",
+      "node_type": "exploit",
+      "phase": "EXPLOITATION",
+      "timestamp": "2026-04-28T21:45:43.879581",
+      "data_hash": "15f88d41c14a64932e3ba34314455217ef2151841c32c741e793af8682aa4a7b",
+      "parent_ids": [
+        "pcf-28473304f6f3"
+      ],
+      "payload": {
+        "exploit_id": "default_creds_ssh",
+        "exploit_type": "default_credentials",
+        "success": false,
+        "confidence": 0.0,
+        "duration_ms": 15865.056037902832,
+        "evidence_summary": "{'service': 'ssh', 'attempts_made': 7, 'attempts': [{'username': 'admin', 'password': '***', 'success': False, 'detail': 'SSH auth failed: admin'}, {'username': 'root', 'password': '***', 'success': False, 'detail': 'SSH auth failed: root'}, {'username': 'root', 'password': '(empty)', 'success': False, 'detail': 'SSH auth failed: root'}, {'username': 'admin', 'password': '***', 'success': False, 'detail': 'SSH auth failed: admin'}, {'username': 'admin', 'password': '***', 'success': False, 'deta"
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-2520e0437886",
+      "node_type": "post_exploit",
+      "phase": "C2_FEASIBILITY_ANALYSIS",
+      "timestamp": "2026-04-28T21:45:43.892735",
+      "data_hash": "45350ad9ec11a4fc636927c14cd9ed537926bd2709aa1dda6621c37a9ff0423d",
+      "parent_ids": [
+        "pcf-407594c254e1"
+      ],
+      "payload": {
+        "device_ip": "192.168.0.1",
+        "skipped": true,
+        "reason": "CRITICAL device \u2014 C2 analysis prohibited"
+      },
+      "oracle_level": "passive",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-e4f62d30dc6a",
+      "node_type": "post_exploit",
+      "phase": "C2_FEASIBILITY_ANALYSIS",
+      "timestamp": "2026-04-28T21:45:43.894264",
+      "data_hash": "821de65bc058f92f94a5384f3934a3fcfa88ba440b8426575f8783524fe0ac98",
+      "parent_ids": [
+        "pcf-3cab61940550"
+      ],
+      "payload": {
+        "device_ip": "192.168.0.100",
+        "composite_score": 0.048,
+        "risk_level": "minimal",
+        "dimension_scores": {
+          "outbound_connectivity": 0.1,
+          "auth_weakness": 0,
+          "writable_service": 0,
+          "dns_tunneling": 0,
+          "covert_channel": 0,
+          "persistence_mechanism": 0.15
+        },
+        "c2_channels_count": 0,
+        "c2_channels": []
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-8170f9fee534",
+      "node_type": "post_exploit",
+      "phase": "C2_FEASIBILITY_ANALYSIS",
+      "timestamp": "2026-04-28T21:45:43.894776",
+      "data_hash": "d23bc06522ea258acb3af3f1473a95d44477b6591f2721cdf0ebd5709e6346a7",
+      "parent_ids": [
+        "pcf-8990e2067a9e"
+      ],
+      "payload": {
+        "device_ip": "192.168.0.112",
+        "composite_score": 0.06,
+        "risk_level": "minimal",
+        "dimension_scores": {
+          "outbound_connectivity": 0.1,
+          "auth_weakness": 0.05,
+          "writable_service": 0,
+          "dns_tunneling": 0,
+          "covert_channel": 0,
+          "persistence_mechanism": 0.15
+        },
+        "c2_channels_count": 0,
+        "c2_channels": []
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-56fa7214b27e",
+      "node_type": "post_exploit",
+      "phase": "C2_FEASIBILITY_ANALYSIS",
+      "timestamp": "2026-04-28T21:45:43.897093",
+      "data_hash": "7a260d9ec3a5461b399202e4ea93b37b9350fb3ce81db5ec92a29a5bd3d72fc6",
+      "parent_ids": [
+        "pcf-f66b3cf48375"
+      ],
+      "payload": {
+        "device_ip": "192.168.0.113",
+        "composite_score": 0.06,
+        "risk_level": "minimal",
+        "dimension_scores": {
+          "outbound_connectivity": 0.1,
+          "auth_weakness": 0.05,
+          "writable_service": 0,
+          "dns_tunneling": 0,
+          "covert_channel": 0,
+          "persistence_mechanism": 0.15
+        },
+        "c2_channels_count": 0,
+        "c2_channels": []
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-eeba480bdbe2",
+      "node_type": "session_event",
+      "phase": "POST_EXPLOITATION_COMPLETE",
+      "timestamp": "2026-04-28T21:45:43.899863",
+      "data_hash": "e592b7b45a188781ef8fe480a5ef465d83fb8a5b9329547e2721ecd80f9a8368",
+      "parent_ids": [
+        "pcf-ac5a1ff39931"
+      ],
+      "payload": {
+        "shells_established": 0,
+        "lateral_results": 0,
+        "total_pivot_paths": 0,
+        "confirmed_pivots": 0,
+        "risk_scores": 3,
+        "attack_graph_summary": {
+          "total_nodes": 4,
+          "total_edges": 0,
+          "compromised_devices": 0,
+          "high_value_targets": 4,
+          "kill_chains_found": 0,
+          "max_chain_length": 0,
+          "edge_feasibility": {},
+          "subnets_analyzed": 1,
+          "critical_subnets": 0,
+          "high_risk_subnets": 0,
+          "top_kill_chain": null
+        },
+        "kill_chains_found": 0
+      },
+      "oracle_level": "active",
+      "device_ip": ""
+    },
+    {
+      "node_id": "pcf-a1582694cc90",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.901255",
+      "data_hash": "eadacf4516d6d5616575eaf09d211888631f7fa46da380fa11108ea062447ef7",
+      "parent_ids": [
+        "p0-e9f47ae2"
+      ],
+      "payload": {
+        "target_node_id": "p0-e9f47ae2",
+        "validated": false,
+        "confidence": 0.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": false,
+            "details": "No passive data"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-d90589fd3961",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.901885",
+      "data_hash": "444bbe7c0e3958cfec4f59f2ad74f7a0133ddfb364a0ab5a59f57019aafaa1e0",
+      "parent_ids": [
+        "p0-b602db11"
+      ],
+      "payload": {
+        "target_node_id": "p0-b602db11",
+        "validated": false,
+        "confidence": 0.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": false,
+            "details": "No passive data"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-ea0998255e76",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.902461",
+      "data_hash": "99845b640a92dadbc36bcb778153b4a1cd85a44332caaec5af7c5d33ec1b6406",
+      "parent_ids": [
+        "p0-ba427950"
+      ],
+      "payload": {
+        "target_node_id": "p0-ba427950",
+        "validated": false,
+        "confidence": 0.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": false,
+            "details": "No passive data"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-0fde716d09bc",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.902953",
+      "data_hash": "c135b43c9eb38d36e6bbc7dba52bc6a2fefb4b48f3509a635f25b65e3a77eca0",
+      "parent_ids": [
+        "p0-336eca41"
+      ],
+      "payload": {
+        "target_node_id": "p0-336eca41",
+        "validated": false,
+        "confidence": 0.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": false,
+            "details": "No passive data"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-5eed6435b25c",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903186",
+      "data_hash": "3cd090196f9004b7fdc090b4ee59f47b5ec713ad5836467c20308604291a33d3",
+      "parent_ids": [
+        "p1-d0261d61"
+      ],
+      "payload": {
+        "target_node_id": "p1-d0261d61",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "mac_present",
+            "passed": true,
+            "details": "MAC: 78:20:51:c9:18:b8"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-2e60d5fffe8b",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903332",
+      "data_hash": "15cadf5f3bf49ad17583cfa0438466c5d4fce9924f9a477bb0e122cf562d8abb",
+      "parent_ids": [
+        "p1-3a46a104"
+      ],
+      "payload": {
+        "target_node_id": "p1-3a46a104",
+        "validated": true,
+        "confidence": 0.5,
+        "oracle_results": [
+          {
+            "name": "ttl_present",
+            "passed": false,
+            "details": "No TTL"
+          },
+          {
+            "name": "ping_verify",
+            "passed": true,
+            "details": "Unknown oracle 'ping_verify' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-41fbcc876583",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903442",
+      "data_hash": "4a0b80190e8cd2d2b167e0a95f05cc6fda4f1be5ba41367a4a81a1b3fc3c92d4",
+      "parent_ids": [
+        "p2-09d219a1"
+      ],
+      "payload": {
+        "target_node_id": "p2-09d219a1",
+        "validated": true,
+        "confidence": 0.5,
+        "oracle_results": [
+          {
+            "name": "ttl_consistency",
+            "passed": false,
+            "details": "No TTL data"
+          },
+          {
+            "name": "rtt_baseline_established",
+            "passed": true,
+            "details": "Baseline: 148.5ms"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-bb66dc173a24",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903543",
+      "data_hash": "ca4ec1ade9cacf44d1f9a0376001d3a6fc25f3ef5441500898e2444ff4cf75ab",
+      "parent_ids": [
+        "p2-c48f9507"
+      ],
+      "payload": {
+        "target_node_id": "p2-c48f9507",
+        "validated": false,
+        "confidence": 0.0,
+        "oracle_results": [
+          {
+            "name": "window_options_present",
+            "passed": false,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-8032d0a8bc4b",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903645",
+      "data_hash": "95adec47799b377f25556ff5e12fea56f056a8dd6c0f897f257dc3b25a5650ef",
+      "parent_ids": [
+        "tib-f144214f"
+      ],
+      "payload": {
+        "target_node_id": "tib-f144214f",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "tier_consistency",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-5feb75c3a5d9",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903755",
+      "data_hash": "b3a5292feb0fe833e1000fe0290f73a6c5738555a433043bc1ad0da394db9c24",
+      "parent_ids": [
+        "p4-a156c91d"
+      ],
+      "payload": {
+        "target_node_id": "p4-a156c91d",
+        "validated": true,
+        "confidence": 0.5,
+        "oracle_results": [
+          {
+            "name": "ports_discovered",
+            "passed": false,
+            "details": "Found 0 ports"
+          },
+          {
+            "name": "port_recheck",
+            "passed": true,
+            "details": "Unknown oracle 'port_recheck' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-177a83e3bc51",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903860",
+      "data_hash": "6a89953e10d08e0f69fcdd97f1180b870484c0a348cbc41fa79a7100032ad653",
+      "parent_ids": [
+        "p0-4037b9aa"
+      ],
+      "payload": {
+        "target_node_id": "p0-4037b9aa",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-d263463c474e",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.903947",
+      "data_hash": "0db6f6ef43e7a1bd76577ed1c597d512fdbbcb2891c937caea93b2a0535990cc",
+      "parent_ids": [
+        "p0-888a86b7"
+      ],
+      "payload": {
+        "target_node_id": "p0-888a86b7",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-8307ab31f4ab",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.905138",
+      "data_hash": "efd3f6cf212bebdb046ccfa7b0d44b443f29758dab6522c0297d72fb59d4bdb3",
+      "parent_ids": [
+        "p0-af3bc4cc"
+      ],
+      "payload": {
+        "target_node_id": "p0-af3bc4cc",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-a90c58075385",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.905351",
+      "data_hash": "8f1e02f661cd01195bdd2dca825215986a896140adfd431b9f70763919420bf1",
+      "parent_ids": [
+        "p0-63b4319b"
+      ],
+      "payload": {
+        "target_node_id": "p0-63b4319b",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-0dcd0a02eae8",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.907637",
+      "data_hash": "46f86f1c61d9cb1a9465f761c6f9c1411df3725e24120f78c19f0c8fb0cbdab7",
+      "parent_ids": [
+        "p1-83a57a77"
+      ],
+      "payload": {
+        "target_node_id": "p1-83a57a77",
+        "validated": false,
+        "confidence": 0.0,
+        "oracle_results": [
+          {
+            "name": "mac_present",
+            "passed": false,
+            "details": "No MAC"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-29d2cfcf59fc",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.908094",
+      "data_hash": "36e452a8deaa5a4656be01c7f9bb0a96ebbbcf4b258cd034d94da4194c30a7d7",
+      "parent_ids": [
+        "p1-1409e5dc"
+      ],
+      "payload": {
+        "target_node_id": "p1-1409e5dc",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "ttl_present",
+            "passed": true,
+            "details": "TTL: 64"
+          },
+          {
+            "name": "ping_verify",
+            "passed": true,
+            "details": "Unknown oracle 'ping_verify' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-130bbeb75c5e",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.908497",
+      "data_hash": "e043dee03801827530c5abe7d466df483a8bb6fce4f93e8b3acddcdb14741045",
+      "parent_ids": [
+        "p2-b1c93f71"
+      ],
+      "payload": {
+        "target_node_id": "p2-b1c93f71",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "ttl_consistency",
+            "passed": true,
+            "details": "TTL consistent"
+          },
+          {
+            "name": "rtt_baseline_established",
+            "passed": true,
+            "details": "Baseline: 0.0ms"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-e769c4c378ba",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.908854",
+      "data_hash": "15603036287365209a36f48d2e8a43e767e6fdfcf578b8186ebe469c04e550f1",
+      "parent_ids": [
+        "p2-c0cb910a"
+      ],
+      "payload": {
+        "target_node_id": "p2-c0cb910a",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "window_options_present",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-9afb225ebc39",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909405",
+      "data_hash": "59299cbf674c44add06539a27ab2028c3d5ac576cb75f3f84cbbb589b3a55a45",
+      "parent_ids": [
+        "tib-1437316e"
+      ],
+      "payload": {
+        "target_node_id": "tib-1437316e",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "tier_consistency",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-720751ec8588",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909544",
+      "data_hash": "52c6b9132f64d8d46231adfa5c61ddebef7df4f8246a57912c94f007dfc0acbf",
+      "parent_ids": [
+        "p4-4adca45f"
+      ],
+      "payload": {
+        "target_node_id": "p4-4adca45f",
+        "validated": true,
+        "confidence": 0.5,
+        "oracle_results": [
+          {
+            "name": "ports_discovered",
+            "passed": false,
+            "details": "Found 0 ports"
+          },
+          {
+            "name": "port_recheck",
+            "passed": true,
+            "details": "Unknown oracle 'port_recheck' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-78d8362c026b",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909620",
+      "data_hash": "29f241a68ea2cd98f4c0611097f94f0db5028ef14f774590a20fb9c065754523",
+      "parent_ids": [
+        "p6-c43a10d4"
+      ],
+      "payload": {
+        "target_node_id": "p6-c43a10d4",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "os_banner_consistency",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-fb4577db0b76",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909690",
+      "data_hash": "cbbed7c54d0d8a3d6d098803c442e0fe9202a06fb61bc69dff516db078afbf73",
+      "parent_ids": [
+        "p6-4b5e3186"
+      ],
+      "payload": {
+        "target_node_id": "p6-4b5e3186",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "os_confidence_above_threshold",
+            "passed": true,
+            "details": ""
+          },
+          {
+            "name": "os_matches_banner",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-7471830c679d",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909752",
+      "data_hash": "c49a26e269395324802b861561e122ac2b5c572c4172e3daf470f4f6e4bdf434",
+      "parent_ids": [
+        "p0-75889b16"
+      ],
+      "payload": {
+        "target_node_id": "p0-75889b16",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-9ead2a314dd7",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909804",
+      "data_hash": "a96bc97e70bf3f23bf4a7cd3ea40e10755887d662b7777f5cf2630f0061e2e10",
+      "parent_ids": [
+        "p0-b8ff03d1"
+      ],
+      "payload": {
+        "target_node_id": "p0-b8ff03d1",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-d8c77e5fb6ca",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909861",
+      "data_hash": "2495e14ebc0aa60ddab9eb574917ac9d4e677bbf47d20ca7b370e17ae46f7b74",
+      "parent_ids": [
+        "p0-5e41701b"
+      ],
+      "payload": {
+        "target_node_id": "p0-5e41701b",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-a5df14ba8f35",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909911",
+      "data_hash": "a53e1d3569d24bf52ec74de7885d52dd71de623bd777b059c020557b21bc3fc1",
+      "parent_ids": [
+        "p0-7e16d367"
+      ],
+      "payload": {
+        "target_node_id": "p0-7e16d367",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-84f8d39ca764",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.909962",
+      "data_hash": "8b0192b8899aa770fcd1e7e41728148863e3f24c72655e703b3476386c69755a",
+      "parent_ids": [
+        "p1-39e9270d"
+      ],
+      "payload": {
+        "target_node_id": "p1-39e9270d",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "mac_present",
+            "passed": true,
+            "details": "MAC: b8:27:eb:b6:8b:93"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-49aeb8552fb1",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910018",
+      "data_hash": "7bb8e8126f81e3682816aaa79173ba1bcf87b8d847421338657b7a9d7c617c75",
+      "parent_ids": [
+        "p1-1f426b00"
+      ],
+      "payload": {
+        "target_node_id": "p1-1f426b00",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "ttl_present",
+            "passed": true,
+            "details": "TTL: 64"
+          },
+          {
+            "name": "ping_verify",
+            "passed": true,
+            "details": "Unknown oracle 'ping_verify' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-dbc2b9e92d83",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910077",
+      "data_hash": "885732392996d603235c4a6e653dc55042c1ef19b313579c9a1894a6b0b209d1",
+      "parent_ids": [
+        "p2-6fd72460"
+      ],
+      "payload": {
+        "target_node_id": "p2-6fd72460",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "ttl_consistency",
+            "passed": true,
+            "details": "TTL consistent"
+          },
+          {
+            "name": "rtt_baseline_established",
+            "passed": true,
+            "details": "Baseline: 106.5ms"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-1d4843272a64",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910135",
+      "data_hash": "d7e85562c7bd9348491d8fce64a10a77d6cb2cf46c38c10ffd43f7c2e94a9438",
+      "parent_ids": [
+        "p2-3d03b093"
+      ],
+      "payload": {
+        "target_node_id": "p2-3d03b093",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "window_options_present",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-acf77214b1cb",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910185",
+      "data_hash": "81fff054400e1be7eab0aca3d100928962aea199f9c46689ebb719a024159869",
+      "parent_ids": [
+        "tib-39de0d73"
+      ],
+      "payload": {
+        "target_node_id": "tib-39de0d73",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "tier_consistency",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-eeec41cc2fb0",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910241",
+      "data_hash": "4c30105f06b436b41ecf2d49c8823a709af775b6c8ce3e4f225143d49cb0f5fc",
+      "parent_ids": [
+        "p4-3e1adaf3"
+      ],
+      "payload": {
+        "target_node_id": "p4-3e1adaf3",
+        "validated": true,
+        "confidence": 0.5,
+        "oracle_results": [
+          {
+            "name": "ports_discovered",
+            "passed": false,
+            "details": "Found 0 ports"
+          },
+          {
+            "name": "port_recheck",
+            "passed": true,
+            "details": "Unknown oracle 'port_recheck' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-dc0fcfcdf814",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910291",
+      "data_hash": "c2ced9eee33610ac66ef17620a898e5ae79eb387723109fe8f673b9dfce12491",
+      "parent_ids": [
+        "p6-912a44cb"
+      ],
+      "payload": {
+        "target_node_id": "p6-912a44cb",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "os_banner_consistency",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-dc0bcb680f58",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910353",
+      "data_hash": "764ff580db63078aec4cdeaf11819b80d067aba35b7ed186a7f07110f6033fdd",
+      "parent_ids": [
+        "p6-beda7178"
+      ],
+      "payload": {
+        "target_node_id": "p6-beda7178",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "os_confidence_above_threshold",
+            "passed": true,
+            "details": ""
+          },
+          {
+            "name": "os_matches_banner",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-0d837fd08da8",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910409",
+      "data_hash": "3ab695139c97752c348ba3e8705720297581c5e82563a60ddfefa063135308d6",
+      "parent_ids": [
+        "p0-b00803b7"
+      ],
+      "payload": {
+        "target_node_id": "p0-b00803b7",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-0111c5e0bd0d",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910467",
+      "data_hash": "9b20c470c8fd0871793ee4aff831bb5cceeba8b10d1d0b005511643f133eaa2f",
+      "parent_ids": [
+        "p0-5201e9c4"
+      ],
+      "payload": {
+        "target_node_id": "p0-5201e9c4",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-be1b78c13e88",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910518",
+      "data_hash": "a6e6fb4d18b064197eaeec3227c73ab275a327faee03c5a86964937aec816fcf",
+      "parent_ids": [
+        "p0-cdc009ee"
+      ],
+      "payload": {
+        "target_node_id": "p0-cdc009ee",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-7407045ca51b",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910572",
+      "data_hash": "7d496c2138773f9aeaacef427e149c6d9fd2bfbc6518e1f400727066b0a76d68",
+      "parent_ids": [
+        "p0-853b4d4d"
+      ],
+      "payload": {
+        "target_node_id": "p0-853b4d4d",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "passive_data_present",
+            "passed": true,
+            "details": "Passive data available"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-5d4d4c0dbc80",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910621",
+      "data_hash": "47832747c54745ecccd4c105a3f36874f681754ef737a5b99d009ad3766ecd37",
+      "parent_ids": [
+        "p1-7764149f"
+      ],
+      "payload": {
+        "target_node_id": "p1-7764149f",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "mac_present",
+            "passed": true,
+            "details": "MAC: b8:27:eb:87:fb:5a"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-3af4b0ba26bc",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910674",
+      "data_hash": "c11c7fd425bd8e24f40dd1e43eebefe6998d91a2c6d505b2888baedf155b37b8",
+      "parent_ids": [
+        "p1-7633bb36"
+      ],
+      "payload": {
+        "target_node_id": "p1-7633bb36",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "ttl_present",
+            "passed": true,
+            "details": "TTL: 64"
+          },
+          {
+            "name": "ping_verify",
+            "passed": true,
+            "details": "Unknown oracle 'ping_verify' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-0b2d5df47e01",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910730",
+      "data_hash": "0fbebf33758a5c7a98b89d1d626c1c340ab2ffd8822a7e8679fe4acde7581858",
+      "parent_ids": [
+        "p2-afeef022"
+      ],
+      "payload": {
+        "target_node_id": "p2-afeef022",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "ttl_consistency",
+            "passed": true,
+            "details": "TTL consistent"
+          },
+          {
+            "name": "rtt_baseline_established",
+            "passed": true,
+            "details": "Baseline: 63.4ms"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-2c9c7430b38f",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910779",
+      "data_hash": "c9a89a9768766e2f0ba6016bfc49cfeda04f4822534a7b5a529c64ceeff80398",
+      "parent_ids": [
+        "p2-a9158c69"
+      ],
+      "payload": {
+        "target_node_id": "p2-a9158c69",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "window_options_present",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-c443cf9d7c39",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910827",
+      "data_hash": "0283ec9b68f70489cb3e897f663519f6ca5d063237558c250fd06ae110c654da",
+      "parent_ids": [
+        "tib-08c0ca2f"
+      ],
+      "payload": {
+        "target_node_id": "tib-08c0ca2f",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "tier_consistency",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-57c2f7bf9201",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910887",
+      "data_hash": "3e8880407fb6e8ce8384d671ef72ad7721b73031ab515215fa0475bfd7d035dc",
+      "parent_ids": [
+        "p4-078f434b"
+      ],
+      "payload": {
+        "target_node_id": "p4-078f434b",
+        "validated": true,
+        "confidence": 0.5,
+        "oracle_results": [
+          {
+            "name": "ports_discovered",
+            "passed": false,
+            "details": "Found 0 ports"
+          },
+          {
+            "name": "port_recheck",
+            "passed": true,
+            "details": "Unknown oracle 'port_recheck' \u2014 default pass"
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-2f117252f836",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.910943",
+      "data_hash": "a19da1bcd287fa24d55782734700ad14d29e35d946dbb9c4f44457be8668f57b",
+      "parent_ids": [
+        "p6-cd1ccb2d"
+      ],
+      "payload": {
+        "target_node_id": "p6-cd1ccb2d",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "os_banner_consistency",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-7757942e5555",
+      "node_type": "probe",
+      "phase": "VALIDATION",
+      "timestamp": "2026-04-28T21:45:43.911142",
+      "data_hash": "9a0ef71a2c0a9d0c4476a30a7313b5fd50b71d719c6ec9b9bed924c8c31e654f",
+      "parent_ids": [
+        "p6-f40ce933"
+      ],
+      "payload": {
+        "target_node_id": "p6-f40ce933",
+        "validated": true,
+        "confidence": 1.0,
+        "oracle_results": [
+          {
+            "name": "os_confidence_above_threshold",
+            "passed": true,
+            "details": ""
+          },
+          {
+            "name": "os_matches_banner",
+            "passed": true,
+            "details": ""
+          }
+        ]
+      },
+      "oracle_level": "inferred",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-3535148b1cb0",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.919830",
+      "data_hash": "2fa64a56b50274a2b7bdedc3b9b14fe77dc455f353c1152568d2b3e6cdd31542",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p0-e9f47ae2"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "result_summary": "{'tool_id': 'mdns_listener', 'safe_mode': 'passive', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0040531158447265625}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-d5745d7d44c5",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.919976",
+      "data_hash": "cb4280e2d508d17b09fdd2aca26b77e4087d8b103bac33ab0fc5511002e84fe5",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p0-b602db11"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "result_summary": "{'tool_id': 'ssdp_listener', 'safe_mode': 'passive', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.005245208740234375}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-5c8834bff0bc",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920071",
+      "data_hash": "d1b893633d4564f2efc7c67ed456fef217297676122c77fff2048c9bd998bda4",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p0-ba427950"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "result_summary": "{'tool_id': 'dhcp_listener', 'safe_mode': 'passive', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-493eb3cb4450",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920124",
+      "data_hash": "143c8b09e0b848b6e3acf0dfbcb67707557ba89542c113bf2a63482e253fd5ef",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p0-336eca41"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "result_summary": "{'tool_id': 'netbios_listener', 'safe_mode': 'passive', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0019073486328125}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-b1caf0abd903",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920178",
+      "data_hash": "eb080d4a095bc62ec5be0df0431ba0a0c37f604d0429f694bb533d4e6c3ccdea",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p1-d0261d61"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "result_summary": "{'tool_id': 'arp_discovery', 'safe_mode': 'standard', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-2e98e47d89a3",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920225",
+      "data_hash": "76e3bbfb7ebb2664d2035e4c0ea356c24ed8886203bf94aba4e0c135e093468a",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p1-3a46a104"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "result_summary": "{'tool_id': 'icmp_discovery', 'safe_mode': 'single_ping', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0040531158447265625}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-573d35bc7b4d",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920268",
+      "data_hash": "2d1d5a6021ca3be9ab4e691e8d219ba3cd607eee52cc0af5cc7f31b7a77cc52a",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p1-e61e2107"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "result_summary": "{'tool_id': 'tcp_discovery', 'safe_mode': 'single_port', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0019073486328125}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-c9d035b32022",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920310",
+      "data_hash": "57e38b6fc2a8ee132abac194a8bb355c3d3f08232a033828538697667e0bdf44",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p2-4f00a965"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "result_summary": "{'tool_id': 'dns_reverse', 'safe_mode': 'standard', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-3b5ad7114c16",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920352",
+      "data_hash": "9b4c348ae48752bc103b3308e395bc67596e18d5f8439fa33df2cec17c436449",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p2-09d219a1"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "result_summary": "{'tool_id': 'icmp_fingerprint', 'safe_mode': 'echo_only', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0016689300537109375}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-451b2c0948c3",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920393",
+      "data_hash": "43f01e1df151c3020b66a223b277bf17e280d8d38ee9ffe3460cc13c385f8772",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p2-c48f9507"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "result_summary": "{'tool_id': 'tcp_fingerprint', 'safe_mode': 'syn_only', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0019073486328125}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-234a2daa84d2",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920435",
+      "data_hash": "bd5d44560a5a37d4aba08a5629eb6e6e0adb048762a51442c1a16d0cb26a4f31",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "tib-f144214f"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "result_summary": "{'tool_id': '__internal_tib_classify', 'safe_mode': 'passive', 'budget_cost': 84.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 84.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-a66218bd7a2e",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920494",
+      "data_hash": "890d8bafe0cf39e7ee23fdc885544023e52c894b1dfb9ae463e7364f099d5605",
+      "parent_ids": [
+        "pcf-e9aa519bd06d",
+        "p4-a156c91d"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "result_summary": "{'tool_id': 'tcp_syn_scan', 'safe_mode': 'top_20', 'budget_cost': 105.5, 'findings': [{'type': 'open_port', 'port': 80}, {'type': 'service', 'port': 1900, 'banner': 'SSDP: TP-Link | TL-WR850N | 300Mbps Wireless N Router | Linux/3.10.14, UPnP/1.0, Portable SDK for UPnP devices/1.6.19'}, {'type': 'os_id', 'os': 'Embedded Linux (TP-Link)'}], 'duration_ms': 21525.924921035767}",
+        "findings_count": 3,
+        "budget_cost": 105.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.1"
+    },
+    {
+      "node_id": "pcf-c6904544acbf",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920536",
+      "data_hash": "bfd39f9b57c840de036e4dcde0d1b13241eedaecce918b1c584c71fce9b6a9cf",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p0-4037b9aa"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "result_summary": "{'tool_id': 'mdns_listener', 'safe_mode': 'passive', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.00476837158203125}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-666df0477da7",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920579",
+      "data_hash": "0eedce4394271fe3d30d05be9a6b7adffc94e564a111eaf0f58c243e9be3bd74",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p0-888a86b7"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "result_summary": "{'tool_id': 'ssdp_listener', 'safe_mode': 'passive', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.0030994415283203125}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-da6168b47cba",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920619",
+      "data_hash": "b33afb3cd1a031832f5fc086c248d6e3f5d504bf405abdac270291cca0730f06",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p0-af3bc4cc"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "result_summary": "{'tool_id': 'dhcp_listener', 'safe_mode': 'passive', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.0030994415283203125}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-900a309fdb03",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920659",
+      "data_hash": "f082b25e6c5275d40fa40e35e7f2fbf264073e30a7ca08b938a561c4156aeab3",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p0-63b4319b"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "result_summary": "{'tool_id': 'netbios_listener', 'safe_mode': 'passive', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-b7a9efb544d1",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920699",
+      "data_hash": "891f0a9bfed55084d987eba1f3be1c083e42a92594ca9a7daa1fd07b8ce04486",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p1-83a57a77"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "result_summary": "{'tool_id': 'arp_discovery', 'safe_mode': 'standard', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.00286102294921875}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-5e5c5e7758e6",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920739",
+      "data_hash": "3553b679a871292d1a4c02b781b948752c452e661f59465b97d0fd61384bec7e",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p1-1409e5dc"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "result_summary": "{'tool_id': 'icmp_discovery', 'safe_mode': 'single_ping', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.005245208740234375}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-0ba9c0809b77",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920780",
+      "data_hash": "0bc41203fe6196c7c67a796f3d880bac007a0809e8afeb51395ce18aa379a332",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p1-2095746c"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "result_summary": "{'tool_id': 'tcp_discovery', 'safe_mode': 'single_port', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.0030994415283203125}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-9565410b1d3e",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920825",
+      "data_hash": "e7d5fa964b2d98bcdce465e592092be276e89355f0435279d37256385b8de873",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p2-680d5278"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "result_summary": "{'tool_id': 'dns_reverse', 'safe_mode': 'standard', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.010967254638671875}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-cdab7474465f",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920866",
+      "data_hash": "5b5b0421dec6b95475a58c5c46993f15ba499870487e65f1ad7a01a310d87331",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p2-b1c93f71"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "result_summary": "{'tool_id': 'icmp_fingerprint', 'safe_mode': 'echo_only', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.0040531158447265625}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-225216207f09",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920908",
+      "data_hash": "c9ff42d3347473f40726c6f25f11770f547f37d4329527442fb278f3f8f97a3c",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p2-c0cb910a"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "result_summary": "{'tool_id': 'tcp_fingerprint', 'safe_mode': 'syn_only', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.0026226043701171875}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-ca15d82414a4",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920948",
+      "data_hash": "7d150aad78845d5b90b2d211435ade9bfa9643208fea2226964b711c3b02058d",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "tib-1437316e"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "result_summary": "{'tool_id': '__internal_tib_classify', 'safe_mode': 'passive', 'budget_cost': 47.5, 'findings': [], 'duration_ms': 0.0011920928955078125}",
+        "findings_count": 0,
+        "budget_cost": 47.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-ef3c8b8de795",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.920994",
+      "data_hash": "97ed7f637680ab7a75f1aea05e1a6e022f72f9c5c99827072c1fe6c3f29240a8",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p4-4adca45f"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "result_summary": "{'tool_id': 'tcp_syn_scan', 'safe_mode': 'top_20', 'budget_cost': 159.5, 'findings': [{'type': 'open_port', 'port': 5432}, {'type': 'os_id', 'os': 'Microsoft Windows 10 (general purpose)'}], 'duration_ms': 13922.84107208252}",
+        "findings_count": 2,
+        "budget_cost": 159.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-b9eafa614f52",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921035",
+      "data_hash": "850c170d52cc42d8df87a3fc1b76c8a823791904021e91b42d1fc85984f24685",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p5-039fda30"
+      ],
+      "payload": {
+        "tool_id": "banner_grab",
+        "result_summary": "{'tool_id': 'banner_grab', 'safe_mode': 'passive_read', 'budget_cost': 161.5, 'findings': [], 'duration_ms': 2002.159833908081}",
+        "findings_count": 0,
+        "budget_cost": 161.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-479d65a1a360",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921076",
+      "data_hash": "415bde1d76a40999706c2c7f493ebdfe86582a117c380102648a1b22219de182",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p5-0349bf2e"
+      ],
+      "payload": {
+        "tool_id": "http_probe",
+        "result_summary": "{'tool_id': 'http_probe', 'safe_mode': 'head_only', 'budget_cost': 163.5, 'findings': [], 'duration_ms': 2002.039909362793}",
+        "findings_count": 0,
+        "budget_cost": 163.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-a5b7ac96433d",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921119",
+      "data_hash": "d2f119dfad7dbf7b968affb7baffcadcbdf7e77b5de705905997dac8ac191739",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p6-c43a10d4"
+      ],
+      "payload": {
+        "tool_id": "os_passive_id",
+        "result_summary": "{'tool_id': 'os_passive_id', 'safe_mode': 'passive', 'budget_cost': 163.5, 'findings': [{'type': 'os_id', 'os': 'Microsoft Windows 10 (general purpose)'}], 'duration_ms': 597.1438884735107}",
+        "findings_count": 1,
+        "budget_cost": 163.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-f887b61ecad2",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921186",
+      "data_hash": "d680b9a4b42f9afc4f023b4257ae87ea8993b4be5c110be9d426b02f0fd180bd",
+      "parent_ids": [
+        "pcf-933acc33e207",
+        "p6-4b5e3186"
+      ],
+      "payload": {
+        "tool_id": "os_active_id",
+        "result_summary": "{'tool_id': 'os_active_id', 'safe_mode': 'minimal', 'budget_cost': 163.5, 'findings': [{'type': 'os_id', 'os': 'Microsoft Windows 10 (general purpose)'}], 'duration_ms': 569.6802139282227}",
+        "findings_count": 1,
+        "budget_cost": 163.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.100"
+    },
+    {
+      "node_id": "pcf-6020c7f58871",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921229",
+      "data_hash": "2d6ab31f1c3e99a5379b6e2778ae1203d56adbabcbeb2c43b92f8d34c1c55ead",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p0-75889b16"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "result_summary": "{'tool_id': 'mdns_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.010013580322265625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-33f41854e96a",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921269",
+      "data_hash": "7c61bbc20caaf02c7704acdca1b73b32e26b183201e88d15c717e256c58a50e9",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p0-b8ff03d1"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "result_summary": "{'tool_id': 'ssdp_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.00286102294921875}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-beb7448e4904",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921309",
+      "data_hash": "87ea9eb02f056322fc0ba1fd24994ac58235056efbf4bd4eaa704e28d908788e",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p0-5e41701b"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "result_summary": "{'tool_id': 'dhcp_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.00286102294921875}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-c91eee0e01c3",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921349",
+      "data_hash": "b1651b7852f1098be7bea5c2fcc256dc9adfa72205d76b03c89d9b28fd48de61",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p0-7e16d367"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "result_summary": "{'tool_id': 'netbios_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0016689300537109375}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-224db0c16154",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921388",
+      "data_hash": "e8455336b7e881a3f197f72fbdcea7d094ab2016cb81364edf5f50fa3df14159",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p1-39e9270d"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "result_summary": "{'tool_id': 'arp_discovery', 'safe_mode': 'standard', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.003814697265625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-586d4a8a0f08",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921428",
+      "data_hash": "cef9bc3fc9800d426f1b5c1fb5f6330cbd5b00f8151fdb07143bd9d6b9e52383",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p1-1f426b00"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "result_summary": "{'tool_id': 'icmp_discovery', 'safe_mode': 'single_ping', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0019073486328125}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-ebf72456d319",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921468",
+      "data_hash": "ee4762302c3f24668b4807fc4dc3d24f208cc9bc5c3db0b659c74e37060739f4",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p1-7c4c6322"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "result_summary": "{'tool_id': 'tcp_discovery', 'safe_mode': 'single_port', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0019073486328125}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-f7e5c595e66f",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921508",
+      "data_hash": "141d5b313fa6c524e56f97f44b6e370d984c4a9b15464b00dff6a0227e34d4b5",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p2-130f6ea2"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "result_summary": "{'tool_id': 'dns_reverse', 'safe_mode': 'standard', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0059604644775390625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-a688ad7aba2c",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921548",
+      "data_hash": "f539ed8a7b059733096a5c44fc3a645eed6ec4ec1bb736b8753458cc7389e026",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p2-6fd72460"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "result_summary": "{'tool_id': 'icmp_fingerprint', 'safe_mode': 'echo_only', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0030994415283203125}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-4f2321bbd513",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921590",
+      "data_hash": "0b3d3bd8d0b844113955abd33a0341dc558e537a7776d003bc8a9b4ab14cc061",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p2-3d03b093"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "result_summary": "{'tool_id': 'tcp_fingerprint', 'safe_mode': 'syn_only', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-8e7b7188f5fe",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921630",
+      "data_hash": "b640cab1fbcb73ba78c9ec38c07727ee74d1441e65854caafc205903b3e449fb",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "tib-39de0d73"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "result_summary": "{'tool_id': '__internal_tib_classify', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0011920928955078125}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-1c9b16145404",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921684",
+      "data_hash": "ee74b10a3863dba53b4b108dadd0819ff971d4e3a760e986ccd15a6618e9f42d",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p4-3e1adaf3"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "result_summary": "{'tool_id': 'tcp_syn_scan', 'safe_mode': 'top_20', 'budget_cost': 185.5, 'findings': [{'type': 'open_port', 'port': 22}, {'type': 'service', 'port': 22, 'banner': 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'os_id', 'os': 'Microsoft Windows XP Professional SP1 (general purpose)'}], 'duration_ms': 105462.99386024475}",
+        "findings_count": 4,
+        "budget_cost": 185.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-6aef95ee0d8e",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.921735",
+      "data_hash": "352d9a203298f5a56c4d4ca5d54252137f356cf4abc9dad65dba32c090bfc440",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p5-ae200423"
+      ],
+      "payload": {
+        "tool_id": "banner_grab",
+        "result_summary": "{'tool_id': 'banner_grab', 'safe_mode': 'passive_read', 'budget_cost': 187.5, 'findings': [{'type': 'service', 'port': 22, 'banner': 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}], 'duration_ms': 87.55207061767578}",
+        "findings_count": 3,
+        "budget_cost": 187.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-2fc06393e609",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922056",
+      "data_hash": "278cbe2c6797a9455610bf246d504b3b693981e67dd622bb5717b73746161edd",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p5-d569ffc8"
+      ],
+      "payload": {
+        "tool_id": "http_probe",
+        "result_summary": "{'tool_id': 'http_probe', 'safe_mode': 'head_only', 'budget_cost': 189.5, 'findings': [{'type': 'service', 'port': 22, 'banner': 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.",
+        "findings_count": 4,
+        "budget_cost": 189.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-6c51a584c106",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922177",
+      "data_hash": "a0134468e12fbc6b06a0c7565116062a8500a9d4fa4f9999f9ef5bd7a80ae9e9",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p6-912a44cb"
+      ],
+      "payload": {
+        "tool_id": "os_passive_id",
+        "result_summary": "{'tool_id': 'os_passive_id', 'safe_mode': 'passive', 'budget_cost': 189.5, 'findings': [{'type': 'os_id', 'os': 'Microsoft Windows XP Professional SP1 (general purpose)'}], 'duration_ms': 573.5979080200195}",
+        "findings_count": 1,
+        "budget_cost": 189.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-8a4eb08221a0",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922338",
+      "data_hash": "729f7228268027f784e14216c029dfa2fdb116271b9b6c66fb21decd49b1df55",
+      "parent_ids": [
+        "pcf-529340d5eb70",
+        "p6-beda7178"
+      ],
+      "payload": {
+        "tool_id": "os_active_id",
+        "result_summary": "{'tool_id': 'os_active_id', 'safe_mode': 'minimal', 'budget_cost': 189.5, 'findings': [{'type': 'os_id', 'os': 'Microsoft Windows XP Professional SP1 (general purpose)'}], 'duration_ms': 564.1908645629883}",
+        "findings_count": 1,
+        "budget_cost": 189.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.112"
+    },
+    {
+      "node_id": "pcf-2a32ed14da61",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922464",
+      "data_hash": "805764c070f62272675293687fd4e4d1afe5995ca15d970737cfd87fb42cd4f2",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p0-b00803b7"
+      ],
+      "payload": {
+        "tool_id": "mdns_listener",
+        "result_summary": "{'tool_id': 'mdns_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.025987625122070312}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-bedd3ab6ea69",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922759",
+      "data_hash": "93a7478e0644c2c499a2a9e1a05a167955c71d87c6f08521b82cb341ea39626e",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p0-5201e9c4"
+      ],
+      "payload": {
+        "tool_id": "ssdp_listener",
+        "result_summary": "{'tool_id': 'ssdp_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.00286102294921875}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-c143d3f06aef",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922874",
+      "data_hash": "03bac7fa119ddb4d0a2847ca8eeb663757569da1d6f4e8e525677056dbf35f00",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p0-cdc009ee"
+      ],
+      "payload": {
+        "tool_id": "dhcp_listener",
+        "result_summary": "{'tool_id': 'dhcp_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-21e1d2fcef31",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922931",
+      "data_hash": "3b3e9d23eb5f86b0b16f2294e048e62d274dd242f89b395f44462a83ff83c3e6",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p0-853b4d4d"
+      ],
+      "payload": {
+        "tool_id": "netbios_listener",
+        "result_summary": "{'tool_id': 'netbios_listener', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-401d00eee5da",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.922980",
+      "data_hash": "77262f81c8c87fdfaacfc9546af61c806eaa4766e096b3d08df5fc22acd7a007",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p1-7764149f"
+      ],
+      "payload": {
+        "tool_id": "arp_discovery",
+        "result_summary": "{'tool_id': 'arp_discovery', 'safe_mode': 'standard', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0021457672119140625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-6ba6303bd3cb",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923026",
+      "data_hash": "71e6b4c76f6610f18a49ee41b261af650e6ca8f964e5f7cc34372925648f729b",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p1-7633bb36"
+      ],
+      "payload": {
+        "tool_id": "icmp_discovery",
+        "result_summary": "{'tool_id': 'icmp_discovery', 'safe_mode': 'single_ping', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0011920928955078125}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-dfb2b85773bc",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923070",
+      "data_hash": "282414b9c4d055ea1da468145a72f939cba4058ccebe97686fbd7facca509a67",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p1-f62001b2"
+      ],
+      "payload": {
+        "tool_id": "tcp_discovery",
+        "result_summary": "{'tool_id': 'tcp_discovery', 'safe_mode': 'single_port', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.003814697265625}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-47fc81af4c0f",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923125",
+      "data_hash": "a80bc7e70352863c723e84133ed3d968f96e6e722bdba4affeb07e28e9857b69",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p2-a05feed8"
+      ],
+      "payload": {
+        "tool_id": "dns_reverse",
+        "result_summary": "{'tool_id': 'dns_reverse', 'safe_mode': 'standard', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0019073486328125}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-1687e267a243",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923168",
+      "data_hash": "b60b16a64a727430573d61c126852c3e16e9b7e35b2ea05ddebf074dbb936027",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p2-afeef022"
+      ],
+      "payload": {
+        "tool_id": "icmp_fingerprint",
+        "result_summary": "{'tool_id': 'icmp_fingerprint', 'safe_mode': 'echo_only', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0016689300537109375}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-4f5fce9a3b7d",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923213",
+      "data_hash": "e58b8f149a75b4b9a1d8233027d935625e817f77481f5f3d74a6b914febb1af8",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p2-a9158c69"
+      ],
+      "payload": {
+        "tool_id": "tcp_fingerprint",
+        "result_summary": "{'tool_id': 'tcp_fingerprint', 'safe_mode': 'syn_only', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0007152557373046875}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-1b4da17e64cb",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923256",
+      "data_hash": "3113804442d0b7133116bd8a8489a7d1f15f83cf67c5c392dbe4c092596b10ec",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "tib-08c0ca2f"
+      ],
+      "payload": {
+        "tool_id": "__internal_tib_classify",
+        "result_summary": "{'tool_id': '__internal_tib_classify', 'safe_mode': 'passive', 'budget_cost': 79.5, 'findings': [], 'duration_ms': 0.0011920928955078125}",
+        "findings_count": 0,
+        "budget_cost": 79.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-fdb4e682977b",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923315",
+      "data_hash": "c2d5b55d2fdc8bdcae10700d2a11729ca0c988086a8f64b8553900591664e02c",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p4-078f434b"
+      ],
+      "payload": {
+        "tool_id": "tcp_syn_scan",
+        "result_summary": "{'tool_id': 'tcp_syn_scan', 'safe_mode': 'top_20', 'budget_cost': 185.5, 'findings': [{'type': 'open_port', 'port': 22}, {'type': 'service', 'port': 22, 'banner': 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'os_id', 'os': 'Microsoft Windows XP Professional SP1 (general purpose)'}], 'duration_ms': 105621.81210517883}",
+        "findings_count": 4,
+        "budget_cost": 185.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-e01b3abef95a",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923368",
+      "data_hash": "644af6a6bdeac10169140562d06988031943720c312320c6f24ee955fbb69102",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p5-b9b87889"
+      ],
+      "payload": {
+        "tool_id": "banner_grab",
+        "result_summary": "{'tool_id': 'banner_grab', 'safe_mode': 'passive_read', 'budget_cost': 187.5, 'findings': [{'type': 'service', 'port': 22, 'banner': 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}], 'duration_ms': 53.87282371520996}",
+        "findings_count": 3,
+        "budget_cost": 187.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-708f159853d1",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923436",
+      "data_hash": "6772c0f249cf9a4bed891005ce1322ce5deda52254df6eb2ba8b20af88d0c11e",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p5-8c497dab"
+      ],
+      "payload": {
+        "tool_id": "http_probe",
+        "result_summary": "{'tool_id': 'http_probe', 'safe_mode': 'head_only', 'budget_cost': 189.5, 'findings': [{'type': 'service', 'port': 22, 'banner': 'SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7'}, {'type': 'ssh_version', 'port': 22, 'severity': 'INFO', 'detail': 'SSH version: SSH-2.0-OpenSSH_10.",
+        "findings_count": 4,
+        "budget_cost": 189.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-17976bf269a0",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923487",
+      "data_hash": "3111d6f8a1a98f27f8283bff9cdaef7bd3fc6b48e299f0ed3bd547dc23250cc9",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p6-cd1ccb2d"
+      ],
+      "payload": {
+        "tool_id": "os_passive_id",
+        "result_summary": "{'tool_id': 'os_passive_id', 'safe_mode': 'passive', 'budget_cost': 189.5, 'findings': [{'type': 'os_id', 'os': 'Microsoft Windows XP Professional SP1 (general purpose)'}], 'duration_ms': 596.1511135101318}",
+        "findings_count": 1,
+        "budget_cost": 189.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-d4e091eae7a6",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923531",
+      "data_hash": "7aa761fa610bb042179a06a42204086cac107cd06402674e87cdb3c5fb13932c",
+      "parent_ids": [
+        "pcf-28473304f6f3",
+        "p6-f40ce933"
+      ],
+      "payload": {
+        "tool_id": "os_active_id",
+        "result_summary": "{'tool_id': 'os_active_id', 'safe_mode': 'minimal', 'budget_cost': 189.5, 'findings': [{'type': 'os_id', 'os': 'Microsoft Windows XP Professional SP1 (general purpose)'}], 'duration_ms': 531.0189723968506}",
+        "findings_count": 1,
+        "budget_cost": 189.5
+      },
+      "oracle_level": "active",
+      "device_ip": "192.168.0.113"
+    },
+    {
+      "node_id": "pcf-8b7038482b8a",
+      "node_type": "probe",
+      "phase": "EVIDENCE_RECORDING",
+      "timestamp": "2026-04-28T21:45:43.923568",
+      "data_hash": "829e8f549af5ee2b3907dc37fdc470452b2182a20354318e41cb5985c224dcb7",
+      "parent_ids": [],
+      "payload": {
+        "tool_id": "",
+        "result_summary": "{}",
+        "findings_count": 0,
+        "budget_cost": 0.0
+      },
+      "oracle_level": "active",
+      "device_ip": ""
+    }
+  ]
+}

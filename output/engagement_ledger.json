@@ -1,0 +1,606 @@
+{
+  "session_root_id": "pcf-ac5a1ff39931",
+  "pcf_dag_integrity": {
+    "valid": false,
+    "errors": 106
+  },
+  "proof_bundles": [
+    {
+      "finding_node_id": "pcf-a66218bd7a2e",
+      "device_ip": "192.168.0.1",
+      "device_tier": "CRITICAL",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-a66218bd7a2e",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.920494",
+          "data_hash": "890d8bafe0cf39e7ee23fdc885544023e52c894b1dfb9ae463e7364f099d5605",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-e9aa519bd06d",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474753",
+          "data_hash": "50e0c7c7fe46368d0a66528846ee853fc2048fdf8e175446aa06e6dc07864940",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-f054bbd37a5a",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.473838",
+          "data_hash": "49665922ca71eaf9e9e18ad6781012978774751ce5f2a6f79b7e37504c312792",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "a63c3215e24a96a528d3a4fd1356ec6f48da2f0754e8ae387b064811065104d5"
+    },
+    {
+      "finding_node_id": "pcf-ef3c8b8de795",
+      "device_ip": "192.168.0.100",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-ef3c8b8de795",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.920994",
+          "data_hash": "97ed7f637680ab7a75f1aea05e1a6e022f72f9c5c99827072c1fe6c3f29240a8",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-933acc33e207",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475037",
+          "data_hash": "aac48376f674e35359c3c61805be6acde96ff5d463e6a9b0fd6a595baff99072",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-b8bea155f38f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474234",
+          "data_hash": "5c12767801444b196553fed9197129e376e296803d9fe70a763cb4794c0c9142",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "f60ebd3cb9ec1dfd96a2a7ab8ceeb3ba958a01c1f2f8bda75833cb2d6dbf4725"
+    },
+    {
+      "finding_node_id": "pcf-a5b7ac96433d",
+      "device_ip": "192.168.0.100",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-a5b7ac96433d",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.921119",
+          "data_hash": "d2f119dfad7dbf7b968affb7baffcadcbdf7e77b5de705905997dac8ac191739",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-933acc33e207",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475037",
+          "data_hash": "aac48376f674e35359c3c61805be6acde96ff5d463e6a9b0fd6a595baff99072",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-b8bea155f38f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474234",
+          "data_hash": "5c12767801444b196553fed9197129e376e296803d9fe70a763cb4794c0c9142",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "fd5d1fc0790a09b7a17af822e228aeed5403c074f53b45616719ad35a707e4d7"
+    },
+    {
+      "finding_node_id": "pcf-f887b61ecad2",
+      "device_ip": "192.168.0.100",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-f887b61ecad2",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.921186",
+          "data_hash": "d680b9a4b42f9afc4f023b4257ae87ea8993b4be5c110be9d426b02f0fd180bd",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-933acc33e207",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475037",
+          "data_hash": "aac48376f674e35359c3c61805be6acde96ff5d463e6a9b0fd6a595baff99072",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-b8bea155f38f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474234",
+          "data_hash": "5c12767801444b196553fed9197129e376e296803d9fe70a763cb4794c0c9142",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "7205d49268b544b6fc14ac2cd101453e747e8bfcc19e293b6721c6e9a0e74d68"
+    },
+    {
+      "finding_node_id": "pcf-1c9b16145404",
+      "device_ip": "192.168.0.112",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-1c9b16145404",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.921684",
+          "data_hash": "ee74b10a3863dba53b4b108dadd0819ff971d4e3a760e986ccd15a6618e9f42d",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-529340d5eb70",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475222",
+          "data_hash": "f1975ffe05c082365d5a0ce17189af948c62e4d79f92e726fc90b46b18c0d802",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-f281ca60ef9f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474423",
+          "data_hash": "e659caa73ff6f5a2a513b75c869046ab94fee4f7a641098393f9c78629551657",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "5858255e6aff348e8cf368d3ecc6be5741540a99992007fd05c0f66ae7168085"
+    },
+    {
+      "finding_node_id": "pcf-6aef95ee0d8e",
+      "device_ip": "192.168.0.112",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-6aef95ee0d8e",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.921735",
+          "data_hash": "352d9a203298f5a56c4d4ca5d54252137f356cf4abc9dad65dba32c090bfc440",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-529340d5eb70",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475222",
+          "data_hash": "f1975ffe05c082365d5a0ce17189af948c62e4d79f92e726fc90b46b18c0d802",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-f281ca60ef9f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474423",
+          "data_hash": "e659caa73ff6f5a2a513b75c869046ab94fee4f7a641098393f9c78629551657",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "ff8f86c2ee640f7ee32602dfac074fd8890f659606cd262d0cc6fdf98e82c7ac"
+    },
+    {
+      "finding_node_id": "pcf-2fc06393e609",
+      "device_ip": "192.168.0.112",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-2fc06393e609",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.922056",
+          "data_hash": "278cbe2c6797a9455610bf246d504b3b693981e67dd622bb5717b73746161edd",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-529340d5eb70",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475222",
+          "data_hash": "f1975ffe05c082365d5a0ce17189af948c62e4d79f92e726fc90b46b18c0d802",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-f281ca60ef9f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474423",
+          "data_hash": "e659caa73ff6f5a2a513b75c869046ab94fee4f7a641098393f9c78629551657",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "c0d9e67856e5170fa8d9e4b7dd67eaa7a5c5055193c7294a1776959cd4a41169"
+    },
+    {
+      "finding_node_id": "pcf-6c51a584c106",
+      "device_ip": "192.168.0.112",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-6c51a584c106",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.922177",
+          "data_hash": "a0134468e12fbc6b06a0c7565116062a8500a9d4fa4f9999f9ef5bd7a80ae9e9",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-529340d5eb70",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475222",
+          "data_hash": "f1975ffe05c082365d5a0ce17189af948c62e4d79f92e726fc90b46b18c0d802",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-f281ca60ef9f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474423",
+          "data_hash": "e659caa73ff6f5a2a513b75c869046ab94fee4f7a641098393f9c78629551657",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "df884098c0df790c79db3e3ce38179631f0341312c30a406389e722324bf8a15"
+    },
+    {
+      "finding_node_id": "pcf-8a4eb08221a0",
+      "device_ip": "192.168.0.112",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-8a4eb08221a0",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.922338",
+          "data_hash": "729f7228268027f784e14216c029dfa2fdb116271b9b6c66fb21decd49b1df55",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-529340d5eb70",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475222",
+          "data_hash": "f1975ffe05c082365d5a0ce17189af948c62e4d79f92e726fc90b46b18c0d802",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-f281ca60ef9f",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474423",
+          "data_hash": "e659caa73ff6f5a2a513b75c869046ab94fee4f7a641098393f9c78629551657",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "b5ca2d9eee6ac75a822b3136c7fd6e451bb883708d9fff72c8032ff22280f61a"
+    },
+    {
+      "finding_node_id": "pcf-fdb4e682977b",
+      "device_ip": "192.168.0.113",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-fdb4e682977b",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.923315",
+          "data_hash": "c2d5b55d2fdc8bdcae10700d2a11729ca0c988086a8f64b8553900591664e02c",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-28473304f6f3",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475353",
+          "data_hash": "e6bb645efe389292cde5f599f10517e04884e24dafaafe95e7964cd0e5159e40",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-3d092c9daa63",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474528",
+          "data_hash": "9a0543e78d10a3649d2b7044fd69c320be5a5045b5414d2068ea3aff83b5de84",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "0bb6fcab0b251de251283627483b1540085175dcf6a0d8122c279431b40e16f0"
+    },
+    {
+      "finding_node_id": "pcf-e01b3abef95a",
+      "device_ip": "192.168.0.113",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-e01b3abef95a",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.923368",
+          "data_hash": "644af6a6bdeac10169140562d06988031943720c312320c6f24ee955fbb69102",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-28473304f6f3",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475353",
+          "data_hash": "e6bb645efe389292cde5f599f10517e04884e24dafaafe95e7964cd0e5159e40",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-3d092c9daa63",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474528",
+          "data_hash": "9a0543e78d10a3649d2b7044fd69c320be5a5045b5414d2068ea3aff83b5de84",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "3a8c0ac8c33db9fbb06a96cb55aa6fe8fb14009db26434b43eed877b19d8d32c"
+    },
+    {
+      "finding_node_id": "pcf-708f159853d1",
+      "device_ip": "192.168.0.113",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-708f159853d1",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.923436",
+          "data_hash": "6772c0f249cf9a4bed891005ce1322ce5deda52254df6eb2ba8b20af88d0c11e",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-28473304f6f3",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475353",
+          "data_hash": "e6bb645efe389292cde5f599f10517e04884e24dafaafe95e7964cd0e5159e40",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-3d092c9daa63",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474528",
+          "data_hash": "9a0543e78d10a3649d2b7044fd69c320be5a5045b5414d2068ea3aff83b5de84",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "f81b1be616634ec16444347ff18cbbf4203624ac2a9c56b4e33be37fd238e5d7"
+    },
+    {
+      "finding_node_id": "pcf-17976bf269a0",
+      "device_ip": "192.168.0.113",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-17976bf269a0",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.923487",
+          "data_hash": "3111d6f8a1a98f27f8283bff9cdaef7bd3fc6b48e299f0ed3bd547dc23250cc9",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-28473304f6f3",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475353",
+          "data_hash": "e6bb645efe389292cde5f599f10517e04884e24dafaafe95e7964cd0e5159e40",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-3d092c9daa63",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474528",
+          "data_hash": "9a0543e78d10a3649d2b7044fd69c320be5a5045b5414d2068ea3aff83b5de84",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "dc6ebf28c506ca90cbcb729729d56956777d8836a9a6b82de761be2dbbe0e0f2"
+    },
+    {
+      "finding_node_id": "pcf-d4e091eae7a6",
+      "device_ip": "192.168.0.113",
+      "device_tier": "FRAGILE",
+      "evidence_chain": [
+        {
+          "node_id": "pcf-d4e091eae7a6",
+          "node_type": "probe",
+          "phase": "EVIDENCE_RECORDING",
+          "timestamp": "2026-04-28T21:45:43.923531",
+          "data_hash": "7aa761fa610bb042179a06a42204086cac107cd06402674e87cdb3c5fb13932c",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-28473304f6f3",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.475353",
+          "data_hash": "e6bb645efe389292cde5f599f10517e04884e24dafaafe95e7964cd0e5159e40",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-3d092c9daa63",
+          "node_type": "discovery",
+          "phase": "HOST_DISCOVERY",
+          "timestamp": "2026-04-28T21:37:39.474528",
+          "data_hash": "9a0543e78d10a3649d2b7044fd69c320be5a5045b5414d2068ea3aff83b5de84",
+          "oracle_level": "active"
+        },
+        {
+          "node_id": "pcf-ac5a1ff39931",
+          "node_type": "session",
+          "phase": "INIT",
+          "timestamp": "2026-04-28T21:35:04.175154",
+          "data_hash": "059c3334df09682ea6f8d0a5d2de9f33ba38d73558e40b1f43072fd0701912f6",
+          "oracle_level": "passive"
+        }
+      ],
+      "chain_length": 4,
+      "bundle_hash": "683f026abd49da857266b9ca45177af0875bc99e9145b633742e86109808e168"
+    }
+  ],
+  "bundle_integrity": {
+    "total_bundles": 14,
+    "valid": 14,
+    "invalid": 0
+  },
+  "session_metrics": {
+    "duration_sec": 639.8,
+    "device_count": 4,
+    "tier_summary": {
+      "ROBUST": 0,
+      "MODERATE": 0,
+      "FRAGILE": 3,
+      "CRITICAL": 1,
+      "UNKNOWN": 0
+    },
+    "total_findings": 41,
+    "validated_findings": 40,
+    "instability_events": 0,
+    "vetoed_actions": 0,
+    "ptg_graphs": 4,
+    "fleet_clusters": 0,
+    "pcf_nodes": 268
+  }
+}

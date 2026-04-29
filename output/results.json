@@ -1,0 +1,888 @@
+{
+  "session_start": 1777392304.174923,
+  "session_end": 1777392943.9694421,
+  "duration_sec": 639.8,
+  "networks": [
+    "192.168.0.0/24"
+  ],
+  "device_count": 4,
+  "exploit_all": false,
+  "pcf_integrity": {
+    "valid": false,
+    "error_count": 106
+  },
+  "metrics": {
+    "duration_sec": 639.8,
+    "device_count": 4,
+    "tier_summary": {
+      "ROBUST": 0,
+      "MODERATE": 0,
+      "FRAGILE": 3,
+      "CRITICAL": 1,
+      "UNKNOWN": 0
+    },
+    "total_findings": 41,
+    "validated_findings": 40,
+    "instability_events": 0,
+    "vetoed_actions": 0,
+    "ptg_graphs": 4,
+    "fleet_clusters": 0,
+    "pcf_nodes": 268
+  },
+  "agent_results": {
+    "discovery": {
+      "discovered": 4
+    },
+    "profiling": {
+      "profiled": 4,
+      "tier_summary": {
+        "ROBUST": 0,
+        "MODERATE": 0,
+        "FRAGILE": 3,
+        "CRITICAL": 1,
+        "UNKNOWN": 0
+      }
+    },
+    "fleet": {},
+    "planner": {
+      "graphs_built": 4
+    },
+    "safety": {
+      "vetoes": 0,
+      "approvals": 63,
+      "preflight_blocks": 0
+    },
+    "execution": {
+      "actions": 68,
+      "findings": 41
+    },
+    "post_exploitation": {
+      "shells_established": 0,
+      "shells_attempted": 0,
+      "lateral_results": 0,
+      "total_pivot_paths": 0,
+      "confirmed_pivots": 0,
+      "risk_scores": 3,
+      "risk_distribution": {
+        "minimal": 3
+      },
+      "attack_graph": {
+        "total_nodes": 4,
+        "total_edges": 0,
+        "compromised_devices": 0,
+        "high_value_targets": 4,
+        "kill_chains_found": 0,
+        "max_chain_length": 0,
+        "edge_feasibility": {},
+        "subnets_analyzed": 1,
+        "critical_subnets": 0,
+        "high_risk_subnets": 0,
+        "top_kill_chain": null
+      },
+      "kill_chains": 0,
+      "subnet_risks": [
+        {
+          "subnet": "192.168.0.0/24",
+          "device_count": 4,
+          "compromised_count": 0,
+          "high_value_count": 4,
+          "total_pivot_paths": 0,
+          "confirmed_pivots": 0,
+          "avg_pivot_score": 0.0,
+          "risk_level": "LOW",
+          "recommendations": [
+            "No immediate action required for 192.168.0.0/24"
+          ]
+        }
+      ],
+      "elapsed_sec": 0.0
+    },
+    "monitoring": {
+      "alerts": 0,
+      "vetoes": 0
+    },
+    "validation": {
+      "validated": 40,
+      "rejected": 6,
+      "pcf_integrity": {
+        "valid": false,
+        "error_count": 46
+      }
+    },
+    "evidence": {
+      "nodes_recorded": 61,
+      "bundles_created": 14,
+      "total_pcf_nodes": 268
+    }
+  },
+  "tier_summary": {
+    "ROBUST": 0,
+    "MODERATE": 0,
+    "FRAGILE": 3,
+    "CRITICAL": 1,
+    "UNKNOWN": 0
+  },
+  "devices": [
+    {
+      "ip": "192.168.0.1",
+      "mac": "78:20:51:c9:18:b8",
+      "vendor": "tp-link systems inc.",
+      "hostname": "",
+      "device_name": "TL-WR850N",
+      "device_type": "Laptop / Desktop",
+      "current_tier": "CRITICAL",
+      "current_phase": "OS_IDENTIFICATION",
+      "circuit_breaker": "ACTIVE",
+      "trip_reason": "",
+      "budget": {
+        "budget_spent": 105.5,
+        "budget_total": 200.0,
+        "budget_remaining": 94.5,
+        "budget_pct_used": 52.8,
+        "breakdown_by_type": {
+          "icmp_echo": 5.0,
+          "tcp_syn": 94.0,
+          "snmp_query": 4.5,
+          "tcp_banner_grab": 2.0
+        }
+      },
+      "live_rate_limit": 20.0,
+      "config_rate_max": 5,
+      "findings": {
+        "open_ports": [
+          80
+        ],
+        "os_hint": "Embedded Linux (TP-Link)",
+        "vulnerabilities": [],
+        "banners": {
+          "1900": "SSDP: TP-Link | TL-WR850N | 300Mbps Wireless N Router | Linux/3.10.14, UPnP/1.0, Portable SDK for UPnP devices/1.6.19"
+        }
+      },
+      "rtt_stats": {
+        "samples": 5,
+        "baseline_ms": 148.45705032348633,
+        "current_ms": 105.70025444030762,
+        "mean_ms": 148.45705032348633,
+        "stddev_ms": 116.44847178812468,
+        "cv": 0.7843916576166958,
+        "stress_events": 0,
+        "current_rate_limit": 20.0,
+        "config_rate_max": 5,
+        "rate_utilisation_pct": 400.0
+      },
+      "stress_events": 0,
+      "classification_history": [
+        {
+          "tier": "FRAGILE",
+          "score": -1.0,
+          "confidence": 0.5,
+          "reasons": [
+            "Vendor 'tp-link systems inc.' -> consumer (score -1)",
+            "Banner analysis: no distinctive keywords (score +0.0)"
+          ]
+        },
+        {
+          "tier": "CRITICAL",
+          "score": -5.0,
+          "confidence": 0.75,
+          "reasons": [
+            "Vendor 'tp-link systems inc.' -> consumer (score -1)",
+            "Banner analysis: no distinctive keywords (score +0.0)",
+            "ICMP CV: CV=0.78 \u2014 very high RTT variance (score -4.0)"
+          ]
+        },
+        {
+          "tier": "CRITICAL",
+          "score": -5.0,
+          "confidence": 0.75,
+          "reasons": [
+            "Vendor 'tp-link systems inc.' -> consumer (score -1)",
+            "Banner analysis: no distinctive keywords (score +0.0)",
+            "ICMP CV: CV=0.78 \u2014 very high RTT variance (score -4.0)"
+          ]
+        }
+      ],
+      "event_log": [
+        "[21:37:39] [TIB_CREATED] Device 192.168.0.1 (78:20:51:c9:18:b8) registered",
+        "[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -> ACTIVE_DISCOVERY",
+        "[21:37:51] [AUTO_RECLASSIFY_TRIGGERED] Signal 'banners' updated \u2014 triggering automatic reclassification",
+        "[21:37:51] [RETIER] RETIER (Signal 'banners' updated automatically): UNKNOWN -> FRAGILE (less fragile)",
+        "[21:37:51] [AUTO_RECLASSIFY_TRIGGERED] Signal 'mdns_device_name' updated \u2014 triggering automatic reclassification",
+        "[21:37:51] [RECLASSIFY_NO_CHANGE] Reclassification (Signal 'mdns_device_name' updated automatically) \u2014 tier unchanged (FRAGILE)",
+        "[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -> FINGERPRINTING",
+        "[21:38:32] [AUTO_RECLASSIFY_TRIGGERED] Signal 'open_ports' updated \u2014 triggering automatic reclassification",
+        "[21:38:32] [RETIER] RETIER (Signal 'open_ports' updated automatically): FRAGILE -> CRITICAL (MORE fragile)",
+        "[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -> TIB_ASSIGNMENT",
+        "[21:40:47] [TIER_ASSIGNED] Tier: CRITICAL -> CRITICAL (score=-5.0, confidence=75%)",
+        "[21:40:47] [PHASE_TRANSITION] TIB_ASSIGNMENT -> PORT_SCAN",
+        "[21:41:08] [PHASE_TRANSITION] PORT_SCAN -> SERVICE_PROBE",
+        "[21:41:08] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:45:01] [PHASE_TRANSITION] OS_IDENTIFICATION -> SERVICE_PROBE",
+        "[21:45:01] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION"
+      ],
+      "c2_risk": {
+        "device_ip": "192.168.0.1",
+        "composite_score": 0.0,
+        "risk_level": "minimal",
+        "dimension_scores": [],
+        "c2_channels_feasible": [],
+        "recommendations": [],
+        "skipped": true,
+        "skip_reason": "CRITICAL device \u2014 C2 analysis prohibited"
+      }
+    },
+    {
+      "ip": "192.168.0.100",
+      "mac": "",
+      "vendor": "Unknown",
+      "hostname": "",
+      "device_name": "Anil\u2019s MacBook Air ",
+      "device_type": "Phone",
+      "current_tier": "FRAGILE",
+      "current_phase": "OS_IDENTIFICATION",
+      "circuit_breaker": "ACTIVE",
+      "trip_reason": "",
+      "budget": {
+        "budget_spent": 165.5,
+        "budget_total": 3000.0,
+        "budget_remaining": 2834.5,
+        "budget_pct_used": 5.5,
+        "breakdown_by_type": {
+          "icmp_echo": 15.0,
+          "tcp_syn": 125.0,
+          "snmp_query": 1.5,
+          "tcp_banner_grab": 24.0
+        }
+      },
+      "live_rate_limit": 20.0,
+      "config_rate_max": 20,
+      "findings": {
+        "open_ports": [
+          5432
+        ],
+        "os_hint": "Microsoft Windows 10 (general purpose)",
+        "vulnerabilities": [],
+        "banners": {}
+      },
+      "rtt_stats": {
+        "samples": 15,
+        "baseline_ms": 0.0,
+        "current_ms": 0.0,
+        "mean_ms": 0.0,
+        "stddev_ms": 0.0,
+        "cv": 0.0,
+        "stress_events": 0,
+        "current_rate_limit": 20.0,
+        "config_rate_max": 20,
+        "rate_utilisation_pct": 100.0
+      },
+      "stress_events": 0,
+      "classification_history": [
+        {
+          "tier": "FRAGILE",
+          "score": -3,
+          "confidence": 0.25,
+          "reasons": [
+            "mDNS ['_dns-sd._udp', '_companion-link._tcp']: consumer device mDNS service '_companion-link._tcp' (score -3.0)"
+          ]
+        },
+        {
+          "tier": "FRAGILE",
+          "score": -3.0,
+          "confidence": 0.5,
+          "reasons": [
+            "ICMP CV: zero mean RTT (score +0.0)",
+            "mDNS ['_dns-sd._udp', '_companion-link._tcp']: consumer device mDNS service '_companion-link._tcp' (score -3.0)"
+          ]
+        }
+      ],
+      "event_log": [
+        "[21:37:39] [TIB_CREATED] Device 192.168.0.100 () registered",
+        "[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -> ACTIVE_DISCOVERY",
+        "[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal 'mdns_services' updated \u2014 triggering automatic reclassification",
+        "[21:37:46] [RETIER] RETIER (Signal 'mdns_services' updated automatically): UNKNOWN -> FRAGILE (less fragile)",
+        "[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal 'mdns_device_name' updated \u2014 triggering automatic reclassification",
+        "[21:37:46] [RECLASSIFY_NO_CHANGE] Reclassification (Signal 'mdns_device_name' updated automatically) \u2014 tier unchanged (FRAGILE)",
+        "[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -> FINGERPRINTING",
+        "[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -> TIB_ASSIGNMENT",
+        "[21:40:47] [TIER_ASSIGNED] Tier: FRAGILE -> FRAGILE (score=-3.0, confidence=50%)",
+        "[21:41:09] [PHASE_TRANSITION] TIB_ASSIGNMENT -> PORT_SCAN",
+        "[21:41:20] [PHASE_TRANSITION] PORT_SCAN -> SERVICE_PROBE",
+        "[21:41:22] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:41:22] [PHASE_TRANSITION] OS_IDENTIFICATION -> SERVICE_PROBE",
+        "[21:41:24] [PHASE_TRANSITION] SERVICE_PROBE -> SERVICE_PROBE",
+        "[21:41:26] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:41:27] [PHASE_TRANSITION] OS_IDENTIFICATION -> OS_IDENTIFICATION",
+        "[21:45:01] [PHASE_TRANSITION] OS_IDENTIFICATION -> SERVICE_PROBE",
+        "[21:45:03] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2017-7921'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2021-36260'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2018-10561'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2019-11510'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2020-25078'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2021-44228'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2022-22965'"
+      ],
+      "c2_risk": {
+        "device_ip": "192.168.0.100",
+        "composite_score": 0.048,
+        "risk_level": "minimal",
+        "dimension_scores": [
+          {
+            "dimension": "outbound_connectivity",
+            "score": 0.1,
+            "weight": 0.25,
+            "weighted_contribution": 0.025,
+            "indicators": []
+          },
+          {
+            "dimension": "auth_weakness",
+            "score": 0,
+            "weight": 0.25,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "writable_service",
+            "score": 0,
+            "weight": 0.15,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "dns_tunneling",
+            "score": 0,
+            "weight": 0.1,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "covert_channel",
+            "score": 0,
+            "weight": 0.1,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "persistence_mechanism",
+            "score": 0.15,
+            "weight": 0.15,
+            "weighted_contribution": 0.022,
+            "indicators": [
+              "FRAGILE (IoT) device \u2014 often has writable flash/firmware"
+            ]
+          }
+        ],
+        "c2_channels_feasible": [],
+        "recommendations": [
+          "Device 192.168.0.100 has low C2 risk \u2014 maintain current controls"
+        ],
+        "skipped": false,
+        "skip_reason": ""
+      }
+    },
+    {
+      "ip": "192.168.0.112",
+      "mac": "b8:27:eb:b6:8b:93",
+      "vendor": "raspberry pi foundation",
+      "hostname": "",
+      "device_name": "",
+      "device_type": "Single Board Computer (Raspberry Pi)",
+      "current_tier": "FRAGILE",
+      "current_phase": "OS_IDENTIFICATION",
+      "circuit_breaker": "ACTIVE",
+      "trip_reason": "",
+      "budget": {
+        "budget_spent": 271.5,
+        "budget_total": 3000.0,
+        "budget_remaining": 2728.5,
+        "budget_pct_used": 9.0,
+        "breakdown_by_type": {
+          "icmp_echo": 14.0,
+          "tcp_syn": 164.0,
+          "snmp_query": 4.5,
+          "tcp_banner_grab": 9.0,
+          "exploit_safe": 80.0
+        }
+      },
+      "live_rate_limit": 20.0,
+      "config_rate_max": 20,
+      "findings": {
+        "open_ports": [
+          22
+        ],
+        "os_hint": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "vulnerabilities": [
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          },
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          },
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          },
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          }
+        ],
+        "banners": {
+          "22": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+        }
+      },
+      "rtt_stats": {
+        "samples": 14,
+        "baseline_ms": 106.5305233001709,
+        "current_ms": 15.884160995483398,
+        "mean_ms": 49.41625254494803,
+        "stddev_ms": 88.511783150418,
+        "cv": 1.791147215582757,
+        "stress_events": 0,
+        "current_rate_limit": 20.0,
+        "config_rate_max": 20,
+        "rate_utilisation_pct": 100.0
+      },
+      "stress_events": 0,
+      "classification_history": [
+        {
+          "tier": "FRAGILE",
+          "score": -1.0,
+          "confidence": 0.5,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        },
+        {
+          "tier": "CRITICAL",
+          "score": -5.0,
+          "confidence": 0.75,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "ICMP CV: CV=1.29 \u2014 very high RTT variance (score -4.0)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        },
+        {
+          "tier": "FRAGILE",
+          "score": -1.0,
+          "confidence": 1,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "Banner analysis: robust OS keyword 'openssh' (score +4.0)",
+            "ICMP CV: CV=1.29 \u2014 very high RTT variance (score -4.0)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        },
+        {
+          "tier": "FRAGILE",
+          "score": -1.0,
+          "confidence": 1,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "Banner analysis: robust OS keyword 'openssh' (score +4.0)",
+            "ICMP CV: CV=1.29 \u2014 very high RTT variance (score -4.0)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        }
+      ],
+      "event_log": [
+        "[21:37:39] [TIB_CREATED] Device 192.168.0.112 (b8:27:eb:b6:8b:93) registered",
+        "[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -> ACTIVE_DISCOVERY",
+        "[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal 'mdns_services' updated \u2014 triggering automatic reclassification",
+        "[21:37:46] [RETIER] RETIER (Signal 'mdns_services' updated automatically): UNKNOWN -> FRAGILE (less fragile)",
+        "[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -> FINGERPRINTING",
+        "[21:39:29] [AUTO_RECLASSIFY_TRIGGERED] Signal 'open_ports' updated \u2014 triggering automatic reclassification",
+        "[21:39:29] [RETIER] RETIER (Signal 'open_ports' updated automatically): FRAGILE -> CRITICAL (MORE fragile)",
+        "[21:40:17] [AUTO_RECLASSIFY_TRIGGERED] Signal 'banners' updated \u2014 triggering automatic reclassification",
+        "[21:40:17] [RETIER] RETIER (Signal 'banners' updated automatically): CRITICAL -> FRAGILE (less fragile)",
+        "[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -> TIB_ASSIGNMENT",
+        "[21:40:47] [TIER_ASSIGNED] Tier: FRAGILE -> FRAGILE (score=-1.0, confidence=100%)",
+        "[21:41:28] [PHASE_TRANSITION] TIB_ASSIGNMENT -> PORT_SCAN",
+        "[21:43:12] [PHASE_TRANSITION] PORT_SCAN -> SERVICE_PROBE",
+        "[21:43:13] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:43:13] [PHASE_TRANSITION] OS_IDENTIFICATION -> SERVICE_PROBE",
+        "[21:43:13] [PHASE_TRANSITION] SERVICE_PROBE -> SERVICE_PROBE",
+        "[21:43:13] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:43:14] [PHASE_TRANSITION] OS_IDENTIFICATION -> OS_IDENTIFICATION",
+        "[21:45:04] [PHASE_TRANSITION] OS_IDENTIFICATION -> SERVICE_PROBE",
+        "[21:45:04] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2017-7921'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2021-36260'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2018-10561'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2019-11510'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2020-25078'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2021-44228'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'CVE Match: CVE-2022-22965'",
+        "[21:45:05] [EXPLOIT_APPROVED] 'Default Credentials (SSH)'"
+      ],
+      "c2_risk": {
+        "device_ip": "192.168.0.112",
+        "composite_score": 0.06,
+        "risk_level": "minimal",
+        "dimension_scores": [
+          {
+            "dimension": "outbound_connectivity",
+            "score": 0.1,
+            "weight": 0.25,
+            "weighted_contribution": 0.025,
+            "indicators": []
+          },
+          {
+            "dimension": "auth_weakness",
+            "score": 0.05,
+            "weight": 0.25,
+            "weighted_contribution": 0.013,
+            "indicators": []
+          },
+          {
+            "dimension": "writable_service",
+            "score": 0,
+            "weight": 0.15,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "dns_tunneling",
+            "score": 0,
+            "weight": 0.1,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "covert_channel",
+            "score": 0,
+            "weight": 0.1,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "persistence_mechanism",
+            "score": 0.15,
+            "weight": 0.15,
+            "weighted_contribution": 0.022,
+            "indicators": [
+              "FRAGILE (IoT) device \u2014 often has writable flash/firmware"
+            ]
+          }
+        ],
+        "c2_channels_feasible": [],
+        "recommendations": [
+          "Device 192.168.0.112 has low C2 risk \u2014 maintain current controls"
+        ],
+        "skipped": false,
+        "skip_reason": ""
+      }
+    },
+    {
+      "ip": "192.168.0.113",
+      "mac": "b8:27:eb:87:fb:5a",
+      "vendor": "raspberry pi foundation",
+      "hostname": "",
+      "device_name": "",
+      "device_type": "Single Board Computer (Raspberry Pi)",
+      "current_tier": "FRAGILE",
+      "current_phase": "OS_IDENTIFICATION",
+      "circuit_breaker": "ACTIVE",
+      "trip_reason": "",
+      "budget": {
+        "budget_spent": 271.5,
+        "budget_total": 3000.0,
+        "budget_remaining": 2728.5,
+        "budget_pct_used": 9.0,
+        "breakdown_by_type": {
+          "icmp_echo": 14.0,
+          "tcp_syn": 164.0,
+          "snmp_query": 4.5,
+          "tcp_banner_grab": 9.0,
+          "exploit_safe": 80.0
+        }
+      },
+      "live_rate_limit": 20.0,
+      "config_rate_max": 20,
+      "findings": {
+        "open_ports": [
+          22
+        ],
+        "os_hint": "Microsoft Windows XP Professional SP1 (general purpose)",
+        "vulnerabilities": [
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          },
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          },
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          },
+          {
+            "type": "ssh_version",
+            "port": 22,
+            "severity": "INFO",
+            "detail": "SSH version: SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+          }
+        ],
+        "banners": {
+          "22": "SSH-2.0-OpenSSH_10.0p2 Raspbian-7"
+        }
+      },
+      "rtt_stats": {
+        "samples": 14,
+        "baseline_ms": 63.350820541381836,
+        "current_ms": 10.721921920776367,
+        "mean_ms": 36.52221815926688,
+        "stddev_ms": 33.72393742543322,
+        "cv": 0.9233814134280987,
+        "stress_events": 0,
+        "current_rate_limit": 20.0,
+        "config_rate_max": 20,
+        "rate_utilisation_pct": 100.0
+      },
+      "stress_events": 0,
+      "classification_history": [
+        {
+          "tier": "FRAGILE",
+          "score": -1.0,
+          "confidence": 0.5,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        },
+        {
+          "tier": "CRITICAL",
+          "score": -5.0,
+          "confidence": 0.75,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "ICMP CV: CV=0.67 \u2014 very high RTT variance (score -4.0)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        },
+        {
+          "tier": "FRAGILE",
+          "score": -1.0,
+          "confidence": 1,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "Banner analysis: robust OS keyword 'openssh' (score +4.0)",
+            "ICMP CV: CV=0.67 \u2014 very high RTT variance (score -4.0)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        },
+        {
+          "tier": "FRAGILE",
+          "score": -1.0,
+          "confidence": 1,
+          "reasons": [
+            "Vendor 'raspberry pi foundation' -> consumer (score -1)",
+            "Banner analysis: robust OS keyword 'openssh' (score +4.0)",
+            "ICMP CV: CV=0.67 \u2014 very high RTT variance (score -4.0)",
+            "mDNS ['_dns-sd._udp']: no distinctive mDNS services (score +0.0)"
+          ]
+        }
+      ],
+      "event_log": [
+        "[21:37:39] [TIB_CREATED] Device 192.168.0.113 (b8:27:eb:87:fb:5a) registered",
+        "[21:37:39] [PHASE_TRANSITION] PASSIVE_LISTENING -> ACTIVE_DISCOVERY",
+        "[21:37:46] [AUTO_RECLASSIFY_TRIGGERED] Signal 'mdns_services' updated \u2014 triggering automatic reclassification",
+        "[21:37:46] [RETIER] RETIER (Signal 'mdns_services' updated automatically): UNKNOWN -> FRAGILE (less fragile)",
+        "[21:37:56] [PHASE_TRANSITION] ACTIVE_DISCOVERY -> FINGERPRINTING",
+        "[21:39:59] [AUTO_RECLASSIFY_TRIGGERED] Signal 'open_ports' updated \u2014 triggering automatic reclassification",
+        "[21:39:59] [RETIER] RETIER (Signal 'open_ports' updated automatically): FRAGILE -> CRITICAL (MORE fragile)",
+        "[21:40:47] [AUTO_RECLASSIFY_TRIGGERED] Signal 'banners' updated \u2014 triggering automatic reclassification",
+        "[21:40:47] [RETIER] RETIER (Signal 'banners' updated automatically): CRITICAL -> FRAGILE (less fragile)",
+        "[21:40:47] [PHASE_TRANSITION] FINGERPRINTING -> TIB_ASSIGNMENT",
+        "[21:40:47] [TIER_ASSIGNED] Tier: FRAGILE -> FRAGILE (score=-1.0, confidence=100%)",
+        "[21:43:14] [PHASE_TRANSITION] TIB_ASSIGNMENT -> PORT_SCAN",
+        "[21:44:59] [PHASE_TRANSITION] PORT_SCAN -> SERVICE_PROBE",
+        "[21:44:59] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:45:00] [PHASE_TRANSITION] OS_IDENTIFICATION -> SERVICE_PROBE",
+        "[21:45:00] [PHASE_TRANSITION] SERVICE_PROBE -> SERVICE_PROBE",
+        "[21:45:00] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:45:01] [PHASE_TRANSITION] OS_IDENTIFICATION -> OS_IDENTIFICATION",
+        "[21:45:05] [PHASE_TRANSITION] OS_IDENTIFICATION -> SERVICE_PROBE",
+        "[21:45:05] [PHASE_TRANSITION] SERVICE_PROBE -> OS_IDENTIFICATION",
+        "[21:45:28] [EXPLOIT_APPROVED] 'CVE Match: CVE-2017-7921'",
+        "[21:45:28] [EXPLOIT_APPROVED] 'CVE Match: CVE-2021-36260'",
+        "[21:45:28] [EXPLOIT_APPROVED] 'CVE Match: CVE-2018-10561'",
+        "[21:45:28] [EXPLOIT_APPROVED] 'CVE Match: CVE-2019-11510'",
+        "[21:45:28] [EXPLOIT_APPROVED] 'CVE Match: CVE-2020-25078'",
+        "[21:45:28] [EXPLOIT_APPROVED] 'CVE Match: CVE-2021-44228'",
+        "[21:45:28] [EXPLOIT_APPROVED] 'CVE Match: CVE-2022-22965'",
+        "[21:45:28] [EXPLOIT_APPROVED] 'Default Credentials (SSH)'"
+      ],
+      "c2_risk": {
+        "device_ip": "192.168.0.113",
+        "composite_score": 0.06,
+        "risk_level": "minimal",
+        "dimension_scores": [
+          {
+            "dimension": "outbound_connectivity",
+            "score": 0.1,
+            "weight": 0.25,
+            "weighted_contribution": 0.025,
+            "indicators": []
+          },
+          {
+            "dimension": "auth_weakness",
+            "score": 0.05,
+            "weight": 0.25,
+            "weighted_contribution": 0.013,
+            "indicators": []
+          },
+          {
+            "dimension": "writable_service",
+            "score": 0,
+            "weight": 0.15,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "dns_tunneling",
+            "score": 0,
+            "weight": 0.1,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "covert_channel",
+            "score": 0,
+            "weight": 0.1,
+            "weighted_contribution": 0.0,
+            "indicators": []
+          },
+          {
+            "dimension": "persistence_mechanism",
+            "score": 0.15,
+            "weight": 0.15,
+            "weighted_contribution": 0.022,
+            "indicators": [
+              "FRAGILE (IoT) device \u2014 often has writable flash/firmware"
+            ]
+          }
+        ],
+        "c2_channels_feasible": [],
+        "recommendations": [
+          "Device 192.168.0.113 has low C2 risk \u2014 maintain current controls"
+        ],
+        "skipped": false,
+        "skip_reason": ""
+      }
+    }
+  ],
+  "safety_compliance": {
+    "total_vetoed": 0,
+    "total_approved": 63,
+    "vetoed_actions": [],
+    "ot_mode": true,
+    "compliance_rate": 100.0
+  },
+  "proof_bundles": 14,
+  "ptg_summaries": {
+    "192.168.0.1": {
+      "target_ip": "192.168.0.1",
+      "total_nodes": 15,
+      "total_budget": 200.0,
+      "total_spent": 1035.0,
+      "estimated_remaining": 0,
+      "by_status": {
+        "completed": 12,
+        "skipped": 3
+      },
+      "is_complete": true
+    },
+    "192.168.0.100": {
+      "target_ip": "192.168.0.100",
+      "total_nodes": 16,
+      "total_budget": 3000.0,
+      "total_spent": 1334.0,
+      "estimated_remaining": 0,
+      "by_status": {
+        "completed": 16
+      },
+      "is_complete": true
+    },
+    "192.168.0.112": {
+      "target_ip": "192.168.0.112",
+      "total_nodes": 16,
+      "total_budget": 3000.0,
+      "total_spent": 1816.0,
+      "estimated_remaining": 0,
+      "by_status": {
+        "completed": 16
+      },
+      "is_complete": true
+    },
+    "192.168.0.113": {
+      "target_ip": "192.168.0.113",
+      "total_nodes": 16,
+      "total_budget": 3000.0,
+      "total_spent": 1816.0,
+      "estimated_remaining": 0,
+      "by_status": {
+        "completed": 16
+      },
+      "is_complete": true
+    }
+  },
+  "post_exploitation": {
+    "shells_established": 0,
+    "total_pivot_paths": 0,
+    "confirmed_pivots": 0,
+    "kill_chains": 0,
+    "attack_graph": {
+      "total_nodes": 4,
+      "total_edges": 0,
+      "compromised_devices": 0,
+      "high_value_targets": 4,
+      "kill_chains_found": 0,
+      "max_chain_length": 0,
+      "edge_feasibility": {},
+      "subnets_analyzed": 1,
+      "critical_subnets": 0,
+      "high_risk_subnets": 0,
+      "top_kill_chain": null
+    },
+    "risk_distribution": {
+      "minimal": 3
+    },
+    "subnet_risks": [
+      {
+        "subnet": "192.168.0.0/24",
+        "device_count": 4,
+        "compromised_count": 0,
+        "high_value_count": 4,
+        "total_pivot_paths": 0,
+        "confirmed_pivots": 0,
+        "avg_pivot_score": 0.0,
+        "risk_level": "LOW",
+        "recommendations": [
+          "No immediate action required for 192.168.0.0/24"
+        ]
+      }
+    ]
+  },
+  "kill_chains": []
+}
