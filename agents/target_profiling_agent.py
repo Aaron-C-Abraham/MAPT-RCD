@@ -150,6 +150,27 @@ class TargetProfilingAgent(BaseAgent):
             tier.name: len(self.context.tibs_by_tier(tier))
             for tier in DeviceTier
         }
+        
+        # Performs port scanning on all the discovered devices
+        from Discovery.port_scan import PortScanPhase
+        phase4=PortScanPhase(pcf_dag=self.context.pcf_dag)
+        for tib in all_tibs:
+                tib.transition_phase(PentestPhase.PORT_SCAN)
+        phase4.run(all_tibs)
+
+        # Performs Service Probe
+        from Discovery.service_probe import ServiceProbePhase
+        phase5=ServiceProbePhase(pcf_dag=self.context.pcf_dag)
+        for tib in all_tibs:
+                tib.transition_phase(PentestPhase.SERVICE_PROBE)
+        phase5.run(all_tibs)
+
+        # Performs OS identification
+        from Discovery.os_identifier import OSIdentificationPhase
+        phase6=OSIdentificationPhase(pcf_dag=self.context.pcf_dag)
+        for tib in all_tibs:
+                tib.transition_phase(PentestPhase.OS_IDENTIFICATION)
+        phase6.run(all_tibs)
 
         # Notify PlannerAgent — it needs the tier summary to decide how
         # aggressive each device's PTG should be.
