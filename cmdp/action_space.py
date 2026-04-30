@@ -140,8 +140,7 @@ class ActionSpace:
         """Number of discrete action types for the DRL policy output layer."""
         return self._action_dim
 
-    def get_available_actions(self, ready_nodes: list,
-                              tier=None) -> List[CMDPAction]:
+    def get_available_actions(self, ready_nodes: list, tier=None) -> List[CMDPAction]:
         """
         Generate all available actions for the current state.
 
