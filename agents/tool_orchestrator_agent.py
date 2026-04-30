@@ -16,7 +16,7 @@ PURPOSE:
 
 INTER-AGENT COMMUNICATION:
     Receives:
-        PlannerAgent    ──RESULT──> ToolOrchestratorAgent  (PTGs ready)
+        PlannerAgent    ──RESULT--> ToolOrchestratorAgent  (PTGs ready)
         SafetyOfficer   ──VETO───> ToolOrchestratorAgent   (block unsafe actions)
         ImpactMonitor   ──VETO───> ToolOrchestratorAgent   (block stressed devices)
         ImpactMonitor   ──ALERT──> ToolOrchestratorAgent   (breaker/RTT/budget alerts)
@@ -42,7 +42,6 @@ Executes PTG nodes by invoking tools via IC-ToolSpec contracts.
 Manages parallelism. Reports results back to the planner.
 Integrates with CMDP policy for action selection.
 
-Paper reference: Section VI-B item 4
 """
 
 import time
@@ -100,11 +99,11 @@ class ToolOrchestratorAgent(BaseAgent):
             AgentResult with total actions, findings count, and errors.
         """
         from TIB_and_PCF.TIB.TIB_structures import PentestPhase
-        from TIB_and_PCF.PCF import NodeType, EvidenceApproach
+        # from TIB_and_PCF.PCF import NodeType, EvidenceApproach
         # TIBViolation: raised when an action violates a TIB constraint (rate, etc.)
         # TIBExhausted: raised when the device's budget is fully spent
         from TIB_and_PCF.TIB.circuit_breaker import TIBViolation, TIBExhausted
-        from ptg.models import PTGNodeStatus
+        # from ptg.models import PTGNodeStatus
 
         total_actions = 0    # Count of successfully executed PTG nodes
         total_findings = 0   # Count of findings discovered across all devices

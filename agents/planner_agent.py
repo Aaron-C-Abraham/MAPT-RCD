@@ -34,7 +34,6 @@ FLEET OPTIMIZATION:
 
 Uses the CMDP policy to prioritize nodes when available.
 
-Paper reference: Section VI-B item 3
 """
 
 import logging

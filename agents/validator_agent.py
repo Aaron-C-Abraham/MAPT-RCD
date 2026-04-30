@@ -50,7 +50,6 @@ PCF INTEGRITY:
 Validates tool outputs against expected schemas. Checks PCF evidence
 chain integrity. Flags anomalous results. Executes validation oracles.
 
-Paper reference: Section VI-B item 6
 """
 
 import logging

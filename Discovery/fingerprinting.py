@@ -1,6 +1,5 @@
 import logging
 import socket
-import statistics
 import subprocess
 import re
 import time
@@ -12,7 +11,7 @@ from typing import List, Dict, Optional
 logger = logging.getLogger(__name__)
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 logging.getLogger("scapy").setLevel(logging.ERROR)
-from scapy.all import IP, UDP, SNMP, SNMPget, SNMPvarbind, ASN1_OID, sr1, conf,sr,TCP
+from scapy.all import IP, UDP, SNMP, SNMPget, SNMPvarbind, ASN1_OID, sr1, conf,send,TCP
 conf.verb = 0
 from impacket.smbconnection import SMBConnection
 TCP_PROBE_PORTS = [
@@ -165,51 +164,31 @@ class FingerprintingPhase:
             try:
                 tib.breaker.request_packet_permission(1, "tcp_syn")
             except (TIBExhausted, TIBViolation):
-                break
-                # sock=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                # sock.settimeout(1.5)
-                # result=sock.connect_ex((ip, port))
-                # if result==0:
-                #     # Port is open — device responded
-                #     tib.breaker.record_response()
-                #     current_ports=list(tib.signals.open_ports)
-                #     if port not in current_ports:
-                #         current_ports.append(port)
-                #         tib.signals.update_open_ports(current_ports)
-                #     self.pcf_dag.add_node(
-                #         node_type=NodeType.PROBE, phase="FINGERPRINTING",
-                #         payload={"ip": ip, "probe": "tcp_connect", "port": port, "state": "open"},
-                #         parent_ids=[tib.pcf_device_root_id],
-                #         evidence_approaches=EvidenceApproach.ACTIVE, device_ip=ip,
-                #     )
-                # else:
-                #     tib.breaker.record_response()
-                # sock.close()
-                # def _scapy_syn_scan(self, ip: str, ports: List[int], timeout: float = 1.5) -> List[int]:
-            """SYN scan specific ports on a single host. Returns list of open ports."""
-            # open_ports = []
-            got_window=False
+                break  # stop entirely if packet budget is exhausted
             try:
-                # Send SYN to all ports at once
-                pkts = IP(dst=ip) / TCP(dport=port, flags="S")
-                answered, _ = sr1(pkts, timeout=1.5, verbose=0)
-                sent, received = answered
-                # SYN-ACK (flags=0x12) means port is open
-                if received.haslayer(TCP) and received[TCP].flags == 0x12:
-                    # open_ports.append(received[TCP].sport)
-                    tib.signals.update_tcp_window_size(received[TCP].window)
-                    got_window=True
-                    # Send RST to close the half-open connection
-                    sr1(IP(dst=ip)/TCP(dport=received[TCP].sport, flags="R"),
-                        timeout=0.5, verbose=0)
-                    break
-                
-                    
-                        
-            except socket.timeout:
-                tib.breaker.record_timeout()
-            except OSError:
-                pass
+                # Send SYN probe to current port
+                syn_pkt = IP(dst=ip) / TCP(dport=port, flags="S")
+                # sr1 returns the first response packet (or None)
+                response = sr1(syn_pkt, timeout=1.5, verbose=0)
+                # If we got a response and it's SYN-ACK
+                if response and response.haslayer(TCP):
+                    tcp_flags = response[TCP].flags
+                    # SYN-ACK = SYN(0x02) + ACK(0x10) = 0x12
+                    if tcp_flags == 0x12:
+                        tib.signals.update_tcp_window_size(response[TCP].window)
+                        # Send RST to terminate half-open connection
+                        rst_pkt = IP(dst=ip) / TCP(
+                            dport=response[TCP].sport,
+                            sport=response[TCP].dport,
+                            seq=response[TCP].ack,
+                            ack=response[TCP].seq + 1,
+                            flags="R"
+                        )
+                        send(rst_pkt, verbose=0)
+                        break  # Exit port scan loop immediately
+            except Exception:
+                continue  # Ignore timeout/errors and move to next port
+            
 
         # 4. SNMP sysDescr
         try:

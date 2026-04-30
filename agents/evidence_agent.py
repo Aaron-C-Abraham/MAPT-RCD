@@ -5,7 +5,7 @@ PURPOSE:
     The Evidence Agent is the NINTH and FINAL agent in the 9-step pipeline
     (Step 9). It is responsible for managing the Proof-Carrying Findings
     (PCF) DAG — the cryptographic evidence chain that makes every finding
-    in a TRUCE-PT engagement tamper-evident and auditable.
+    in a MAPT-RCD engagement tamper-evident and auditable.
 
     Specifically, it:
       1. Processes RESULT messages from the ToolOrchestrator, recording each
