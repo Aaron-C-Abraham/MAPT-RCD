@@ -413,53 +413,53 @@ class ToolOrchestratorAgent(BaseAgent):
         # Determine which phase module to invoke based on the node's phase string
         phase = node.phase
 
-        if phase == "PORT_SCAN":
-            # Phase 4: Port scanning — discovers open TCP/UDP ports.
-            # Transition the TIB's phase state machine (may already be in
-            # this phase, hence the try/except for ValueError).
-            try:
-                tib.transition_phase(PentestPhase.PORT_SCAN)
-            except ValueError:
-                pass  # Already in this phase — safe to ignore
-            from Discovery.port_scan import PortScanPhase
-            phase4 = PortScanPhase(
-                pcf_dag=self.context.pcf_dag,
-                # Limit thread count to 3 per device to avoid overwhelming
-                # the target or causing network congestion
-                max_threads=min(self.context.max_threads, 3),
-            )
-            phase4.run([tib])  # Run port scan on this single device
-            # Collect findings: each open port is a finding
-            result["findings"] = [{"type": "open_port", "port": p}
-                                  for p in tib.signals.open_ports]
+        # if phase == "PORT_SCAN":
+        #     # Phase 4: Port scanning — discovers open TCP/UDP ports.
+        #     # Transition the TIB's phase state machine (may already be in
+        #     # this phase, hence the try/except for ValueError).
+        #     try:
+        #         tib.transition_phase(PentestPhase.PORT_SCAN)
+        #     except ValueError:
+        #         pass  # Already in this phase — safe to ignore
+        #     from Discovery.port_scan import PortScanPhase
+        #     phase4 = PortScanPhase(
+        #         pcf_dag=self.context.pcf_dag,
+        #         # Limit thread count to 3 per device to avoid overwhelming
+        #         # the target or causing network congestion
+        #         max_threads=min(self.context.max_threads, 3),
+        #     )
+        #     phase4.run([tib])  # Run port scan on this single device
+        #     # Collect findings: each open port is a finding
+        #     result["findings"] = [{"type": "open_port", "port": p}
+        #                           for p in tib.signals.open_ports]
 
-            # If port scan found new ports, run service probe + OS ID immediately
-            # so vulnerability checks see the discovered ports
-            if tib.signals.open_ports:
-                try:
-                    tib.transition_phase(PentestPhase.SERVICE_PROBE)
-                except ValueError:
-                    pass
-                from Discovery.service_probe import ServiceProbePhase
-                svc = ServiceProbePhase(pcf_dag=self.context.pcf_dag, max_threads=3)
-                svc.run([tib])
-                result["findings"].extend([{"type": "service", "port": p, "banner": b}
-                                           for p, b in tib.signals.banners.items()])
-                vuln_findings = getattr(tib.state, 'vuln_findings', [])
-                if vuln_findings:
-                    result["findings"].extend(vuln_findings)
+        #     # If port scan found new ports, run service probe + OS ID immediately
+        #     # so vulnerability checks see the discovered ports
+        #     if tib.signals.open_ports:
+        #         try:
+        #             tib.transition_phase(PentestPhase.SERVICE_PROBE)
+        #         except ValueError:
+        #             pass
+        #         from Discovery.service_probe import ServiceProbePhase
+        #         svc = ServiceProbePhase(pcf_dag=self.context.pcf_dag, max_threads=3)
+        #         svc.run([tib])
+        #         result["findings"].extend([{"type": "service", "port": p, "banner": b}
+        #                                    for p, b in tib.signals.banners.items()])
+        #         vuln_findings = getattr(tib.state, 'vuln_findings', [])
+        #         if vuln_findings:
+        #             result["findings"].extend(vuln_findings)
 
-                try:
-                    tib.transition_phase(PentestPhase.OS_IDENTIFICATION)
-                except ValueError:
-                    pass
-                from Discovery.os_identifier import OSIdentificationPhase
-                os_phase = OSIdentificationPhase(pcf_dag=self.context.pcf_dag)
-                os_phase.run([tib])
-                if tib.signals.nmap_os_guess:
-                    result["findings"].append({"type": "os_id", "os": tib.signals.nmap_os_guess})
+        #         try:
+        #             tib.transition_phase(PentestPhase.OS_IDENTIFICATION)
+        #         except ValueError:
+        #             pass
+        #         from Discovery.os_identifier import OSIdentificationPhase
+        #         os_phase = OSIdentificationPhase(pcf_dag=self.context.pcf_dag)
+        #         os_phase.run([tib])
+        #         if tib.signals.nmap_os_guess:
+        #             result["findings"].append({"type": "os_id", "os": tib.signals.nmap_os_guess})
 
-        elif phase == "SERVICE_PROBE":
+        if phase == "SERVICE_PROBE":
             # Phase 5: Service probing — banner grabbing on open ports.
             # Identifies what software is running on each port.
             try:
