@@ -40,13 +40,6 @@ def generate_html_report(results: dict, output_path: str = "output/pt_report.htm
     fleet_data = agent_results.get("fleet", {})
     evidence_data = agent_results.get("evidence", {})
 
-    # ── FIX 1: metric card helper ──────────────────────────────────────────
-    # Builds a metric card with correct class names, avoiding f-string
-    # concatenation bugs that produced "mred" instead of "m red".
-    def metric_card(value, label, color=""):
-        cls = f"m {color}".strip()
-        return f'<div class="{cls}"><div class="v">{value}</div><div class="l">{label}</div></div>'
-
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,40 +95,9 @@ tr:hover{{background:#f0f4ff}}
 .oracle.pass{{background:#d4edda;color:#155724}}.oracle.fail{{background:#f8d7da;color:#721c24}}
 .port{{display:inline-block;background:#e74c3c;color:#fff;padding:1px 8px;border-radius:10px;font-size:.8em;margin:1px;font-weight:600}}
 .footer{{text-align:center;padding:25px;color:#999;font-size:.82em}}
-
-/* ── FIX 2: details/summary styling ─────────────────────────────────────
-   - summary shows a clear clickable row with an arrow indicator
-   - details content is hidden until the row is clicked
-   - no open attribute is set by default, so all devices start collapsed    */
-details{{margin:8px 0;border:1px solid #e4e8ee;border-radius:8px;background:#fff}}
-summary{{
-    cursor:pointer;
-    font-weight:600;
-    color:#0f3460;
-    padding:12px 16px;
-    list-style:none;          /* hides the default UA triangle         */
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-radius:8px;
-    user-select:none;
-}}
-summary::-webkit-details-marker{{display:none}} /* Safari default triangle */
-summary::after{{
-    content:'\\25BC';          /* DOWN ARROW ▼ — rotates when open      */
-    font-size:.7em;
-    color:#999;
-    transition:transform .2s;
-    flex-shrink:0;
-}}
-details[open] > summary::after{{transform:rotate(-180deg)}}
-details[open] > summary{{
-    border-bottom:1px solid #e4e8ee;
-    border-radius:8px 8px 0 0;
-}}
-summary:hover{{background:#f4f6fb}}
-.device-body{{padding:16px}}  /* inner wrapper for the expanded content  */
-
+details{{margin:8px 0}}
+summary{{cursor:pointer;font-weight:600;color:#0f3460;padding:6px 0}}
+summary:hover{{color:#e74c3c}}
 .two-col{{display:grid;grid-template-columns:1fr 1fr;gap:15px}}
 @media(max-width:768px){{.two-col{{grid-template-columns:1fr}}.mg{{grid-template-columns:repeat(2,1fr)}}}}
 </style>
@@ -166,14 +128,14 @@ produced <strong>{metrics.get('total_findings', 0)} findings</strong>, and valid
 All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong> cryptographic proof chain (PCF DAG).
 {'<br><strong style="color:#e74c3c">Exploitation Override (--exploit-all):</strong> Exploitation was forced on ALL discovered devices, including CRITICAL-tier. CRITICAL devices received dry-run analysis only (zero packets sent).' if exploit_all else ''}</p>
 <div class="mg" style="margin-top:16px">
-{metric_card(len(devices), "Devices Discovered")}
-{metric_card(exec_data.get('actions', 0), "Tests Executed", "green")}
-{metric_card(metrics.get('total_findings', 0), "Findings", "red" if metrics.get('total_findings', 0) > 0 else "")}
-{metric_card(val_data.get('validated', 0), "Validated", "green")}
-{metric_card(val_data.get('rejected', 0), "Rejected", "orange")}
-{metric_card(metrics.get('vetoed_actions', 0), "Safety Vetoes")}
-{metric_card(metrics.get('pcf_nodes', 0), "Evidence Nodes")}
-{metric_card(len(rpis), "Raspberry Pi")}
+<div class="m"><div class="v">{len(devices)}</div><div class="l">Devices Discovered</div></div>
+<div class="m green"><div class="v">{exec_data.get('actions', 0)}</div><div class="l">Tests Executed</div></div>
+<div class="m{'red' if metrics.get('total_findings',0)>0 else ''} "><div class="v">{metrics.get('total_findings', 0)}</div><div class="l">Findings</div></div>
+<div class="m green"><div class="v">{val_data.get('validated', 0)}</div><div class="l">Validated</div></div>
+<div class="m orange"><div class="v">{val_data.get('rejected', 0)}</div><div class="l">Rejected</div></div>
+<div class="m"><div class="v">{metrics.get('vetoed_actions', 0)}</div><div class="l">Safety Vetoes</div></div>
+<div class="m"><div class="v">{metrics.get('pcf_nodes', 0)}</div><div class="l">Evidence Nodes</div></div>
+<div class="m"><div class="v">{len(rpis)}</div><div class="l">Raspberry Pi</div></div>
 </div>
 </div>
 
@@ -291,6 +253,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
     html += "</table></div>"
 
     # ═══ EXPLOITATION RESULTS ═══
+    # Collect all exploit findings across devices for the summary table
     all_exploit_findings = []
     for d in devices:
         ip = d.get("ip", "")
@@ -313,10 +276,10 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
         html += '</div>'
 
     html += f"""<div class="mg" style="margin-bottom:16px">
-{metric_card(len(exploit_successes), "Successful Exploits", "red")}
-{metric_card(len(exploit_dry_runs), "Dry-Run Findings", "orange")}
-{metric_card(len(all_exploit_findings), "Total Exploit Checks")}
-{metric_card(len(exploit_devices), "Devices Tested")}
+<div class="m red"><div class="v">{len(exploit_successes)}</div><div class="l">Successful Exploits</div></div>
+<div class="m orange"><div class="v">{len(exploit_dry_runs)}</div><div class="l">Dry-Run Findings</div></div>
+<div class="m"><div class="v">{len(all_exploit_findings)}</div><div class="l">Total Exploit Checks</div></div>
+<div class="m"><div class="v">{len(exploit_devices)}</div><div class="l">Devices Tested</div></div>
 </div>"""
 
     if all_exploit_findings:
@@ -329,18 +292,21 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
             ip = _h(e.get("ip", ""))
             tier = e.get("tier", "UNKNOWN")
             eid = _h(e.get("exploit_id", "?"))
-            sev = e.get("severity", "INFO").upper()
+            sev = e.get("severity", "INFO")
+            sev = sev.upper()
             sev_color = sev_colors.get(sev, "#333")
             success = e.get("success", False)
             dry_run = e.get("dry_run", False)
             conf = e.get("confidence", 0)
             detail = _h(str(e.get("detail", ""))[:150])
+
             if success:
                 result_html = '<span style="color:#e74c3c;font-weight:bold">EXPLOITED</span>'
             elif dry_run:
                 result_html = '<span style="color:#f39c12;font-weight:bold">DRY-RUN</span>'
             else:
                 result_html = '<span style="color:#95a5a6">checked</span>'
+
             conf_pct = f"{conf*100:.0f}%" if conf else "—"
             html += f'<tr><td><strong>{ip}</strong></td><td><span class="tb tb-{tier}">{tier}</span></td>'
             html += f'<td><code>{eid}</code></td>'
@@ -349,19 +315,23 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
         html += '</table>'
     else:
         html += '<div class="finding warn">No exploitation findings — no exploitable services were detected on any device.</div>'
+
     html += '</div>'
 
-    # ═══ POST-EXPLOITATION ═══
+    # ═══ POST-EXPLOITATION: LATERAL MOVEMENT & ATTACK GRAPH ═══
     pe_data = results.get("post_exploitation", {})
     if pe_data and not pe_data.get("skipped"):
         html += '<div class="card"><h2>7.5. Post-Exploitation Analysis</h2>'
-        html += f"""<div class="mg" style="margin-bottom:16px">
-{metric_card(pe_data.get('shells_established', 0), "Shells Established", "red")}
-{metric_card(pe_data.get('total_pivot_paths', 0), "Pivot Paths", "red")}
-{metric_card(pe_data.get('confirmed_pivots', 0), "Confirmed Pivots", "red")}
-{metric_card(pe_data.get('kill_chains', 0), "Kill Chains", "orange")}
-</div>"""
 
+        # Summary metrics
+        html += f"""<div class="mg" style="margin-bottom:16px">
+        <div class="m red"><div class="v">{pe_data.get('shells_established', 0)}</div><div class="l">Shells Established</div></div>
+        <div class="m red"><div class="v">{pe_data.get('total_pivot_paths', 0)}</div><div class="l">Pivot Paths</div></div>
+        <div class="m red"><div class="v">{pe_data.get('confirmed_pivots', 0)}</div><div class="l">Confirmed Pivots</div></div>
+        <div class="m orange"><div class="v">{pe_data.get('kill_chains', 0)}</div><div class="l">Kill Chains</div></div>
+        </div>"""
+
+        # C2 Risk Distribution
         risk_dist = pe_data.get("risk_distribution", {})
         if risk_dist:
             html += '<h3>C2 / Reverse Shell Risk Distribution</h3>'
@@ -369,9 +339,10 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
             risk_colors = {"critical": "red", "high": "red", "moderate": "orange", "low": "", "minimal": "green"}
             for level, count in risk_dist.items():
                 cls = risk_colors.get(level, "")
-                html += metric_card(count, level.upper(), cls)
+                html += f'<div class="m {cls}"><div class="v">{count}</div><div class="l">{level.upper()}</div></div>'
             html += '</div>'
 
+        # Kill Chains
         kill_chains = results.get("kill_chains", [])
         if kill_chains:
             html += f'<h3>Kill Chains ({len(kill_chains)} found)</h3>'
@@ -387,6 +358,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                 html += f'<tr><td>{i}</td><td>{path_html}</td><td>{hops}</td><td style="{score_cls};font-weight:bold">{score:.3f}</td><td>{feasibility}</td><td>{target_val}</td></tr>'
             html += '</table>'
 
+        # Subnet Risks
         subnet_risks = pe_data.get("subnet_risks", [])
         if subnet_risks:
             html += f'<h3>Subnet Risk Assessment ({len(subnet_risks)} subnets)</h3>'
@@ -404,6 +376,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                 html += f'<td style="font-size:.82em">{recs}</td></tr>'
             html += '</table>'
 
+        # Per-device lateral movement details
         has_lateral = any(d.get("lateral_movement") for d in devices)
         if has_lateral:
             html += '<h3>Per-Device Lateral Movement Details</h3>'
@@ -413,7 +386,9 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                     continue
                 ip = _h(d.get("ip", ""))
                 html += f'<details><summary>{ip} — {lm.get("pivot_count", 0)} pivot path(s), {lm.get("confirmed_pivots", 0)} confirmed</summary>'
-                html += '<div class="device-body">'
+                html += '<div style="padding:8px 0">'
+
+                # Trust relationships
                 trust_rels = lm.get("trust_relationships", [])
                 if trust_rels:
                     html += f'<h4>Trust Relationships ({len(trust_rels)})</h4>'
@@ -422,6 +397,8 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                         html += f'<tr><td>{_h(tr.get("target_ip", ""))}</td><td>{_h(tr.get("trust_type", ""))}</td>'
                         html += f'<td>{tr.get("confidence", 0):.0%}</td><td style="font-size:.82em">{_h(str(tr.get("evidence", {}))[:100])}</td></tr>'
                     html += '</table>'
+
+                # Pivot paths
                 pivots = lm.get("pivot_paths", [])
                 if pivots:
                     html += f'<h4>Pivot Paths ({len(pivots)})</h4>'
@@ -435,8 +412,10 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                         if p.get("services_available"):
                             html += f' | services: {", ".join(p["services_available"])}'
                         html += '</div>'
+
                 html += '</div></details>'
 
+        # Per-device C2 risk details
         has_c2 = any(d.get("c2_risk") for d in devices)
         if has_c2:
             html += '<h3>Per-Device C2 / Reverse Shell Risk</h3>'
@@ -449,6 +428,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                 score = c2.get("composite_score", 0)
                 level = c2.get("risk_level", "minimal")
                 level_cls = {"critical": "#8e44ad", "high": "#e74c3c", "moderate": "#f39c12", "low": "#27ae60", "minimal": "#95a5a6"}.get(level, "#333")
+
                 dims = {ds.get("dimension", ""): ds.get("score", 0) for ds in c2.get("dimension_scores", [])}
                 channels = len(c2.get("c2_channels_feasible", []))
 
@@ -472,13 +452,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
         html += '</div>'
 
     # ═══ DETAILED DEVICE REPORTS ═══
-    # FIX 2: Every device starts collapsed (no 'open' attribute).
-    # The summary row shows IP + label + tier badge + status dot.
-    # All detail content lives inside a .device-body div AFTER the summary,
-    # so the browser toggle correctly hides/shows only that content.
     html += '<div class="card"><h2>8. Detailed Device Reports</h2>'
-    html += '<p style="color:#666;font-size:.88em;margin-bottom:16px">Click any device row to expand its full findings.</p>'
-
     for d in devices:
         ip = _h(d.get("ip", ""))
         mac = _h(d.get("mac", ""))
@@ -494,87 +468,77 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
         budget = d.get("budget", {})
         rtt = d.get("rtt_stats", {})
         event_log = d.get("event_log", [])
+        class_hist = d.get("classification_history", [])
         ptg = ptg_summaries.get(d.get("ip", ""), {})
         by_st = ptg.get("by_status", {})
         breakdown = budget.get("breakdown_by_type", {})
+        is_rpi = "raspberry pi" in vendor.lower()
         summary_label = device_name or device_type or vendor
-        status_dot = "🔴" if breaker == "TRIPPED" else "🟢"
 
-        # No 'open' attribute — all devices start collapsed regardless of type
-        html += f'<details>'
-        html += f'<summary>{ip} — {summary_label} <span class="tb tb-{tier}" style="margin:0 6px">{tier}</span> {status_dot}</summary>'
-        html += '<div class="device-body">'
-
-        html += '<div class="two-col">'
-
-        # Left column: identity
-        html += '<div>'
-        html += '<h4>Identity</h4>'
-        html += '<table>'
-        html += f'<tr><td>Device Name</td><td><strong>{device_name or "<span style=\'color:#999\'>—</span>"}</strong></td></tr>'
-        html += f'<tr><td>Device Type</td><td>{device_type or "<span style=\'color:#999\'>—</span>"}</td></tr>'
-        html += f'<tr><td>IP Address</td><td><strong>{ip}</strong></td></tr>'
-        html += f'<tr><td>MAC Address</td><td>{mac}</td></tr>'
-        html += f'<tr><td>Vendor</td><td>{vendor}</td></tr>'
-        html += f'<tr><td>Tier</td><td><span class="tb tb-{tier}">{tier}</span></td></tr>'
-        html += f'<tr><td>OS Detection</td><td><strong>{os_hint}</strong></td></tr>'
-        if breaker == "TRIPPED":
-            html += f'<tr><td>Circuit Breaker</td><td><span style="color:#e74c3c;font-weight:bold">TRIPPED</span> — {trip}</td></tr>'
-        else:
-            html += '<tr><td>Circuit Breaker</td><td><span style="color:#27ae60">ACTIVE</span></td></tr>'
-        html += '</table>'
-        html += '</div>'
-
-        # Right column: budget
-        html += '<div>'
-        html += '<h4>Budget Consumption</h4>'
-        html += '<table>'
-        html += f'<tr><td>Total Budget</td><td>{budget.get("budget_total", 0):.0f} pts</td></tr>'
-        html += f'<tr><td>Budget Spent</td><td><strong>{budget.get("budget_spent", 0):.0f} pts</strong></td></tr>'
-        html += f'<tr><td>Remaining</td><td>{budget.get("budget_total", 0) - budget.get("budget_spent", 0):.0f} pts</td></tr>'
-        html += '</table>'
+        html += f"""
+<details{"open" if is_rpi else ""}>
+<summary>{ip} — {summary_label} <span class="tb tb-{tier}">{tier}</span> {"🔴" if breaker=="TRIPPED" else "🟢"}</summary>
+<div style="padding:10px 0">
+<div class="two-col">
+<div>
+<h4>Identity</h4>
+<table>
+<tr><td>Device Name</td><td><strong>{device_name or '<span style="color:#999">—</span>'}</strong></td></tr>
+<tr><td>Device Type</td><td>{device_type or '<span style="color:#999">—</span>'}</td></tr>
+<tr><td>IP Address</td><td><strong>{ip}</strong></td></tr>
+<tr><td>MAC Address</td><td>{mac}</td></tr>
+<tr><td>Vendor</td><td>{vendor}</td></tr>
+<tr><td>Tier</td><td><span class="tb tb-{tier}">{tier}</span></td></tr>
+<tr><td>OS Detection</td><td><strong>{os_hint}</strong></td></tr>
+<tr><td>Circuit Breaker</td><td>{"<span style='color:#e74c3c;font-weight:bold'>TRIPPED</span> — "+trip if breaker=="TRIPPED" else "<span style='color:#27ae60'>ACTIVE</span>"}</td></tr>
+</table>
+</div>
+<div>
+<h4>Budget Consumption</h4>
+<table>
+<tr><td>Total Budget</td><td>{budget.get('budget_total',0):.0f} pts</td></tr>
+<tr><td>Budget Spent</td><td><strong>{budget.get('budget_spent',0):.0f} pts</strong></td></tr>
+<tr><td>Remaining</td><td>{budget.get('budget_total',0)-budget.get('budget_spent',0):.0f} pts</td></tr>
+</table>"""
         if breakdown:
-            html += '<h4>Budget Breakdown by Probe Type</h4><table>'
+            html += "<h4>Budget Breakdown by Probe Type</h4><table>"
             for probe_type, cost in sorted(breakdown.items(), key=lambda x: -x[1]):
-                html += f'<tr><td>{_h(probe_type)}</td><td>{cost:.1f} pts</td></tr>'
-            html += '</table>'
-        html += '</div>'
+                html += f"<tr><td>{_h(probe_type)}</td><td>{cost:.1f} pts</td></tr>"
+            html += "</table>"
+        html += "</div></div>"
 
-        html += '</div>'  # end .two-col
-
-        # Open ports
-        html += '<h4>Open Ports</h4>'
+        # Findings: ports, OS, banners, vulnerabilities
+        html += "<h4>Open Ports</h4>"
         if ports:
             for p in ports:
                 html += f'<div class="finding danger">Port <strong>{p}/tcp</strong> — OPEN</div>'
         else:
             html += '<div class="finding warn">No open ports detected</div>'
 
-        # OS hint
         if os_hint and os_hint != "Unknown":
             html += f'<div class="finding info">OS Identified: <strong>{os_hint}</strong></div>'
 
         # Service banners
         svc_banners = findings.get("banners", {})
         if svc_banners:
-            html += '<h4>Service Banners</h4><table><tr><th>Port</th><th>Banner</th></tr>'
+            html += "<h4>Service Banners</h4><table><tr><th>Port</th><th>Banner</th></tr>"
             for bp, bb in svc_banners.items():
-                html += f'<tr><td>{bp}</td><td><code>{_h(str(bb)[:120])}</code></td></tr>'
-            html += '</table>'
+                html += f"<tr><td>{bp}</td><td><code>{_h(str(bb)[:120])}</code></td></tr>"
+            html += "</table>"
 
-        # Vulnerabilities
+        # Vulnerability findings
         vulns = findings.get("vulnerabilities", [])
         if vulns:
             sev_cls = {"CRITICAL": "danger", "HIGH": "danger", "MEDIUM": "warn", "LOW": "info", "INFO": "info"}
             exploit_vulns = [v for v in vulns if v.get("type") == "exploit"]
             probe_vulns = [v for v in vulns if v.get("type") != "exploit"]
-            html += f'<h4>Vulnerability Findings ({len(vulns)})</h4>'
+            html += f"<h4>Vulnerability Findings ({len(vulns)})</h4>"
             for v in sorted(probe_vulns, key=lambda x: ["CRITICAL","HIGH","MEDIUM","LOW","INFO"].index(x.get("severity","INFO").upper())):
                 sev = v.get("severity", "INFO").upper()
                 cls = sev_cls.get(sev, "info")
                 html += f'<div class="finding {cls}"><strong>[{sev}]</strong> Port {v.get("port","?")} — {_h(v.get("detail",""))}</div>'
             if exploit_vulns:
-                html += f'<h4>Exploitation Findings ({len(exploit_vulns)})</h4>'
+                html += f"<h4>Exploitation Findings ({len(exploit_vulns)})</h4>"
                 for v in sorted(exploit_vulns, key=lambda x: ["CRITICAL","HIGH","MEDIUM","LOW","INFO"].index(x.get("severity","INFO").upper())):
                     sev = v.get("severity", "INFO").upper()
                     cls = sev_cls.get(sev, "info")
@@ -586,43 +550,42 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
         elif not ports:
             html += '<div class="finding warn">No vulnerability findings — device may be firewalled or unresponsive</div>'
 
-        # PTG node status
-        html += '<h4>Test Execution (PTG Nodes)</h4>'
-        html += '<table><tr><th>Status</th><th>Count</th></tr>'
+        # PTG execution
+        html += "<h4>Test Execution (PTG Nodes)</h4>"
+        html += f'<table><tr><th>Status</th><th>Count</th></tr>'
         for st_name, st_count in by_st.items():
-            html += f'<tr><td><span class="st st-{st_name}">{st_name.upper()}</span></td><td>{st_count}</td></tr>'
-        html += '</table>'
+            cls = f"st-{st_name}"
+            html += f'<tr><td><span class="st {cls}">{st_name.upper()}</span></td><td>{st_count}</td></tr>'
+        html += "</table>"
 
         # RTT stats
-        if rtt and rtt.get("samples", 0) > 0:
-            baseline = rtt.get("baseline_ms") or 0
-            current = rtt.get("current_ms") or 0
-            mean = rtt.get("mean_ms") or 0
-            stddev = rtt.get("stddev_ms") or 0
-            html += '<h4>Network Metrics (RTT)</h4>'
-            html += '<table>'
-            html += f'<tr><td>Samples</td><td>{rtt.get("samples", 0)}</td></tr>'
-            html += f'<tr><td>Baseline RTT</td><td>{baseline:.1f} ms</td></tr>'
-            html += f'<tr><td>Current RTT</td><td>{current:.1f} ms</td></tr>'
-            html += f'<tr><td>Mean RTT</td><td>{mean:.1f} ms</td></tr>'
-            html += f'<tr><td>Std Dev</td><td>{stddev:.2f} ms</td></tr>'
-            html += f'<tr><td>Stress Events</td><td>{rtt.get("stress_events", 0)}</td></tr>'
-            html += '</table>'
+        if rtt and rtt.get("samples", 0) and rtt.get("samples", 0) > 0:
+            baseline = rtt.get('baseline_ms') or 0
+            current = rtt.get('current_ms') or 0
+            mean = rtt.get('mean_ms') or 0
+            stddev = rtt.get('stddev_ms') or 0
+            html += f"""<h4>Network Metrics (RTT)</h4>
+<table>
+<tr><td>Samples</td><td>{rtt.get('samples',0)}</td></tr>
+<tr><td>Baseline RTT</td><td>{baseline:.1f} ms</td></tr>
+<tr><td>Current RTT</td><td>{current:.1f} ms</td></tr>
+<tr><td>Mean RTT</td><td>{mean:.1f} ms</td></tr>
+<tr><td>Std Dev</td><td>{stddev:.2f} ms</td></tr>
+<tr><td>Stress Events</td><td>{rtt.get('stress_events',0)}</td></tr>
+</table>"""
 
-        # Event timeline
+        # Timeline
         if event_log:
-            html += '<h4>Event Timeline</h4><div class="timeline">'
+            html += "<h4>Event Timeline</h4><div class='timeline'>"
             for ev in event_log[:20]:
-                cls = "alert" if any(kw in str(ev) for kw in ("ERROR", "TRIPPED", "RECLASSIFY")) else ""
+                cls = "alert" if "ERROR" in str(ev) or "TRIPPED" in str(ev) or "RECLASSIFY" in str(ev) else ""
                 html += f'<div class="tl-item {cls}">{_h(str(ev))}</div>'
             if len(event_log) > 20:
-                html += f'<div class="tl-item">... and {len(event_log) - 20} more events</div>'
-            html += '</div>'
+                html += f'<div class="tl-item">... and {len(event_log)-20} more events</div>'
+            html += "</div>"
 
-        html += '</div>'      # end .device-body
-        html += '</details>'
-
-    html += '</div>'  # end section card
+        html += "</div></details>"
+    html += "</div>"
 
     # ═══ RASPBERRY PI SECTION ═══
     if rpis:
@@ -644,11 +607,11 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
 <tr><td><strong>Tier</strong></td><td><span class="tb tb-{tier}">{tier}</span></td></tr>
 <tr><td><strong>Open Ports</strong></td><td>{ports_html}</td></tr>
 <tr><td><strong>OS Detection</strong></td><td><strong>{os_hint}</strong></td></tr>
-<tr><td><strong>Budget Used</strong></td><td>{budget.get('budget_spent', 0):.0f} / {budget.get('budget_total', 0):.0f} pts</td></tr>
-<tr><td><strong>Circuit Breaker</strong></td><td>{d.get('circuit_breaker', 'N/A')}</td></tr>
+<tr><td><strong>Budget Used</strong></td><td>{budget.get('budget_spent',0):.0f} / {budget.get('budget_total',0):.0f} pts</td></tr>
+<tr><td><strong>Circuit Breaker</strong></td><td>{d.get('circuit_breaker','N/A')}</td></tr>
 </table>
 </div>"""
-        html += '</div>'
+        html += "</div>"
 
     # ═══ ISSUES & RECOMMENDATIONS ═══
     html += '<div class="card"><h2>10. Issues Found & Recommendations</h2>'
@@ -665,9 +628,11 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
         banners_d = findings_d.get("banners", {})
         is_rpi = "raspberry pi" in vendor
 
+        # Pull real vulnerability findings from service probe
         for v in vulns:
             issues.append((v.get("severity", "INFO").upper(), ip, v.get("detail", ""), v.get("type", ""), "probe"))
 
+        # ── Port-based security analysis ──
         port_set = set(ports)
         for p in ports:
             if p == 22:
@@ -677,6 +642,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                     issues.append(("HIGH", ip, f"Raspberry Pi SSH open — default user 'pi' with password 'raspberry' may be active. Run 'passwd' to change immediately", "rpi_default_creds", "rpi"))
                     issues.append(("MEDIUM", ip, f"Raspberry Pi SSH — disable password auth, use key-based auth only (set PasswordAuthentication no in sshd_config)", "rpi_ssh_password", "rpi"))
                 if "openssh" in banner_text:
+                    # Extract version for CVE check
                     issues.append(("MEDIUM", ip, f"OpenSSH version disclosed in banner — consider adding 'DebianBanner no' to sshd_config to reduce fingerprinting", "ssh_banner_leak", "service"))
                 if not any(v.get("type") == "ssh_v1" for v in vulns):
                     issues.append(("INFO", ip, f"SSH Protocol v2 in use (good) — verify no SSHv1 fallback is configured", "ssh_v2_ok", "info"))
@@ -684,14 +650,14 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                 issues.append(("MEDIUM", ip, f"HTTP (port 80) unencrypted — implement HTTPS redirect, sensitive data may be transmitted in plaintext", "http_unencrypted", "port"))
                 if is_rpi:
                     issues.append(("MEDIUM", ip, f"Raspberry Pi web server on port 80 — check for default admin panels (e.g., /admin, /config)", "rpi_http_admin", "rpi"))
-            elif p in (443, 8443):
+            elif p == 443 or p == 8443:
                 issues.append(("LOW", ip, f"HTTPS (port {p}) — verify TLS 1.2+ enforced, check certificate validity and cipher suite strength", "https_check", "port"))
             elif p == 21:
                 issues.append(("HIGH", ip, f"FTP (port 21) — plaintext protocol transmits credentials in clear. Migrate to SFTP/SCP", "ftp_plaintext", "port"))
                 issues.append(("HIGH", ip, f"FTP (port 21) — check for anonymous login access (test: 'ftp {ip}' with user 'anonymous')", "ftp_anon_check", "port"))
             elif p == 23:
                 issues.append(("CRITICAL", ip, f"Telnet (port 23) — unencrypted remote shell. Disable immediately and replace with SSH", "telnet_open", "port"))
-            elif p in (445, 139):
+            elif p == 445 or p == 139:
                 issues.append(("HIGH", ip, f"SMB/NetBIOS (port {p}) — check for EternalBlue (MS17-010), null sessions, and guest access", "smb_open", "port"))
                 issues.append(("MEDIUM", ip, f"SMB (port {p}) — verify SMBv1 is disabled (vulnerable to WannaCry/NotPetya)", "smb_v1", "port"))
             elif p == 3306:
@@ -715,6 +681,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
             else:
                 issues.append(("LOW", ip, f"Port {p}/tcp open — verify this service is intentional and running latest patches", "unknown_port", "port"))
 
+        # ── Raspberry Pi specific findings ──
         if is_rpi:
             issues.append(("HIGH", ip, f"Raspberry Pi Foundation device detected (MAC OUI: B8:27:EB) — apply all Raspberry Pi OS security hardening", "rpi_detected", "rpi"))
             issues.append(("MEDIUM", ip, f"Raspberry Pi — verify OS and packages are up to date: 'sudo apt update && sudo apt full-upgrade'", "rpi_updates", "rpi"))
@@ -727,39 +694,44 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
                 issues.append(("LOW", ip, f"Raspberry Pi — consider changing SSH port from default 22 to reduce automated scanning exposure", "rpi_ssh_port", "rpi"))
                 issues.append(("LOW", ip, f"Raspberry Pi — install fail2ban to protect SSH from brute-force: 'sudo apt install fail2ban'", "rpi_fail2ban", "rpi"))
 
+        # ── OS-based findings ──
         if os_hint and os_hint != "Unknown":
             if "linux" in os_hint.lower():
                 issues.append(("LOW", ip, f"Linux detected ({os_hint}) — verify kernel is up to date, check for known CVEs with 'uname -r'", "linux_kernel", "os"))
 
+        # ── Network infrastructure findings ──
         if breaker == "TRIPPED":
             issues.append(("MEDIUM", ip, f"Circuit breaker tripped during scan — device may be resource-constrained or has aggressive rate limiting", "breaker_trip", "infra"))
         if not ports and os_hint == "Unknown":
             issues.append(("INFO", ip, f"No open ports or OS detected — device may be behind a firewall or host-based IPS blocking probes", "no_findings", "infra"))
 
+    # ── Render issues table ──
     if issues:
         sev_colors = {"CRITICAL": "#8e44ad", "HIGH": "#e74c3c", "MEDIUM": "#f39c12", "LOW": "#3498db", "INFO": "#95a5a6"}
+        sev_icons = {"CRITICAL": "!!!", "HIGH": "!!", "MEDIUM": "!", "LOW": "~", "INFO": "i"}
+
+        # Summary counts
         sev_counts = {}
         for sev, *_ in issues:
             sev_counts[sev] = sev_counts.get(sev, 0) + 1
-
         html += '<div class="mg" style="margin-bottom:15px">'
         for sev in ["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"]:
             if sev in sev_counts:
                 cls = "red" if sev in ("CRITICAL", "HIGH") else ("orange" if sev == "MEDIUM" else "")
-                html += metric_card(sev_counts[sev], sev, cls)
+                html += f'<div class="m {cls}"><div class="v">{sev_counts[sev]}</div><div class="l">{sev}</div></div>'
         html += '</div>'
 
         html += '<table><tr><th>Sev</th><th>Device</th><th>Category</th><th>Finding & Recommendation</th></tr>'
         for sev, ip, desc, typ, cat in sorted(issues, key=lambda x: ["CRITICAL","HIGH","MEDIUM","LOW","INFO"].index(x[0])):
             cat_label = {"port": "Open Port", "service": "Service", "rpi": "Raspberry Pi", "os": "OS", "infra": "Infrastructure", "probe": "Probe", "info": "Info"}.get(cat, cat)
             html += f'<tr><td><span style="color:{sev_colors.get(sev,"#333")};font-weight:bold">{sev}</span></td><td><strong>{ip}</strong></td><td>{cat_label}</td><td>{_h(desc)}</td></tr>'
-        html += '</table>'
+        html += "</table>"
     else:
         html += '<div class="finding warn">No specific issues identified — all scanned ports are closed or filtered.</div>'
-    html += '</div>'
+    html += "</div>"
 
     # ═══ EVIDENCE & COMPLIANCE ═══
-    html += f"""<div class="card"><h2>11. Evidence Chain &amp; Compliance</h2>
+    html += f"""<div class="card"><h2>11. Evidence Chain & Compliance</h2>
 <div class="two-col">
 <div>
 <h4>PCF Evidence DAG</h4>
@@ -771,7 +743,7 @@ All evidence is recorded in a <strong>{metrics.get('pcf_nodes', 0)}-node</strong
 </table>
 </div>
 <div>
-<h4>Safety &amp; Monitoring</h4>
+<h4>Safety & Monitoring</h4>
 <table>
 <tr><td>Safety Officer</td><td>{"Active" if not agent_results.get("safety", {}).get("skipped") else "Skipped (no OT devices)"}</td></tr>
 <tr><td>Actions Vetoed</td><td>{metrics.get('vetoed_actions', 0)}</td></tr>
